@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require bootstrap-datepicker
+//= require bootstrap
 
 $(document).ready(function(){
 	$('input.datepicker').datepicker();
