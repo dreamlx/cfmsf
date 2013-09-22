@@ -31,7 +31,7 @@ module Bancheng
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = "zh-CN"
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -42,6 +42,13 @@ module Bancheng
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+    config.to_prepare do
+      Devise::SessionsController.layout "admin"
+      Devise::RegistrationsController.layout "admin"
+      Devise::ConfirmationsController.layout "admin"
+      Devise::UnlocksController.layout "admin"
+      Devise::PasswordsController.layout "admin"
+    end
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types

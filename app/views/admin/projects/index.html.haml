@@ -1,0 +1,33 @@
+%h1 Listing projects
+
+%table
+  %tr
+    %th
+    %th
+    %th
+   
+  = link_to 'New Project', new_admin_project_path
+
+  %table.table.center.table-bordered
+    %thead
+      %tr
+        %td name
+        %td desc
+        %td tags
+        %td thumb
+        %td release_time
+        %td 
+    %tbody
+    - @projects.each do |project|
+      %tr
+        %td= project.name
+        %td= project.desc
+        %td= project.tags
+        %td= project.thumb
+        %td= project.release_time
+        %td
+          = link_to t(:works), admin_project_works_path(project)
+          = link_to t(:edit, scope: "crud"), edit_admin_project_path(project)
+          = link_to t(:destroy, scope: "crud"), admin_project_path(project), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

@@ -1,0 +1,22 @@
+zh-CN:
+  app_name: 半城
+  welcome: 欢迎访问进入管理页面
+  crud: 
+    back: 返回
+    back_to: "返回%{model}"
+    confirmation: 
+      destroy: 确定要删除吗？删除后不能恢复！
+    creating: "新增%{model}"
+    destroy: 删除   
+    edit: 编辑
+    editing: "编辑%{model}"
+    listing: "%{model}列表"
+    more: 更多操作
+    move_higher: 上移
+    move_lower: 下移
+    new: 新增
+    show: 查看
+    showing: "%{model}详细信息"
+    add: "添加更多%{model}"
+    save: 保存
+    upload: 上传 

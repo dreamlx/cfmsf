@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require_tree .
+//= require bootstrap-datepicker
+
+$(document).ready(function(){
+	$('input.datepicker').datepicker();
+})
+
