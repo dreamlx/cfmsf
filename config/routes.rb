@@ -1,5 +1,7 @@
 Bancheng::Application.routes.draw do
 
+  get "site/projects"
+
   devise_for :users
 
   namespace :admin do
@@ -11,7 +13,7 @@ Bancheng::Application.routes.draw do
     end
   end
 
-  root :to => 'admin/home#index'
+  root :to => 'site#projects'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

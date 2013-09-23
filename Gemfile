@@ -31,6 +31,7 @@ gem "nested_form"  #嵌套资源form
 gem 'state_machine' #状态转换跟踪
 gem "less-rails" 
 gem "haml-rails" #erb简化模板
+gem 'requirejs-rails' #requirejs
 
 gem 'kaminari', '~> 0.14.1' #翻页
 gem 'default_value_for', '~> 2.0.1' #model中更好的默认值设定

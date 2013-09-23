@@ -1,0 +1,442 @@
+@import "normalize-scss/normalize";
+body
+{
+	background-color: #dedede;
+	font-family:Tahoma;
+}
+header#globalHeader
+{
+	background: black;
+	width:100%;
+	min-width: 1058px;
+	height:77px;
+	margin-bottom: 3px;
+	hgroup
+	{
+		float:left;
+		h1
+		{
+			width:226px;
+			height:77px;
+			margin:
+			{
+				left:60px;
+				right:0px;
+				top:0px;
+				bottom:0px;
+			}
+			a
+			{
+				display: block;
+				width:226px;
+				height:77px;
+				background: url(/assets/logo.png) scroll no-repeat 19px 30px;
+			}
+		}
+	}
+	nav ul
+	{
+		list-style:none;
+		margin:0;
+		padding:0;
+		float: left;
+		li
+		{
+			float:left;
+			&.selected{background-color:#242424}
+		}
+		a
+		{
+			display: block;
+			width:78px;
+			height:77px;
+			color:#b3b3b3;
+			text-decoration: none;
+			font-size:12px; 
+			text-align: center;
+			line-height: 77px;
+
+		}
+	}
+	form
+	{
+		float:right;
+		width:300px;
+		height:44px;
+		input
+		{
+			text-indent: 1em;
+			width:231px;
+			height:44px;
+			border:none;
+			font-size:12px;
+			color:#808080;
+			font-family: Tahoma;
+			margin-top:16px;
+			background: url(/assets/search_icon.png) #242424 no-repeat scroll 200px 16px;
+		}
+	}
+}
+aside
+{
+	width:234px;
+	padding-left:60px;
+	margin-right:17px;
+	height:auto;
+	float:left;
+	#faqlink
+	{
+		margin-top:23px;
+	}
+	#faqlink a
+	{
+		display:block;
+		width:100%;
+		height:35px;
+		background-color: #b3b3b3;
+		line-height: 35px;
+		text-align: center;
+		color:white;
+		font-family: "ConduitITC";
+		text-decoration: none;
+		font-size:24px;
+	}
+}
+aside section#lastestNews
+{
+	width:234px - 16px;
+	height:234px - 16px;
+	padding:13px 3px 3px 13px;
+	margin-bottom:8px;
+	background-color: white;
+	article
+	{
+		figure
+		{
+			width:101px;
+			height:126px;
+			background-color: #f2f2f2;
+			display: inline-block;
+			float:left;
+			margin-bottom:13px;
+			img
+			{
+
+			}
+
+		}
+		u
+		{
+			text-decoration: none;
+			color:#ccc;
+			font-size:40px;
+			font-family:"ConduitITC";
+			margin-left: 12px;
+			line-height: 50px;
+		}
+		hr
+		{
+			clear: both;
+			border: none;
+			border-top: 1px solid #b3b3b3;
+			width:206px;
+			margin:0;
+		}
+		p
+		{
+			width:201px;
+			height:auto;
+			font-size:12px;
+			font-family:Tahoma;
+			color:#666666;
+			margin:8px 0px 0px 0px;
+			line-height: 12px
+		}
+		a
+		{
+			display: block;
+			float:right;
+			width:49px;
+			height:22px;
+			background-color: #666666;
+			color:white;
+			font-size:12px;
+			font-family: Tahoma;
+			text-align: center;
+			line-height: 22px;
+			text-decoration: none;
+		}
+	}
+}
+aside ul#tagList
+{
+	list-style: none;
+	margin:0;
+	padding:0;
+	li:last-child a
+	{
+		border-bottom:1px solid #ccc;
+	}
+	a
+	{
+		
+		text-decoration: none;
+		color:#999;
+		font-size:12px;
+		font-family: "ConduitITC";
+		border-top:1px solid #ccc;
+		width:234px;
+		height:43px;	
+		line-height: 43px;	
+		display: block;
+		text-transform: uppercase;
+		
+		&.selected
+		{
+			background-color: #ccc;
+		}
+		span
+		{
+			display: inline-block;;
+			text-indent:24px;
+		}
+		b
+		{
+			display: inline-block;
+			float:right;
+			color:white;
+			width:42px;
+			text-align: left;
+		}
+	}
+}
+
+div.projects
+{
+
+	height:auto;
+	section#clientComment
+	{
+		// width:500px;
+		text-align: center;
+		margin-left:310px;
+		font-family: Georgia;
+		width:100%;
+		height:234px - 78px;
+		padding-top:78px;
+		margin-bottom: 8px;
+		h3
+		{
+			margin:0px auto;
+			width:780px;
+			font-size:21px;
+			color:#4d4d4d;
+			font-weight: normal;
+		}
+		p
+		{
+			margin-top:19px;
+			font-size:12px;
+			color:#b3b3b3;
+		}
+	}
+	section.projectList
+	{
+		min-width: 900px;
+		max-width:1980px;
+		article
+		{
+			width:231px - 30px;
+			height: 346px - 32px;
+			
+			margin-bottom:18px;
+			padding:16px 15px;
+			background-color: white;
+			float:left;
+			&.longConver
+			{
+				height:500px;
+			}
+			figure
+			{
+				width:201px;
+				height:251px;
+				background-color: #f2f2f2;
+				a
+				{
+
+				}
+			}
+			h6
+			{
+				font:
+				{
+					size:14px;
+				 	family:Tahoma;
+				 	weight: normal;
+				} 
+				margin:5px 0px;
+			}
+			p
+			{
+				font:
+				{
+					size:11px;
+					family: Tahoma;
+				}
+			}
+		}
+	}
+	.scrollLoading
+	{
+		clear:both;
+		text-align: center;
+
+	}
+	.navigation
+	{
+		display: none;
+		clear:both;
+		text-align:center;
+	}
+}
+
+.column
+{
+	float:left;
+	width:231px;
+	margin-right:18px;
+}
+
+[data-columns]::before { display: none; } /* Don't forget this. */
+
+.projectList[data-columns]::before {
+    content: '2';
+}
+
+@media screen and (min-width: 1058px) and (max-width: 1306px) {
+	.projectList[data-columns]::before {
+    	content: '3';
+  	}
+  	section#clientComment
+  	{
+		max-width:729px;
+  	}
+}
+
+@media screen and (min-width: 1307px) and (max-width: 1555px) {
+	.projectList[data-columns]::before {
+    	content: '4';
+  	}
+  	section#clientComment
+  	{
+		max-width:978px;
+  	}
+}
+
+@media screen and (min-width: 1556px) and (max-width: 1804px) {
+	.projectList[data-columns]::before {
+    	content: '5';
+  	}
+  	section#clientComment
+  	{
+		max-width:1210px;
+  	}
+}
+
+@media screen and (min-width: 1805px) {
+	.projectList[data-columns]::before {
+    	content: '6';
+  	}
+  	section#clientComment
+  	{
+		max-width:1476px;
+  	}
+}
+
+footer
+{
+	clear:both;
+	width:100%;
+	height:400px - 41px;
+	background-color: #999;
+	padding-top:41px;
+	color:white;
+	article
+	{
+		vertical-align: top;
+		display: inline-block;
+		h6{font-weight: normal;font-size:14px;margin:0;margin-bottom:33px;}
+		p{line-height:19px;margin:0;font-size: 12px}
+		a{font-size:12px;color:#fff;text-decoration: none}
+		ul
+		{
+			list-style: none;
+			margin:0;
+			padding:0;
+			li
+			{
+				line-height:19px;
+			}
+		}
+		&#faq
+		{
+			width:245px;
+			margin-left:116px;
+			p{width:190px;word-wrap: break-word;}
+		}
+		&#about
+		{
+			width:298px;
+			p{width:220px;margin-bottom:4px;}
+		}
+		&#services
+		{
+			width:189px;
+			
+		}
+		&#contact
+		{
+			width:260px;
+			p
+			{
+				width:220px;
+				line-height:16px;
+				margin-bottom:6px;
+				a
+				{
+					text-decoration: underline;
+					display: block;
+					line-height:14px;
+				}
+			}
+			figure
+			{
+				margin-top:27px;
+			}
+		}
+		&#careers{width:182px;}
+		&#life{width:70px;}
+	}
+	&>p
+	{
+		margin-top:50px;
+		clear:both;
+		text-align: right;
+		font-size:10px;
+		b
+		{
+			color:#ccc;
+			font-weight:normal;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
