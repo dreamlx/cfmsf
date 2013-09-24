@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %meta{charset: "utf-8"}/
+    %meta{content: "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{content: "", name: "description"}/
+    %meta{content: "width=device-width", name: "viewport"}/
+    %title Tang Digital
+    = stylesheet_link_tag action_name, :media => "all"
+    - if action_name == "projects"
+      = requirejs_include_tag "projects"
+    - else
+      = javascript_include_tag "site"
+    = csrf_meta_tags
+
+  %body
+
+    = render "layouts/ie_check"
+    = render "layouts/siteheader"
+    
+    = yield
+
+    = render "layouts/footer"

@@ -1,0 +1,20 @@
+%header#globalHeader
+  %hgroup
+    %h1#logo
+      %a{href: "/"}
+  %nav
+    %ul
+      %li{class: action_name == "aboutus" ? "selected" : ""}
+        %a{href: "/site/aboutus"} ABOUT
+      %li{class: action_name == "services" ? "selected" : ""}
+        %a{href: "services.html"} SERVICES
+      %li{class: action_name == "projects" ? "selected" : ""}
+        %a{href: "/site/projects"} PROJECTS
+      %li{class: action_name == "contact" ? "selected" : ""}
+        %a{href: "/site/contact"} CONTACT
+      %li{class: action_name == "careers" ? "selected" : ""}
+        %a{href: "careers.html"} CAREERS
+      %li{class: action_name == "life" ? "selected" : ""}
+        %a{href: "life.html"} LIFE
+  %form{action: ""}
+    %input{placeholder: "Search", type: "search"}/

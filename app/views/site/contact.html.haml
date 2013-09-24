@@ -1,0 +1,72 @@
+%article#contactInfo
+  %h1.pageTitle
+    contact us
+  %figure
+    %img{:src=>"/assets/logo.png"}
+
+  %p
+    Contact :
+  %p
+    Address: A101 No.33 Lane 672 Changle Road Shanghai China 200040.
+  %p
+    \-
+  %p
+    New Business Opportunities:  
+    %a{:href=>"#"}
+      Simon Shi
+
+    %a{:href=>"#"}
+      Liji Tang
+  %p
+    Job Opportunities:  
+    %a{:href=>"#"}
+      SH JOB
+  %p
+    \-
+
+%script{type:"text/javascript", src:"http://maps.googleapis.com/maps/api/js?key=AIzaSyAu-2gApboK2JUfuvk5cbwe1gDjXFAxKKg&sensor=false"}
+:javascript
+  $(document).ready(function(){
+    var mapOptions = {
+      center: new google.maps.LatLng(31.219784, 121.452811),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"),
+        mapOptions);
+    
+    var image = '/assets/beachflag.png';
+    var myLatLng = new google.maps.LatLng(31.219784, 121.452811);
+    var beachMarker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        icon: image
+    });
+
+    var styles = [
+      {
+        stylers: [
+          { hue: "#00ffe6" },
+          { saturation: -20 }
+        ]
+      },{
+        featureType: "road",
+        elementType: "geometry",
+        stylers: [
+          { lightness: 100 },
+          { visibility: "simplified" }
+        ]
+      },{
+        featureType: "road",
+        elementType: "labels",
+        stylers: [
+          { visibility: "off" }
+        ]
+      }
+    ];
+
+    map.setOptions({styles: styles});
+  });
+
+#map_canvas
+  
