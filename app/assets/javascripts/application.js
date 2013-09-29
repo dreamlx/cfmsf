@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require_tree .
-//= require bootstrap-datepicker
+//= require admin/projects
+//= require bootstrap-datepicker/core
 //= require bootstrap
 
 $(document).ready(function(){
