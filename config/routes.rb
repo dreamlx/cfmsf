@@ -1,5 +1,4 @@
 Bancheng::Application.routes.draw do
-
   get "site/aboutus"
 
   get "site/projects"

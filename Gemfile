@@ -35,6 +35,11 @@ gem 'requirejs-rails' #requirejs
 
 gem 'kaminari', '~> 0.14.1' #翻页
 gem 'default_value_for', '~> 2.0.1' #model中更好的默认值设定
+gem 'bootstrap-wysihtml5-rails' # rich text
+
+gem 'qiniu-rs'
+gem 'carrierwave'
+gem 'carrierwave-qiniu'
 
 group :development, :test do
   gem 'pry'

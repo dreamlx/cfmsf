@@ -23,7 +23,8 @@
         %td= project.name
         %td= project.desc
         %td= project.tags
-        %td= project.thumb
+        %td
+          %img{:src => "#{project.thumb}?imageView/1/w/50/h/50"}
         %td= project.release_time
         %td
           = link_to t(:works), admin_project_works_path(project)
