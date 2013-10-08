@@ -60,6 +60,9 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dragonfly (0.9.15)
+      multi_json (~> 1.0)
+      rack
     erubis (2.7.0)
     execjs (2.0.1)
     haml (4.0.3)
@@ -200,6 +203,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   default_value_for (~> 2.0.1)
   devise
+  dragonfly (~> 0.9.15)
   haml-rails
   jquery-rails
   kaminari (~> 0.14.1)
@@ -209,6 +213,7 @@ DEPENDENCIES
   pry
   pry-nav
   qiniu-rs
+  rack-cache
   rails (= 3.2.13)
   rails_kindeditor (~> 0.4.0)
   ransack

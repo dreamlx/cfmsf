@@ -9,7 +9,9 @@
     = f.input :name
     = f.input :desc, :as => :kindeditor
     = f.input :content
+    = f.input :albums, input_html: {multiple: :true, :name => 'albums[]'}, :as => :file
     = f.input :thumb, :as => :file
     = f.input :tag_list
   .actions
     = f.submit 'Save'
+
