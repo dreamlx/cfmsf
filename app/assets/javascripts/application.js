@@ -12,18 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
 //= require twitter/bootstrap
 //= require admin/projects
 //= require bootstrap-datepicker/core
 //= require bootstrap
-//= require bootstrap-wysihtml5
-// or
-//= require bootstrap-wysihtml5/b3
 $(document).ready(function(){
 	$('input.datepicker').datepicker();
-	$('.wysihtml5').each(function(i, elem) {
-	  alert("aa")
-      $(elem).wysihtml5();
-    });
 })
 

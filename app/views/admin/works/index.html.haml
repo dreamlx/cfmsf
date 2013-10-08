@@ -23,7 +23,7 @@
       %tr
         %td= work.project_id
         %td= work.name
-        %td= work.desc
+        %td= raw(work.desc)
         %td= work.content
         %td
           %img{:src => "#{work.thumb}?imageView/1/w/50/h/50"}

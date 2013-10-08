@@ -11,7 +11,4 @@
  *= require_self
  *= require bootstrap-datepicker
  *= require bootstrap_and_overrides
- *= require bootstrap-wysihtml5
- // or
- *= require bootstrap-wysihtml5/b3
  */

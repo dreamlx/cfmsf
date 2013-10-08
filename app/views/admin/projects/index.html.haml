@@ -21,7 +21,7 @@
     - @projects.each do |project|
       %tr
         %td= project.name
-        %td= project.desc
+        %td= raw(project.desc)
         %td= project.tag_list
         %td
           %img{:src => "#{project.thumb}?imageView/1/w/50/h/50"}

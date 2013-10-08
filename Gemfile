@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem "ransack" 
 gem 'bootstrap-datepicker-rails'
 gem 'acts-as-taggable-on' 
+gem 'rails_kindeditor', '~> 0.4.0'
 gem 'devise' #用户注册
 gem 'cancan' #权限管理
 gem 'simple_form' #更好的form help
