@@ -35,8 +35,6 @@ GEM
     bcrypt-ruby (3.1.2)
     bootstrap-datepicker-rails (1.1.1.7)
       railties (>= 3.0)
-    bootstrap-wysihtml5-rails (0.3.1.23)
-      railties (>= 3.0)
     builder (3.0.4)
     cancan (1.6.10)
     carrierwave (0.9.0)
@@ -196,7 +194,6 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   bootstrap-datepicker-rails
-  bootstrap-wysihtml5-rails
   cancan
   carrierwave
   carrierwave-qiniu

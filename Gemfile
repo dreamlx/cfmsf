@@ -23,8 +23,8 @@ end
 gem 'jquery-rails'
 gem "ransack" 
 gem 'bootstrap-datepicker-rails'
-gem 'acts-as-taggable-on' 
-gem 'rails_kindeditor', '~> 0.4.0'
+gem 'acts-as-taggable-on' # tag
+gem 'rails_kindeditor', '~> 0.4.0' # rich text
 gem 'devise' #用户注册
 gem 'cancan' #权限管理
 gem 'simple_form' #更好的form help
@@ -39,8 +39,6 @@ gem 'dragonfly', '~>0.9.15'
 
 gem 'kaminari', '~> 0.14.1' #翻页
 gem 'default_value_for', '~> 2.0.1' #model中更好的默认值设定
-gem 'bootstrap-wysihtml5-rails' # rich text
-
 gem 'qiniu-rs'
 gem 'carrierwave'
 gem 'carrierwave-qiniu'
