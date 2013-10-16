@@ -23,7 +23,8 @@ end
 gem 'jquery-rails'
 gem "ransack" 
 gem 'bootstrap-datepicker-rails'
-
+gem 'acts-as-taggable-on' # tag
+gem 'rails_kindeditor', '~> 0.4.0' # rich text
 gem 'devise' #用户注册
 gem 'cancan' #权限管理
 gem 'simple_form' #更好的form help
@@ -33,8 +34,14 @@ gem "less-rails"
 gem "haml-rails" #erb简化模板
 gem 'requirejs-rails' #requirejs
 
+gem 'rack-cache', :require => 'rack/cache'
+gem 'dragonfly', '~>0.9.15'
+
 gem 'kaminari', '~> 0.14.1' #翻页
 gem 'default_value_for', '~> 2.0.1' #model中更好的默认值设定
+gem 'qiniu-rs'
+gem 'carrierwave'
+gem 'carrierwave-qiniu'
 
 group :development, :test do
   gem 'pry'

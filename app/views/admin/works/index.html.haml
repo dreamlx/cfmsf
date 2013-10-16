@@ -23,10 +23,13 @@
       %tr
         %td= work.project_id
         %td= work.name
-        %td= work.desc
-        %td= work.content
-        %td= work.thumb
-        %td= work.tag
+        %td= raw(work.desc)
+        %td
+          - work.albums.each do |albums|
+            %img{:src => "#{albums.cover_image}?imageView/1/w/50/h/50"}
+        %td
+          %img{:src => "#{work.thumb}?imageView/1/w/50/h/50"}
+        %td= work.tag_list
         %td
           = link_to t(:edit, scope: "crud"), edit_admin_project_work_path(@project,work)
           = link_to t(:destroy, scope: "crud"), admin_project_work_path(@project,work), :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.4.1)
+      rails (>= 3, < 5)
     arel (3.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -35,6 +37,11 @@ GEM
       railties (>= 3.0)
     builder (3.0.4)
     cancan (1.6.10)
+    carrierwave (0.9.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+    carrierwave-qiniu (0.0.6)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -51,6 +58,9 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    dragonfly (0.9.15)
+      multi_json (~> 1.0)
+      rack
     erubis (2.7.0)
     execjs (2.0.1)
     haml (4.0.3)
@@ -81,6 +91,8 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25)
+    mini_magick (3.6.0)
+      subexec (~> 0.2.1)
     multi_json (1.8.0)
     nested_form (0.3.2)
     orm_adapter (0.4.0)
@@ -94,6 +106,11 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.3)
       pry (~> 0.9.10)
+    qiniu-rs (3.4.2)
+      json (~> 1.7)
+      mime-types (~> 1.19)
+      rest-client (~> 1.6)
+      ruby-hmac (~> 0.4)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -109,6 +126,9 @@ GEM
       activesupport (= 3.2.13)
       bundler (~> 1.0)
       railties (= 3.2.13)
+    rails_kindeditor (0.4.0)
+      carrierwave
+      mini_magick
     railties (3.2.13)
       actionpack (= 3.2.13)
       activesupport (= 3.2.13)
@@ -126,6 +146,9 @@ GEM
     ref (1.0.5)
     requirejs-rails (0.9.1)
       railties (>= 3.1.1, < 3.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
+    ruby-hmac (0.4.0)
     sass (3.2.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -142,6 +165,7 @@ GEM
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.8)
     state_machine (1.2.0)
+    subexec (0.2.3)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
@@ -168,11 +192,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   bootstrap-datepicker-rails
   cancan
+  carrierwave
+  carrierwave-qiniu
   coffee-rails (~> 3.2.1)
   default_value_for (~> 2.0.1)
   devise
+  dragonfly (~> 0.9.15)
   haml-rails
   jquery-rails
   kaminari (~> 0.14.1)
@@ -181,7 +209,10 @@ DEPENDENCIES
   pg
   pry
   pry-nav
+  qiniu-rs
+  rack-cache
   rails (= 3.2.13)
+  rails_kindeditor (~> 0.4.0)
   ransack
   requirejs-rails
   sass-rails (~> 3.2.3)

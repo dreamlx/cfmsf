@@ -10,4 +10,10 @@ class SiteController < ApplicationController
 
   def contact
   end
+
+  def security
+  end
+
+  def project
+  end
 end

@@ -1,0 +1,145 @@
+@import "main";
+@import "commonProjectAndTag";
+
+div.projects
+{
+	margin:0 auto;
+	height:auto;	
+	section#clientComment
+	{
+		margin-left:310px;
+		padding-top:78px;
+	}
+	section.workList
+	{
+		min-width: 900px;
+		max-width:1980px;
+		article
+		{	
+			&.longConver
+			{
+				height:500px;
+			}
+		}
+	}
+	.scrollLoading
+	{
+		clear:both;
+		text-align: center;
+
+	}
+	.navigation
+	{
+		display: none;
+		clear:both;
+		text-align:center;
+	}
+}
+
+.column
+{
+	float:left;
+	width:231px;
+	margin-right:18px;
+}
+
+@mixin projectsWidth($count)
+{
+	width:$count * (231px + 18px);
+}
+
+[data-columns]::before { display: none; } /* Don't forget this. */
+
+.workList[data-columns]::before {
+    content: '2';
+}
+
+@media screen and (min-width: 1058px) and (max-width: 1306px) {
+	.workList[data-columns]::before {
+    	content: '4';
+  	}
+  	.projects
+  	{
+  		@include projectsWidth(4);
+  	}
+  	section#clientComment
+  	{
+		max-width:729px;
+  	}
+}
+
+@media screen and (min-width: 1307px) and (max-width: 1555px) {
+	.workList[data-columns]::before {
+    	content: '5';
+  	}
+  	.projects
+  	{
+  		@include projectsWidth(5);
+  	}
+  	section#clientComment
+  	{
+		max-width:978px;
+  	}
+}
+
+@media screen and (min-width: 1556px) and (max-width: 1804px) {
+	.workList[data-columns]::before {
+    	content: '6';
+  	}
+  	.projects
+  	{
+  		@include projectsWidth(6);
+  	}
+  	section#clientComment
+  	{
+		max-width:1210px;
+  	}
+}
+
+@media screen and (min-width: 1805px) {
+	.workList[data-columns]::before {
+    	content: '7';
+  	}
+  	.projects
+  	{
+  		@include projectsWidth(7);
+  	}
+  	section#clientComment
+  	{
+		max-width:1476px;
+  	}
+}
+
+section.workList
+{
+	article
+	{
+		width:231px;
+		height: auto;		
+		margin-bottom:18px;
+		background-color: white;
+		float:left;
+		figure
+		{
+			width:100%;
+			height: auto;
+			background-color: #f2f2f2;
+		}
+		h6
+		{
+			font:
+			{
+				size:14px;
+			 	weight: normal;
+			} 
+			margin:5px 0px;
+		}
+		p
+		{
+			font:
+			{
+				size:11px;
+			}
+		}
+	}
+}

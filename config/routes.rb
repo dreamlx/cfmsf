@@ -1,12 +1,17 @@
 Bancheng::Application.routes.draw do
-
   get "site/aboutus"
 
   get "site/projects"
 
   get "site/services"
 
-  get "site/contact"
+  get "site/contact" 
+
+  get "site/security"
+
+  get "site/project"
+
+  get "site/work"
 
   devise_for :users
 

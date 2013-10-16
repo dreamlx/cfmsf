@@ -12,11 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
 //= require twitter/bootstrap
 //= require admin/projects
 //= require bootstrap-datepicker/core
 //= require bootstrap
-
 $(document).ready(function(){
 	$('input.datepicker').datepicker();
 })

@@ -1,0 +1,74 @@
+@import "main";
+@import "commonProjectAndTag";
+
+article#servicesPage
+{
+	min-width: 984px;
+	padding:0px 0px 63px 0px;
+	width:984px - 114px;
+	height:auto;
+	margin:0 auto;
+	margin-top:44px;
+	border-bottom: 1px solid #b3b3b3;
+	article.security
+	{
+		border:13px solid #808080;
+		width:842px - 54px;
+		height:142px;
+		
+		margin-bottom:65px;
+		padding: 0px 27px;
+		h3
+		{
+			font-size:24px;
+			margin-top:19px;
+			margin-bottom: 14px;
+			color:#666666;
+			text-transform: uppercase;
+		}
+		p
+		{
+			color:#666;
+			font-size: 16px;
+			font-weight: normal;
+		}
+		&::before
+		{
+			width:84px;
+			height:83px;
+			background: url("/assets/services/security.png") no-repeat scroll;
+			content: "";
+			margin-top: 72px;
+			margin-left: 744px;
+			position: absolute;
+		}
+	}
+
+	h1
+	{
+		width:390px;
+		height:87px;
+		font-size:27px;
+		line-height: 83px;
+		background: url("/assets/services/security.png") no-repeat scroll top right;
+		
+	}
+
+	ul#firstLvl
+	{
+		list-style-type: decimal;
+		list-style-position: outside;
+		margin:0;
+		padding:0;
+		border-top:1px dashed #666;
+		ul.discUl
+		{
+			list-style-type:disc;
+		}
+		ul.lowerAlphaUl
+		{
+			list-style-type:lower-alpha;
+
+		}
+	}
+}
