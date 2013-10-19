@@ -4,6 +4,10 @@ class SiteController < ApplicationController
   	@tags = Project.tag_counts_on(:tags)
   end
 
+  def project
+    
+  end
+
   def aboutus
   end
 
@@ -16,8 +20,7 @@ class SiteController < ApplicationController
   def security
   end
 
-  def project
-  end
+  
 
   def work
   end
