@@ -9,46 +9,50 @@
         “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and ...
       %a{href: "#"} more
   %ul#tagList
-    %li
-      %a.selected{href: "#"}
-        %span shuffle
-        %b 200
-    %li
-      %a{href: "#"}
-        %span 2d production
-        %b 10
-    %li
-      %a{href: "#"}
-        %span 3d models
-        %b 1
-    %li
-      %a{href: "#"}
-        %span textures
-        %b 1
-    %li
-      %a{href: "#"}
-        %span illustration
-        %b 1
-    %li
-      %a{href: "#"}
-        %span concept design
-        %b 1
-    %li
-      %a{href: "#"}
-        %span special effects
-        %b 1
-    %li
-      %a{href: "#"}
-        %span animation
-        %b 1
-    %li
-      %a{href: "#"}
-        %span skin
-        %b 1
-    %li
-      %a{href: "#"}
-        %span characters
-        %b 1
+    - @tags.each do |tag|
+      %li
+        %a.selected{href: "#"}
+          %span 
+            = tag
+          %b
+            = Project.tagged_with("#{tag}").size
+
+    / %li
+    /   %a{href: "#"}
+    /     %span 2d production
+    /     %b 10
+    / %li
+    /   %a{href: "#"}
+    /     %span 3d models
+    /     %b 1
+    / %li
+    /   %a{href: "#"}
+    /     %span textures
+    /     %b 1
+    / %li
+    /   %a{href: "#"}
+    /     %span illustration
+    /     %b 1
+    / %li
+    /   %a{href: "#"}
+    /     %span concept design
+    /     %b 1
+    / %li
+    /   %a{href: "#"}
+    /     %span special effects
+    /     %b 1
+    / %li
+    /   %a{href: "#"}
+    /     %span animation
+    /     %b 1
+    / %li
+    /   %a{href: "#"}
+    /     %span skin
+    /     %b 1
+    / %li
+    /   %a{href: "#"}
+    /     %span characters
+    /     %b 1
   #faqlink
     %a{href: "#"} F.A.Q
 .projects
@@ -56,78 +60,81 @@
     %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
     %p Art Director at EA China
   %section.projectList{"data-columns" => ""}
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 ubi
-      %p SPLINTER CELL BLACKLIST
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 2
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 3
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 4
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 5
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 6
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 7
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 8
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 9
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 10
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 11
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 12
-      %p
+    - @projects.each do |project|
+      %article
+        %figure
+          %a{href: "#"}
+            %img{alt: "", src: "#{project.thumb}?imageView/1/w/150/h/200"}/
+        %h6 
+          = project.name
+        %p 
+          = raw(project.desc)
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 2
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 3
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 4
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 5
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 6
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 7
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 8
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 9
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 10
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 11
+    /   %p
+    / %article
+    /   %figure
+    /     %a{href: "#"}
+    /       %img{alt: "", src: ""}/
+    /   %h6 12
+    /   %p
   .scrollLoading
   .navigation
     %a{href: "2.html"} 2

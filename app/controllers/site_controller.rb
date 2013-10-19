@@ -1,5 +1,7 @@
 class SiteController < ApplicationController
   def projects
+  	@projects = Project.page(params[:page])
+  	@tags = Project.tag_counts_on(:tags)
   end
 
   def aboutus

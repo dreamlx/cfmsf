@@ -1,6 +1,23 @@
 %h1 Editing project
 
-= render 'form'
+= simple_form_for [:admin, @project] do |f|
+  - if @project.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+      %ul
+        - @project.errors.full_messages.each do |msg|
+          %li= msg
+  %table
+    = f.input :name
+    = f.input :desc, :as => :kindeditor
+    = f.input :tag_list
+    = f.input :company
+    = f.input :thumb, :as => :file
+    %img{:src => "#{@project.thumb}?imageView/1/w/50/h/50"}
+    = f.input :release_time, :as => :date_picker
+  .actions
+    = f.submit 'Save'
+
 
 = link_to 'Show', admin_project_path
 \|
