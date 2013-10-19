@@ -55,14 +55,27 @@ header#globalHeader
 		li
 		{
 			float:left;
-			&.selected{background-color:#242424}
+			&.selected a{color:#b3b3b3;}
+			&:hover
+			{
+				background-color: #242424;
+				a
+				{
+					color:#b3b3b3;
+				}
+			}
 		}
 		a
 		{
 			@include linkBtn(78px,77px);
-			color:#b3b3b3;
+			// color:#b3b3b3;
+			color:#4d4d4d;
 			font-size:12px; 			
 			line-height: 77px;
+			&:hover
+			{
+
+			}
 		}
 	}
 	form

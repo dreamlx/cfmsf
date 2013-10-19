@@ -7,18 +7,58 @@ div.projects
 	height:auto;	
 	section#clientComment
 	{
-		margin-left:310px;
+		// margin-left:310px;
 		padding-top:78px;
 	}
 	section.workList
 	{
 		min-width: 900px;
 		max-width:1980px;
-		article
-		{	
-			&.longConver
+		figure.projectCover
+		{
+			a:hover
 			{
-				height:500px;
+				#projectInfo
+				{
+					display: block
+				}
+			}
+			#projectInfo
+			{
+				width:199px;
+				height:37px;
+				background-color: #ccc;
+				opacity: 0.7;
+				position: absolute;
+				z-index: 5px;
+				margin-top: -56px;
+				padding:16px 12px 0px 20px;
+				display: none;
+				p
+				{
+					font-size: 10px;
+					color:#333;
+					width:182px;
+					margin: 0;
+					line-height: 14px;
+					float:left;
+				}
+				span
+				{
+					background-color: #ff2142;
+					border:1px solid #ff2142;
+					-moz-border-radius: 8px;
+					-webkit-border-radius: 8px;
+					-o-border-radius: 8px;
+					border-radius: 8px;
+					font-size: 14px;
+					width: 15px;
+					display: inline-block;
+					text-align: center;
+					color: white;
+					font-family: Arial;
+
+				}
 			}
 		}
 	}
@@ -58,56 +98,44 @@ div.projects
 	.workList[data-columns]::before {
     	content: '4';
   	}
-  	.projects
+  	.projects,section#clientComment
   	{
   		@include projectsWidth(4);
   	}
-  	section#clientComment
-  	{
-		max-width:729px;
-  	}
+  	
 }
 
 @media screen and (min-width: 1307px) and (max-width: 1555px) {
 	.workList[data-columns]::before {
     	content: '5';
   	}
-  	.projects
+  	.projects,section#clientComment
   	{
   		@include projectsWidth(5);
   	}
-  	section#clientComment
-  	{
-		max-width:978px;
-  	}
+  	
 }
 
 @media screen and (min-width: 1556px) and (max-width: 1804px) {
 	.workList[data-columns]::before {
     	content: '6';
   	}
-  	.projects
+  	.projects,section#clientComment
   	{
   		@include projectsWidth(6);
   	}
-  	section#clientComment
-  	{
-		max-width:1210px;
-  	}
+  	
 }
 
 @media screen and (min-width: 1805px) {
 	.workList[data-columns]::before {
     	content: '7';
   	}
-  	.projects
+  	.projects,section#clientComment
   	{
   		@include projectsWidth(7);
   	}
-  	section#clientComment
-  	{
-		max-width:1476px;
-  	}
+  	
 }
 
 section.workList

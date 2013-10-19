@@ -16,4 +16,7 @@ class SiteController < ApplicationController
 
   def project
   end
+
+  def work
+  end
 end
