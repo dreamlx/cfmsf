@@ -94,6 +94,7 @@ aside ul#tagList
 	a
 	{
 		@include linkBtn(234px,43px);
+		text-align: left;
 		color:#999;
 		font-size:12px;
 		font-family: "ConduitITC";

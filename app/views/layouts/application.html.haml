@@ -9,6 +9,8 @@
     = stylesheet_link_tag action_name, :media => "all"
     - if action_name == "projects"
       = requirejs_include_tag "projects"
+    - elsif action_name == "project"
+      = requirejs_include_tag "project"
     - else
       = javascript_include_tag "site"
     = csrf_meta_tags

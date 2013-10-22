@@ -5,7 +5,13 @@ Bancheng::Application.routes.draw do
 
   get "site/services"
 
-  get "site/contact"
+  get "site/contact" 
+
+  get "site/security"
+
+  get "site/project"
+
+  get "site/work"
 
   devise_for :users
 
