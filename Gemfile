@@ -43,6 +43,9 @@ gem 'qiniu-rs'
 gem 'carrierwave'
 gem 'carrierwave-qiniu'
 
+gem 'jcrop-rails'
+gem "mini_magick"
+
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'

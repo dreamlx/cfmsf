@@ -1,4 +1,4 @@
-= simple_form_for [:admin, @project,@work] do |f|
+= simple_form_for [:admin, @project, @work] do |f|
   - if @work.errors.any?
     #error_explanation
       %h2= "#{pluralize(@work.errors.count, "error")} prohibited this work from being saved:"
@@ -10,7 +10,12 @@
     = f.input :desc, :as => :kindeditor
     = f.input :content
     = f.input :albums, input_html: {multiple: :true, :name => 'albums[]'}, :as => :file
-    = f.input :thumb, :as => :file
+    = f.input :thumb, :as => :file, input_html: {id: 'image_file'}
+    %img{id:"preview", src:"#", alt:"your image"}
+    %input{id: 'x1', type: 'hidden', size: '4', name:'x1', }
+    %input{id: 'y1', type: 'hidden', size: '4', name:'y1'}
+    %input{id: 'x2', type: 'hidden', size: '4', name:'x2'}
+    %input{id: 'y2', type: 'hidden', size: '4', name:'y2'}
     = f.input :tag_list
   .actions
     = f.submit 'Save'

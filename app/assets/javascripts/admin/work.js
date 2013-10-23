@@ -1,11 +1,9 @@
 $(document).ready(function(){
-	$('input.datepicker').datepicker();
-
     $("#image_file").change(function(){
         readURL(this);
     });
 
-	function readURL(input) {
+    function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -51,4 +49,3 @@ $(document).ready(function(){
         $('#y2').val("");
     };
 })
-
