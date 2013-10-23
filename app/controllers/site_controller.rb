@@ -5,7 +5,8 @@ class SiteController < ApplicationController
   end
 
   def project
-    
+    project = Project.find(params[:id])
+    @works = project.works.page(params[:page])
   end
 
   def aboutus
@@ -28,5 +29,6 @@ class SiteController < ApplicationController
   
 
   def work
+    @works = Work.page(params[:page])
   end
 end
