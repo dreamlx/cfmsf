@@ -20,6 +20,11 @@ class SiteController < ApplicationController
   def security
   end
 
+  def faq
+  end
+
+  def careers
+  end
   
 
   def work

@@ -12,7 +12,7 @@ article#servicesPage
 	margin:0 auto;
 	margin-top:44px;
 	border-bottom: 1px solid #b3b3b3;
-	article.security
+	a.security
 	{
 		border:13px solid #808080;
 		width:842px - 54px;
@@ -20,6 +20,7 @@ article#servicesPage
 		
 		margin-bottom:65px;
 		padding: 0px 27px;
+		display: block;
 		h3
 		{
 			font-size:24px;

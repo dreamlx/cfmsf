@@ -1,0 +1,31 @@
+.projects
+  %section#clientComment
+    %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
+    %p Art Director at EA China
+  %section.workList{"data-columns" => ""}
+    %article
+      %figure.projectCover
+        %a{href: "#"}
+          %img{alt: "", src: "/assets/projects/crysis_big.jpg"}
+          #projectInfo
+            %p
+              Work, Tencent, WebGame
+            %p
+              2012.08
+            %span
+              2
+      %h6 ubi
+      %p SPLINTER CELL BLACKLIST
+
+    - @works.each do |work|
+      %article
+        %figure
+          %a{href: "/projects/show/#{work.id}"}
+            %img{alt: "", src: "#{work.thumb}?imageView/1/w/201/h/251"}/
+        %h6 
+          = work.name
+        %p 
+          = raw(work.desc)
+  .scrollLoading
+  .navigation
+    %a{href: "2.html"} 2

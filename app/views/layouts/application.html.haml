@@ -7,7 +7,7 @@
     %meta{content: "width=device-width", name: "viewport"}/
     %title Tang Digital
     = stylesheet_link_tag action_name, :media => "all"
-    - if action_name == "projects"
+    - if controller_name == "projects"
       = requirejs_include_tag "projects"
     - elsif action_name == "project"
       = requirejs_include_tag "project"
@@ -16,10 +16,10 @@
     = csrf_meta_tags
 
   %body
-
+    
     = render "layouts/ie_check"
     = render "layouts/siteheader"
-    
+
     = yield
 
     = render "layouts/footer"

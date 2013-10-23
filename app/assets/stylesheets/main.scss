@@ -24,7 +24,10 @@ header#globalHeader
 	width:100%;
 	min-width: 1058px;
 	height:77px;
-	margin-bottom: 3px;
+	
+	position:fixed;
+	top:0;
+	z-index: 500;
 	hgroup
 	{
 		float:left;
@@ -95,6 +98,13 @@ header#globalHeader
 			background: url(/assets/search_icon.png) #242424 no-repeat scroll 200px 16px;
 		}
 	}
+}
+#headerGap
+{
+	width:100%;
+	min-width: 1058px;
+	height:77px;
+	margin-bottom: 3px;
 }
 
 h1.pageTitle
