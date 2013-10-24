@@ -6,12 +6,12 @@
     %article
       %figure.projectCover
         %a{href: "#"}
-          %img{alt: "", src: "/assets/projects/crysis_big.jpg"}
+          %img{alt: "", src: "#{@project.thumb}?imageView/2/w/231"}
           #projectInfo
             %p
-              Work, Tencent, WebGame
+              = @project.tag_list
             %p
-              2012.08
+              = @project.release_time.strftime('%Y.%m') 
             %span
               2
       %h6 
@@ -22,12 +22,10 @@
     - @works.each do |work|
       %article
         %figure
-          %a{href: "/projects/show/#{work.id}"}
-            %img{alt: "", src: "#{work.thumb}?imageView/1/w/201/h/251"}/
+          %a{href: "/works/#{work.id}"}
+            %img{alt: "", src: "#{work.thumb}?imageView/2/w/231"}/
         %h6 
           = work.name
-        %p 
-          = raw(work.desc)
   .scrollLoading
   .navigation
     %a{href: "2.html"} 2

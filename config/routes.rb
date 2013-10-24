@@ -1,7 +1,7 @@
 Bancheng::Application.routes.draw do
   get "site/aboutus"
 
-  get "site/projects"
+  get "site/careers"
 
   get "site/services"
 
@@ -32,6 +32,7 @@ Bancheng::Application.routes.draw do
 
   root :to => 'projects#index'
   resources :projects
+  resources :works
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
