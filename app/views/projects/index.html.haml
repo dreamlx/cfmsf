@@ -31,7 +31,7 @@
     - @projects.each do |project|
       %article
         %figure
-          %a{href: "/projects/show/#{project.id}"}
+          %a{href: "/projects/#{project.id}"}
             %img{alt: "", src: "#{project.thumb}?imageView/1/w/201/h/251"}/
         %h6 
           = project.name
