@@ -45,6 +45,8 @@ gem 'carrierwave-qiniu'
 
 gem 'jcrop-rails'
 gem "mini_magick"
+gem 'capistrano'
+
 
 group :development, :test do
   gem 'pry'
