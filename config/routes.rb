@@ -30,7 +30,7 @@ Bancheng::Application.routes.draw do
     end
   end
 
-  root :to => 'site#projects'
+  root :to => 'projects#index'
   resources :projects
   # The priority is based upon order of creation:
   # first created -> highest priority.
