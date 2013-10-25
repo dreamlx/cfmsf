@@ -27,7 +27,7 @@
         %td= project.tag_list
         %td
           %img{:src => "#{project.thumb}?imageView/1/w/50/h/50"}
-        %td= project.release_time
+        %td= project.release_time.to_date unless project.release_time.nil?
         %td
           = link_to t(:works), admin_project_works_path(project)
           = link_to t(:edit, scope: "crud"), edit_admin_project_path(project)
