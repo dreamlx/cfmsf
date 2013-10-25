@@ -45,6 +45,7 @@ gem 'carrierwave-qiniu'
 
 gem 'jcrop-rails'
 gem "mini_magick"
+gem 'rvm-capistrano'
 gem 'capistrano'
 
 
