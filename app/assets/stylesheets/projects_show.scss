@@ -38,7 +38,7 @@ div.projects
 				{
 					font-size: 10px;
 					color:#333;
-					width:182px;
+					width:157px;
 					margin: 0;
 					line-height: 14px;
 					float:left;
@@ -160,7 +160,9 @@ section.workList
 				size:14px;
 			 	weight: normal;
 			} 
+			color:#333;
 			margin:5px 0px;
+			padding-left:21px;
 		}
 		p
 		{
@@ -168,6 +170,8 @@ section.workList
 			{
 				size:11px;
 			}
+			color:#666;
+			padding-left:21px;
 		}
 	}
 }

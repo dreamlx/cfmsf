@@ -13,8 +13,7 @@
       %tr
         %td project_id
         %td name
-        %td desc
-        %td content
+        
         %td thumb
         %td tag
         %td 
@@ -22,11 +21,7 @@
     - @works.each do |work|
       %tr
         %td= work.project_id
-        %td= work.name
-        %td= raw(work.desc)
-        %td
-          - work.albums.each do |albums|
-            %img{:src => "#{albums.cover_image}?imageView/1/w/50/h/50"}
+        %td= work.name        
         %td
           %img{:src => "#{work.thumb}?imageView/1/w/50/h/50"}
         %td= work.tag_list

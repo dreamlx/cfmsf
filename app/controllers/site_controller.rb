@@ -26,9 +26,4 @@ class SiteController < ApplicationController
 
   def careers
   end
-  
-
-  def work
-    @works = Work.page(params[:page])
-  end
 end
