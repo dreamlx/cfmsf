@@ -11,7 +11,9 @@
             %p
               = @project.tag_list
             %p
-              = @project.release_time.strftime('%Y.%m') 
+              - if @project.release_time != nil
+                = @project.release_time.strftime('%Y.%m') 
+              
             %span
               2
       %h6 
