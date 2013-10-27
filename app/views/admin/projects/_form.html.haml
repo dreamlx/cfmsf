@@ -13,16 +13,18 @@
     = f.input :thumb, :as => :file, input_html: {id: 'image_file'}
     - if action_name == 'new' 
       %img{id:"preview", src:"#", alt:"your image"}
-      %input{id: 'x1', type: 'hidden', size: '4', name:'x1', }
-      %input{id: 'y1', type: 'hidden', size: '4', name:'y1'}
-      %input{id: 'x2', type: 'hidden', size: '4', name:'x2'}
-      %input{id: 'y2', type: 'hidden', size: '4', name:'y2'}
       = f.input :release_time, :as => :date_picker
     - else action_name == 'edit'
       - if !@project.thumb.nil?
-        %img{:src => "#{@project.thumb}?imageView/1/w/50/h/50"}
+        %img{id:"preview", :src => "#{@project.thumb}?imageView/1/w/50/h/50"}
       %p
-        = text_field_tag(:release_time, @project.release_time.to_date, :class => 'datepicker', )
+        = text_field_tag(:release_time, (@project.release_time.to_date unless @project.release_time.nil?), :class => 'datepicker', )
+    %input{id: 'x1', type: 'hidden', size: '4', name:'x1', }
+    %input{id: 'y1', type: 'hidden', size: '4', name:'y1'}
+    %input{id: 'x2', type: 'hidden', size: '4', name:'x2'}
+    %input{id: 'y2', type: 'hidden', size: '4', name:'y2'}
+    %input{id: 'width', type: 'hidden', size: '4'}
+    %input{id: 'heigth', type: 'hidden', size: '4'}
   .actions
     = f.submit 'Save'
 
