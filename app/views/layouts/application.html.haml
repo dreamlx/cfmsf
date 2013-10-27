@@ -11,6 +11,8 @@
       = requirejs_include_tag "projects"
     - elsif action_name == "project"
       = requirejs_include_tag "project"
+    - elsif action_name == "faq"
+      = requirejs_include_tag "site_faq"
     - else
       = javascript_include_tag "site"
     = csrf_meta_tags
