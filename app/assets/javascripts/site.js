@@ -11,3 +11,18 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+
+
+$(document).ready(function(){
+	$("#captcha_img").click(function(){
+		$.ajax({
+                cache: true,
+                type: "GET",
+             	url: $("#captcha_img").src,
+            	async: false,
+                success: function(data) {
+                	$("#captcha_img").attr("src", $("#captcha_img").attr("src"))
+                }
+            });
+	})
+})

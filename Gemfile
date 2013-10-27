@@ -45,12 +45,15 @@ gem 'carrierwave-qiniu'
 
 gem 'jcrop-rails'
 gem "mini_magick"
+gem 'easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano'
 gem 'sqlite3'
 
 
 group :development, :test do
+  gem "pry-nav"
+  gem 'pry'
   gem 'mysql2'
 end
 

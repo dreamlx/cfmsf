@@ -1,0 +1,21 @@
+%h1 Listing leave_messages
+
+%table.table.center.table-bordered
+  %thread
+    %tr
+      %th name
+      %th email
+      %th website
+      %td comment
+      %td 
+  %tbody
+    - @leave_messages.each do |leave_message|
+      %tr
+        %td= leave_message.name
+        %td= leave_message.email
+        %td= leave_message.website
+        %td= leave_message.comment
+        %td
+          = link_to t(:destroy, scope: "crud"), admin_leave_message_path(leave_message), :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

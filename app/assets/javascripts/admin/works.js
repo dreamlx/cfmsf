@@ -15,16 +15,7 @@ $(document).ready(function(){
             reader.onload = function (e) {
                 // if()
                 $('#preview').attr('src', e.target.result);
-                $('#preview').Jcrop({
-                    onChange:   updateInfo,
-                    onSelect:   updateInfo,
-                    onRelease:  clearInfo,
-                    minSize:[231,288],
-                    aspectRatio:231 / 288,
-                    setSelect:[0,0,231,288]
-                },function(){
-                    jcrop_api = this;
-                });
+                $('#preview').Jcrop();
             }
             
             reader.readAsDataURL(input.files[0]);
