@@ -22,6 +22,7 @@ class SiteController < ApplicationController
   end
 
   def faq
+    @leave_message = LeaveMessage.new
   end
 
   def careers

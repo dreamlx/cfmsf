@@ -28,7 +28,7 @@ module Admin
           @work.albums << Album.create(:cover_image => image)
         end
       end
-      unless @work.thumb.nil?
+      unless params[:project][:thumb].nil?
         @work.thumb = crop_image(@work.thumb)
       end
       if @work.save
@@ -57,19 +57,6 @@ module Admin
 
     def find_project
       @project = Project.find(params[:project_id])
-    end
-
-    def crop_image(thumb)
-      avatar_path = Rails.root + "public/uploads/image"
-      photo_name = "thumb.jpg"
-      img = MiniMagick::Image.from_blob(thumb.read)
-      Dir.chdir avatar_path
-      img.write "#{photo_name}"
-      img = MiniMagick::Image.open("#{photo_name}")  
-      width = params[:x2].to_i - params[:x1].to_i  
-      height= params[:y2].to_i - params[:y1].to_i 
-      img.crop "#{width}x#{height}+#{params[:x1]}+#{params[:y1]}"  
-      thumb = img
     end
   end
 end

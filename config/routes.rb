@@ -1,4 +1,6 @@
 Bancheng::Application.routes.draw do
+  captcha_route
+
   get "site/aboutus"
 
   get "site/careers"
@@ -19,11 +21,14 @@ Bancheng::Application.routes.draw do
   
   # match ':site(/:action(/:id))(.:format)'
 
+  resources :leave_messages
+
   devise_for :users
 
   namespace :admin do
     resources :users
     resources :home
+    resources :leave_messages
     
     resources :projects do
       resources :works

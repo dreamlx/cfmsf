@@ -1,10 +1,6 @@
 $(document).ready(function(){
-    $("#image_file").change(function(){
+        $("#image_file").change(function(){
         readURL(this);
-    });
-
-    $("#workimage_file").change(function(){
-        workReadURL(this)
     });
 
     var jcrop_api;
@@ -18,35 +14,7 @@ $(document).ready(function(){
                 $('#preview').Jcrop({
                     onChange:   updateInfo,
                     onSelect:   updateInfo,
-                    onRelease:  clearInfo,
-                    minSize:[231,288],
-                    aspectRatio:231 / 288,
-                    setSelect:[0,0,231,288]
-                },function(){
-                    jcrop_api = this;
-                });
-            }
-            
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    function workReadURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                if(jcrop_api)
-                {
-                    jcrop_api.destroy();
-                }
-                $('#preview').attr('src', e.target.result);
-                $('#preview').Jcrop({
-                    onChange:   updateInfo,
-                    onSelect:   updateInfo,
-                    onRelease:  clearInfo,
-                    minSize:[231,288],
-                    maxSize:[231,3000],
-                    setSelect:[0,0,231,288]
+                    onRelease:  clearInfo
                 },function(){
                     jcrop_api = this;
                 });

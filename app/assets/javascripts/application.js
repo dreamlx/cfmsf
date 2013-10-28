@@ -14,9 +14,6 @@
 //= require jquery_ujs
 //= require jcrop
 //= require kindeditor
-//= require admin/projects
-//= require admin/works
 //= require bootstrap-datepicker/core
-//= require bootstrap
 
 

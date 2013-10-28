@@ -9,4 +9,9 @@ class ProjectsController < ApplicationController
 		@project = Project.find(params[:id])
 		@works = @project.works
 	end
+
+	def tag
+		tag = Project.tag_counts_on(:tags).find(params[:id])
+		@projects = Project.tagged_with(tag)
+	end
 end
