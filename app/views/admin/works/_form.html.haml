@@ -10,7 +10,7 @@
     = f.input :desc, :as => :kindeditor,:input_html => { :items => ['source','formatblock', 'hr', 'link', 'unlink', '|', 'about'] }
     = f.input :content, :as => :kindeditor,:input_html => { :items => ['formatblock', 'image', 'multiimage', 'hr', 'link', 'unlink', '|', 'about'] }
     / = f.input :albums, input_html: {multiple: :true, :name => 'albums[]'}, :as => :file
-    = f.input :thumb, :as => :file, input_html: {id: 'workimage_file'}
+    = f.input :thumb, :as => :file, input_html: {id: 'image_file'}
     - if action_name == 'new'
       %img{id:"preview", src:"#", alt:"your image"}
     - elsif action_name == 'edit'
