@@ -18,7 +18,6 @@ article#questions
 	width:984px;
 	padding:43px 52px 43px 52px;
 	margin:0 auto;
-	border-bottom: 1px solid #b3b3b3;
 	ul
 	{
 		list-style: none;
@@ -56,5 +55,62 @@ section#answers
 	p
 	{
 		color:#666;
+	}
+}
+
+section#leaveMsg
+{
+	min-width: 984px;
+	width:984px;
+	padding:78px 52px 100px 52px;
+	margin:0 auto;
+	label
+	{
+		display: block;
+		margin-top: 12px;
+		margin-bottom:9px;
+		color:#666;
+		font-size:12px;
+	}
+	input
+	{
+		background-color: #f2f2f2;
+		border:none;
+		font-size:10px;
+		color:#999;
+		text-align: center;
+		&.string
+		{
+			width:174px;
+			height:32px;
+		}
+		&#captcha
+		{
+			width:101px;
+			height:32px;
+		}
+	}
+	img#captcha_img
+	{
+		display: block;
+		margin-top:24px;
+		margin-bottom: 7px;
+	}
+	textarea
+	{
+		width:710px;
+		height:178px;
+		background-color: #f2f2f2;
+		border:none;
+	}
+	.actions
+	{
+		margin-top:18px;
+		input
+		{
+			width:71px;
+			height:32px;
+			border:1px solid #c8c8c8;
+		}
 	}
 }
