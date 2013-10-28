@@ -6,7 +6,7 @@
     %meta{content: "", name: "description"}/
     %meta{content: "width=device-width", name: "viewport"}/
     %title Tang Digital
-    = stylesheet_link_tag controller_name+"_"+action_name, :media => "all"
+    = stylesheet_link_tag("#{params[:controller]}_#{params[:action]}", :media => "all")
     - if controller_name == "projects"
       = requirejs_include_tag "projects"
     - elsif action_name == "project"

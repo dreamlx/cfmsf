@@ -19,13 +19,10 @@ test:
     encoding: utf8
 
 production:
-    adapter: mysql2
-    database: bancheng_production
-    host: localhost
-    port: 3306
-    username: root
-    password: "bancheng2013"
-    encoding: utf8
+    adapter: sqlite3
+    database: db/development.sqlite3
+    pool: 5
+    timeout: 5000
 
 
 

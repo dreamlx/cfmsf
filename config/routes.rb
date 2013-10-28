@@ -36,7 +36,11 @@ Bancheng::Application.routes.draw do
   end
 
   root :to => 'projects#index'
-  resources :projects
+  resources :projects do
+    collection do 
+      get :tags
+    end
+  end
   resources :works
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,6 +11,7 @@
     = f.input :tag_list
     = f.input :company
     = f.input :release_time, :as => :date_picker
+    = f.input :top, :type => :checkbox, label: "is_top?"
     = f.input :thumb, :as => :file, input_html: {id: 'image_file'}
     - if action_name == 'new' 
       %img{id:"preview", src:"#", alt:"your image"}
