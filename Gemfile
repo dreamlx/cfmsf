@@ -47,7 +47,7 @@ gem 'jcrop-rails'
 gem "mini_magick"
 gem 'easy_captcha'  #captcha
 gem 'rvm-capistrano'
-gem 'capistrano'
+gem 'capistrano' 
 gem 'sqlite3'
 
 

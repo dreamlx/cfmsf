@@ -17,6 +17,7 @@
         %td tags
         %td thumb
         %td release_time
+        %td
         %td 
     %tbody
     - @projects.each do |project|
@@ -29,8 +30,13 @@
           %img{:src => "#{project.thumb}?imageView/1/w/50/h/50"}
         %td= project.release_time.to_date unless project.release_time.nil?
         %td
+          - if project.top
+            = check_box_tag "top","yes", ""
+          - else
+            = check_box_tag "top"
+        %td
           = link_to t(:works), admin_project_works_path(project)
           = link_to t(:edit, scope: "crud"), edit_admin_project_path(project)
           = link_to t(:destroy, scope: "crud"), admin_project_path(project), :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-
+= paginate @projects

@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 	def index
-		@projects = Project.page(params[:page])
+		@projects = Project.page(params[:page]).order("top desc")
 	  	@tags = Project.tag_counts_on(:tags)
 	end
 

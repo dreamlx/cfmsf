@@ -4,7 +4,7 @@ module Admin
     before_filter :find_project, :except => [:index, :new, :create]
 
     def index
-    	@projects = Project.all
+    	@projects = Project.page(params[:page]).order("top DESC")
     end
 
     def show

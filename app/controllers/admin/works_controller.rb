@@ -23,16 +23,9 @@ module Admin
 
     def create
       @work = @project.works.build(params[:work])
-      unless params[:albums].nil?
-        params[:albums].each do |image|
-          @work.albums << Album.create(:cover_image => image)
-        end
-      end
-      unless params[:project][:thumb].nil?
-        @work.thumb = crop_image(@work.thumb)
-      end
+      @work.thumb = crop_image(@work.thumb) unless params[:work][:thumb].nil?
       if @work.save
-    	redirect_to admin_project_works_url(@project), notice: 'work was successful created'
+    	  redirect_to admin_project_works_url(@project), notice: 'work was successful created'
       else
     	render action: "new"
       end
@@ -41,7 +34,7 @@ module Admin
     def update
       @work = @project.works.find(params[:id])
       if @work.update_attributes(params[:work])
-        unless params[:work][:thumb].nil?
+        if !params[:work][:thumb].nil?
           @work.thumb = crop_image(params[:work][:thumb])
           @work.save
         end
