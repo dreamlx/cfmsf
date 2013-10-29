@@ -50,6 +50,7 @@ gem 'easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 
 gem 'sqlite3'
+gem 'figaro'
 
 
 group :development, :test do
