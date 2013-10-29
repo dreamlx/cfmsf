@@ -8,10 +8,10 @@
 /config/database.yml
 
 #Ignore 
-/public/uploads
+/public/uploads/*.*
 
 #Ignore
-/public/assets
+/public/assets/*.*
 
 # Ignore bundler config
 /.bundle
