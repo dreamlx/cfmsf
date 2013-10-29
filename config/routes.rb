@@ -1,4 +1,9 @@
 Bancheng::Application.routes.draw do
+  namespace :admin do
+    resources :careers
+  end
+
+
   captcha_route
 
   get "site/aboutus"

@@ -1,0 +1,13 @@
+= simple_form_for [:admin, @career] do |f|
+  = f.error_notification
+  %table
+    = f.input :title
+    = f.input :color, input_html:{id:"colorpicker"}
+    = f.input :thumb, as: :file
+    = f.input :desc
+    = f.input :responsibility, as: "text", input_html:{rows:"3"}
+    = f.input :requirements, as: "text", input_html:{rows:"3"}
+  .form-inputs
+
+  .form-actions
+    = f.button :submit
