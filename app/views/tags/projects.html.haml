@@ -1,0 +1,45 @@
+%aside
+  %section#lastestNews
+    %article
+      %figure
+        %img{alt: "", src: ""}/
+      %u 05/13
+      %hr/
+      %p
+        “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and ...
+      %a{href: "#"} more
+  %ul#tagList
+    - @tags.each do |tag|
+      %li
+      - if tag.id.to_s == params[:id]
+        %a.selected{href: projects_tag_path(tag)}
+          %span 
+            = tag
+          %b
+            = Project.tagged_with("#{tag}").size
+      - else
+        %a{href: projects_tag_path(tag)}
+          %span 
+            = tag
+          %b
+            = Project.tagged_with("#{tag}").size
+  #faqlink
+    %a{href: "/site/faq"} F.A.Q
+.projects
+  %section#clientComment
+    %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
+    %p Art Director at EA China
+  %section.projectList{"data-columns" => ""}
+    - @projects.each do |project|
+      %article
+        %figure
+          %a{href: "/projects/#{project.id}"}
+            %img{alt: "", src: "#{project.thumb}?imageView/1/w/201/h/251"}/
+        %h6 
+          = project.name
+        %p 
+          = raw(project.desc)
+  .scrollLoading
+  .navigation
+    %a{href: "2.html"} 2
+= stylesheet_link_tag "projects_index"
