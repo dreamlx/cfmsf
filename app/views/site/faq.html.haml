@@ -64,15 +64,16 @@
     %a{:href=>"#"}
       contact us today 
     for an answer. 
-= flash[:alert] unless flash[:alert].nil?
-= simple_form_for @leave_message do |f|
-  %table
-    = f.input :name
-    = f.input :email
-    = f.input :website
-    = captcha_tag :id => "captcha_img"
-    = text_field_tag :captcha
-    = f.input :comment
-  .actions
-    = f.submit 'submit'
+%section#leaveMsg
+  = flash[:alert] unless flash[:alert].nil?
+  = simple_form_for @leave_message do |f|
+    %table
+      = f.input :name
+      = f.input :email,:placeholder => "will not be published"
+      = f.input :website
+      = captcha_tag :id => "captcha_img"
+      = text_field_tag :captcha
+      = f.input :comment, as: :text
+    .actions
+      = f.submit 'submit'
 

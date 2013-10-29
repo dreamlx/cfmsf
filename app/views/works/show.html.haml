@@ -1,7 +1,7 @@
 %section.workTitle
   %h1
     Fly Dragon
-  %a{:href=>"/projects/2"}
+  %a{:href=>"/projects/#{@work.project_id}"}
     %img{:src=>"/assets/projects/back_project_icon.png"}
 %section.workContent
   = raw(@work.content)
