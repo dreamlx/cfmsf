@@ -1,4 +1,4 @@
-require 'rvm/capistrano' # 支持rvm
+ require 'rvm/capistrano' # 支持rvm
 require 'bundler/capistrano'  # 支持自动bundler
 set :rvm_autolibs_flag, "read-only"        # more info: rvm help autolibs
 
@@ -21,14 +21,20 @@ set :ssh_options, { :forward_agent => true }
 #repo details
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :scm_username, "HuberyDu" #github帐号
-set :scm_passphrase, "xixiha451198435" #设置github  ssh时设置到密码
+set :scm_username, ENV["GITHUB_USERNAME"] #github帐号
+set :scm_passphrase, ENV["GITHUB_PASSWORD"] #设置github  ssh时设置到密码
 set :repository,  "git@github.com:HuberyDu/bancheng.git" #项目在github上的帐号
 set :branch, "master" #github上具体的分支
 set :deploy_via, :remote_cache
 
 #tasks
 namespace :deploy do
+
+desc "SCP transfer figaro configuration to the shared folder"
+task :setup do
+  transfer :up, "config/application.yml", "#{shared_path}/application.yml", :via => :scp
+end
+
 task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
 end
