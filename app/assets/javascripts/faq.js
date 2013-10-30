@@ -1,6 +1,5 @@
-require(["jquery"]
-    ,function($,salvattore){
-        $("#captcha_img").click(function(){
+$(document).ready(function(){
+   $("#captcha_img").click(function(){
         $.ajax({
                 cache: true,
                 type: "GET",
@@ -9,6 +8,5 @@ require(["jquery"]
                     $("#captcha_img").attr("src", $("#captcha_img").attr("src"))
                 }
             });
-        })
-    }
-);
+        }) 
+});

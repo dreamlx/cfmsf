@@ -6,15 +6,8 @@
     %meta{content: "", name: "description"}/
     %meta{content: "width=device-width", name: "viewport"}/
     %title Tang Digital
-    = stylesheet_link_tag("#{params[:controller]}_#{params[:action]}", :media => "all")
-    - if controller_name == "projects"
-      = requirejs_include_tag "projects"
-    - elsif action_name == "project"
-      = requirejs_include_tag "project"
-    - elsif action_name == "faq"
-      = requirejs_include_tag "site_faq"
-    - else
-      = javascript_include_tag "site"
+    = stylesheet_link_tag(@css, :media => "all")
+    = javascript_include_tag "jquery"
     = csrf_meta_tags
 
   %body

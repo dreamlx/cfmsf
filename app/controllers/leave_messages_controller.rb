@@ -4,6 +4,7 @@ class LeaveMessagesController < ApplicationController
 
   def new
     @leave_message = LeaveMessage.new
+    @css = "leave_messages_new"
   end
 
   def create
@@ -12,10 +13,10 @@ class LeaveMessagesController < ApplicationController
       if @leave_message.save
         redirect_to site_faq_path
       else
-        render action: "site/faq"
+        render action: "/leave_messages/new"
       end
     else
-      redirect_to site_faq_path, :alert => "the captcha is not match"
+      redirect_to "/leave_messages/new", :alert => "the captcha is not match"
     end
 
   end

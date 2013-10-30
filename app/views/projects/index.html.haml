@@ -12,7 +12,8 @@
     %li
       %a.selected{href: "#"}
         %span shuffle
-        %b 200
+        %b
+          = Project.all.size
 
     - @tags.each do |tag|
       %li
@@ -22,7 +23,7 @@
           %b
             = Project.tagged_with("#{tag}").size
   #faqlink
-    %a{href: "/site/faq"} F.A.Q
+    %a{href: "/leave_messages/new"} F.A.Q
 .projects
   %section#clientComment
     %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
@@ -40,3 +41,5 @@
   .scrollLoading
   .navigation
     %a{href: "2.html"} 2
+
+= requirejs_include_tag "projects"

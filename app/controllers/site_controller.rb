@@ -1,30 +1,18 @@
 class SiteController < ApplicationController
-  def projects
-  	@projects = Project.page(params[:page])
-  	@tags = Project.tag_counts_on(:tags)
-  end
-
-  def project
-    project = Project.find(params[:id])
-    @works = project.works.page(params[:page])
-  end
 
   def aboutus
+    @css = "site_aboutus"
   end
 
   def services
+    @css = "site_services"
   end
 
   def contact
+    @css = "site_contact"
   end
 
   def security
-  end
-
-  def faq
-    @leave_message = LeaveMessage.new
-  end
-
-  def careers
+    @css = "site_security"
   end
 end

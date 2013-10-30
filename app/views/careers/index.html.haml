@@ -95,55 +95,48 @@
       %u
         interested
       \.
-  #jobListBlock
-    .jobUnit
-      .jobTitleBlock
-        .jobPic
-          %img{:src=>"#"}
-        .jobTitle  
-          %h6
-            2D artist
-          %span{:style=>"background-color:#d43d6d"}
+  #jobListBlock{"data-columns" => ""}
+    - @careers.each do |career|
+      .jobUnit
+        .jobTitleBlock
+          .jobPic
+            %img{:src=>"#{career.thumb}?imageView/2/w/501"}
+          .jobTitle
+            %h6
+              = career.title
+            %span{:style=>"background-color:#{career.color}"}
+              I’m interested
+        %article.jobDesc
+          %h5
+            Job Description:
+          %p
+            = career.desc
+        %article.jobRes
+          %h5
+            Responsibility:
+          %ul
+            - @r = career.responsibility.split("\n")
+            - @r.each do |res|
+              %li
+                = res
+        %article.jobReq
+          %h5
+            Requirements:
+          %ul
+            - @m = career.requirements.split("\n")
+            - @m.each do |res|
+              %li
+                = res
+        %article.jobWarningBlock
+          .jobWarning
+            No phone calls, please. We greatly appreciate your interest in Tangdigital. Only those selected for the interview process will be contacted.
+          %span{:style=>"background-color:#{career.color}"}
             I’m interested
-      %article.jobDesc
-        %h5
-          Job Description:
-        %p
-          Responsible for the production of game ui, interface, props, scenes, roles and publicity illustrator.
+        %article.jobContact
+          %p
+            Qualified candidates please e-mail cover letter, including salary requirements, and CV in Chinese or English to 
+            %a{:href=>"mailto:"}
+              hr@tangdigital.com
+            \. Please specify 2D artist in the subject line of your e-mail.
 
-      %article.jobRes
-        %h5
-          Responsibility:
-        %ul
-          %li
-            Depending on the game product demand accurately locate the style of the game, the characters in the game, scenes, props and posters designed to draw;
-          %li
-            collaboration with the engineers of the game, revise and improve the interface of the game at any time according to the actual situation;
-      
-      %article.jobReq
-        %h5
-          Requirements:
-        %ul
-          %li
-            the love of the game industry, game 2d art in more than 1 year work experience;
-          %li
-            painting or art and design related undergraduate degree or above;
-          %li  
-            Design ability, specializes in the role of a variety of game   styles, props, scenes and illustrations, as well as the game   interface and icon conversion and skilled in a variety of art style;
-          %li
-            At least mastered more than one graphics software (such as Photoshop, painter, flash, etc.), master 3d software users preferred;
-          %li
-            good communication skills and team spirit, work hard.
-
-      %article.jobWarningBlock
-        .jobWarning
-          No phone calls, please. We greatly appreciate your interest in Tangdigital. Only those selected for the interview process will be contacted.
-        %span{:style=>"background-color:#d43d6d"}
-          I’m interested
-
-      %article.jobContact
-        %p
-          Qualified candidates please e-mail cover letter, including salary requirements, and CV in Chinese or English to 
-          %a{:href=>"mailto:"}
-            hr@tangdigital.com
-          \. Please specify 2D artist in the subject line of your e-mail.
+= javascript_include_tag "salvattore"
