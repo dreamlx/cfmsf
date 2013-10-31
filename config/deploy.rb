@@ -21,8 +21,8 @@ set :ssh_options, { :forward_agent => true }
 #repo details
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :scm_username, EVN["GITHUB_USERNAME"] #github帐号
-set :scm_passphrase, EVN["GITHUB_PASSWORD"] #设置github  ssh时设置到密码
+set :scm_username, ENV["GITHUB_USERNAME"] #github帐号
+set :scm_passphrase, ENV["GITHUB_PASSWORD"] #设置github  ssh时设置到密码
 set :repository,  "git@github.com:HuberyDu/bancheng.git" #项目在github上的帐号
 set :branch, "master" #github上具体的分支
 set :deploy_via, :remote_cache
@@ -38,8 +38,6 @@ end
 task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
 end
-
-tas
 
 task :stop, :roles => :app do
     #do nonthing

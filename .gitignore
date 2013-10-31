@@ -6,6 +6,7 @@
 
 #Ignore database.yml
 /config/database.yml
+/config/database.yml.server
 /config/application.yml
 
 #Ignore 
