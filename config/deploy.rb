@@ -32,7 +32,7 @@ namespace :deploy do
 desc "SCP transfer figaro configuration to the shared folder"
   task :setup do
     transfer :up, "config/application.yml", "#{shared_path}/config/application.yml", :via => :scp
-    transfer :up, "config/database.yml", "#{shared_path}/config/database.yml", :via => :scp
+    transfer :up, "config/database.yml.server", "#{shared_path}/config/database.yml", :via => :scp
 end
 
 task :restart, :roles => :app do
