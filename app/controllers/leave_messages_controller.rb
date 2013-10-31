@@ -10,12 +10,12 @@ class LeaveMessagesController < ApplicationController
     if valid_captcha?(params[:captcha])
       @leave_message = LeaveMessage.new(params[:leave_message])
       if @leave_message.save
-        redirect_to site_faq_path
+        redirect_to site_faq_path(:messages => @leave_message.errors.messages)
       else
-        render action: "site/faq"
+        redirect_to site_faq_path(:messages => @leave_message.errors.messages)
       end
     else
-      redirect_to site_faq_path, :alert => "the captcha is not match"
+      redirect_to site_faq_path, :alert => "The captcha is not match"
     end
 
   end
