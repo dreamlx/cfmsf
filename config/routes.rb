@@ -1,8 +1,7 @@
 Bancheng::Application.routes.draw do
   namespace :admin do
-    resources :careers
+    resources :clients
   end
-
 
   captcha_route
 
@@ -31,6 +30,7 @@ Bancheng::Application.routes.draw do
   devise_for :users
 
   namespace :admin do
+    resources :careers
     resources :users
     resources :home
     resources :leave_messages
