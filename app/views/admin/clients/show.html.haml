@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p= "id:  #{@client.id} "
+%p= "company:  #{@client.company}"
+%p= "name:  #{@client.name}"
+%p= "title:  #{@client.title}"
+%p= "words:  #{@client.words}"
+%p pic:
+%img{ src:"#{@client.pic}?imageView/1/w/50/h/50"}
+%p= "service:  #{@client.service}"
+
+= link_to 'Edit', edit_admin_client_path(@client)
+\|
+= link_to 'Back', admin_clients_path

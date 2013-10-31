@@ -3,11 +3,11 @@ class Career < ActiveRecord::Base
   mount_uploader :thumb, AvatarUploader
 
   def responsibility_to_array
-    self.responsibility = self.responsibility.split("\r\n")
+    self.responsibility.split("\r\n")
   end
 
   def requirments_to_array
-    self.requirements = self.requirements.split("\r\n")
+    self.requirements.split("\r\n")
   end
 
 end

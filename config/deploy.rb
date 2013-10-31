@@ -1,4 +1,4 @@
- require 'rvm/capistrano' # 支持rvm
+require 'rvm/capistrano' # 支持rvm
 require 'bundler/capistrano'  # 支持自动bundler
 set :rvm_autolibs_flag, "read-only"        # more info: rvm help autolibs
 
@@ -29,10 +29,10 @@ set :deploy_via, :remote_cache
 
 #tasks
 namespace :deploy do
-
 desc "SCP transfer figaro configuration to the shared folder"
-task :setup do
-  transfer :up, "config/application.yml", "#{shared_path}/application.yml", :via => :scp
+  task :setup do
+    transfer :up, "config/application.yml", "#{shared_path}/config/application.yml", :via => :scp
+    transfer :up, "config/database.yml", "#{shared_path}/config/database.yml", :via => :scp
 end
 
 task :restart, :roles => :app do
@@ -45,7 +45,9 @@ end
 
 desc "Symlink shared resources on each release - not used"
 task :symlink_shared, :roles => :app do
-# run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  run "touch #{release_path}/config/application.yml"
+  run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
 end
 
 task :precompile, :roles => :web do  
