@@ -21,17 +21,25 @@ set :ssh_options, { :forward_agent => true }
 #repo details
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
-set :scm_username, "HuberyDu" #github帐号
-set :scm_passphrase, "xixiha451198435" #设置github  ssh时设置到密码
+set :scm_username, EVN["GITHUB_USERNAME"] #github帐号
+set :scm_passphrase, EVN["GITHUB_PASSWORD"] #设置github  ssh时设置到密码
 set :repository,  "git@github.com:HuberyDu/bancheng.git" #项目在github上的帐号
 set :branch, "master" #github上具体的分支
 set :deploy_via, :remote_cache
 
 #tasks
 namespace :deploy do
+desc "SCP transfer figaro configuration to the shared folder"
+  task :setup do
+    transfer :up, "config/application.yml", "#{shared_path}/config/application.yml", :via => :scp
+    transfer :up, "config/database.yml", "#{shared_path}/config/database.yml", :via => :scp
+end
+
 task :restart, :roles => :app do
     run "touch #{current_path}/tmp/restart.txt"
 end
+
+tas
 
 task :stop, :roles => :app do
     #do nonthing
@@ -39,7 +47,9 @@ end
 
 desc "Symlink shared resources on each release - not used"
 task :symlink_shared, :roles => :app do
-# run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  run "touch #{release_path}/config/application.yml"
+  run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
 end
 
 task :precompile, :roles => :web do  
