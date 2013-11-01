@@ -7,22 +7,12 @@ Bancheng::Application.routes.draw do
 
   get "site/aboutus"
 
-  get "site/careers"
-
   get "site/services"
 
   get "site/contact" 
 
   get "site/security"
 
-  get "site/faq"
-
-  # get "site/project"
-
-  # get "site/work"
-
-  # get "site/"
-  
   # match ':site(/:action(/:id))(.:format)'
 
   resources :leave_messages
@@ -42,6 +32,7 @@ Bancheng::Application.routes.draw do
 
   root :to => 'projects#index'
   resources :projects 
+  resources :careers
   resources :works
   resources :tags do 
     member do

@@ -291,7 +291,6 @@ section#joblist
 			.jobPic
 			{
 				width:100%;
-				height:181px;
 				background-color: #cccccc;
 			}
 			.jobTitle
@@ -445,4 +444,20 @@ section#joblist
 			}
 		}
 	}
+}
+
+.column
+{
+	width:501px;
+	float:left;
+	&:last-child
+	{
+		float:right;
+	}
+}
+
+[data-columns]::before { display: none; } /* Don't forget this. */
+
+#jobListBlock[data-columns]::before {
+    content: '2';
 }

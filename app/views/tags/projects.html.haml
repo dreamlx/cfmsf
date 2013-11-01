@@ -9,6 +9,12 @@
         “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and ...
       %a{href: "#"} more
   %ul#tagList
+    %li
+      %a{href: "/projects"}
+        %span shuffle
+        %b
+          = Project.all.size
+
     - @tags.each do |tag|
       %li
       - if tag.id.to_s == params[:id]
@@ -24,7 +30,7 @@
           %b
             = Project.tagged_with("#{tag}").size
   #faqlink
-    %a{href: "/site/faq"} F.A.Q
+    %a{href: "/leave_messages/new"} F.A.Q
 .projects
   %section#clientComment
     %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
@@ -42,4 +48,5 @@
   .scrollLoading
   .navigation
     %a{href: "2.html"} 2
-= stylesheet_link_tag "projects_index"
+
+= requirejs_include_tag "projects"

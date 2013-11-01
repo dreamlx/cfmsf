@@ -5,5 +5,6 @@ class WorksController < ApplicationController
 
 	def show
 		@work = Work.find(params[:id])
+		@css = "works_show"
 	end
 end

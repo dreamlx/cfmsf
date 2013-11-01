@@ -79,6 +79,9 @@ GEM
       yard (>= 0.7.0)
     erubis (2.7.0)
     execjs (2.0.1)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -250,6 +253,7 @@ DEPENDENCIES
   devise
   dragonfly (~> 0.9.15)
   easy_captcha
+  figaro
   haml-rails
   jcrop-rails
   jquery-rails

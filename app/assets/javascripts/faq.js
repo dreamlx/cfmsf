@@ -1,8 +1,5 @@
-
-require(["jquery","validate"]
-    ,function($,salvattore){
-
-        $("#captcha_img").click(function(){
+$(document).ready(function(){
+   $("#captcha_img").click(function(){
         $.ajax({
                 cache: true,
                 type: "GET",

@@ -3,5 +3,6 @@ class TagsController < ApplicationController
 		@tags = Project.tag_counts_on(:tags)
 		tag = @tags.find(params[:id])
 		@projects = Project.tagged_with(tag)
+		@css = "projects_index"
 	end
 end
