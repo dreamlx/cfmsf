@@ -17,16 +17,7 @@ class SiteController < ApplicationController
   end
 
   def faq
-    @leave_message = LeaveMessage.new
-    @errors = Array.new
-    @messages = params[:messages]
-    if !@messages.nil?
-      @messages.each do |msg|
-        msg[1].each do |error|
-          @errors.push(error)
-        end
-      end
-    end
+    
   end
 
   def careers

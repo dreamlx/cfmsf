@@ -1,3 +1,5 @@
+//= require validate
+
 $(document).ready(function(){
    $("#captcha_img").click(function(){
         $.ajax({
