@@ -46,6 +46,7 @@ end
 desc "Symlink shared resources on each release - not used"
 task :symlink_shared, :roles => :app do
   run "touch #{release_path}/config/application.yml"
+  run "touch #{release_path}/config/database.yml"
   run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   run "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
 end
