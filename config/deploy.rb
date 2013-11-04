@@ -36,7 +36,8 @@ desc "SCP transfer figaro configuration to the shared folder"
 end
 
 task :restart, :roles => :app do
-    run "touch #{current_path}/tmp/restart.txt"
+  run "touch #{current_path}/tmp/restart.txt"
+  
 end
 
 task :stop, :roles => :app do
@@ -57,6 +58,6 @@ end
 
 end
 
+after "deploy:update", "deploy:symlink_shared" 
 after "deploy:update", "deploy:migrate"
-after "deploy:migrate", "deploy:symlink_shared" 
 after "deploy:migrate", "deploy:precompile"

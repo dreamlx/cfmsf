@@ -63,18 +63,28 @@
     Don’t hesitate to 
     %a{:href=>"#"}
       contact us today 
-    for an answer. 
+    for an answer.
+
 %section#leaveMsg
-  = flash[:alert] unless flash[:alert].nil?
-  = simple_form_for @leave_message do |f|
+  / - if @errors.size > 0
+  /   #error_explanation
+  /     %h2= "#{pluralize(@errors.count, "error")} prohibited this leave_message from being saved:"
+  /     %ul
+  /     - @errors.each do |msg|
+  /       %li= msg
+  
+  = simple_form_for @leave_message, html: { name: "leave_message"}  do |f|
+    = f.error_notification
     %table
-      = f.input :name
+      = f.input :name, required: false, input_html: { maxlength: 20 }
       = f.input :email,:placeholder => "will not be published"
       = f.input :website
-      = captcha_tag :id => "captcha_img"
+      = captcha_tag :id => "captcha_img" 
       = text_field_tag :captcha
+      %span.formerrspan{style: "color: red"}= flash[:alert] unless flash[:alert].nil?
       = f.input :comment, as: :text
     .actions
       = f.submit 'submit'
-      
-= javascript_include_tag "faq"
+
+= requirejs_include_tag "leave_messages"
+
