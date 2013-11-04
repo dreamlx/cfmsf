@@ -18,8 +18,7 @@ $(document).ready(function(){
                     onChange:   updateInfo,
                     onSelect:   updateInfo,
                     onRelease:  clearInfo,
-                    minSize:[231,288],
-                    maxSize:[231,3000],
+                    minSize:[100,100],
                     setSelect:[0,0,231,288]
 
                 },function(){

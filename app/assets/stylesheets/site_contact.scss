@@ -50,8 +50,8 @@ section#joinUs
 		font-size:34px;
 		font-weight: normal;
 		font-style: italic;
-		color:#666666;
-		text-shadow:#bcbcbc 2px 2px 1px;
+		color:#999;
+		text-shadow: #C0BEBE 1px 1px 2px;
 		text-align: center;
 		margin-top:37px;
 		margin-bottom:73px;
@@ -65,7 +65,7 @@ section#joinUs
 			left:238px;
 			width:373px;
 			height:96px;
-			border:1px solid #999;
+			border:1px solid #ccc;
 			background-color: #f2f2f2;
 			font-size:18px;
 			color:#666666;
@@ -88,6 +88,7 @@ section#joinUs
 			height:100px;
 			max-width:500px;
 			clear:both;
+			border:1px solid #ccc;
 			&::before
 			{
 				position: absolute;
@@ -106,14 +107,12 @@ section#joinUs
 			top:41px;
 			&::before
 			{
-				margin-top: 99px;
+				margin-top: 100px;
 				margin-left: 339px;
 			}
 			.jobTitle
 			{
 				width:274px;
-
-				border-right:1px solid #999;
 			}
 		}
 		#block3
@@ -124,13 +123,13 @@ section#joinUs
 			left:463px;
 			&::before
 			{
-				margin-top: 99px;
+				margin-top: 100px;
 				margin-left: 29px;
 			}
 			.jobTitle
 			{	
 				width:229px;
-				border-left:1px solid #999;
+				// border-left:1px solid #ccc;
 			}
 		}
 		#block4
@@ -150,7 +149,7 @@ section#joinUs
 			.jobTitle
 			{
 				width:354px;
-				border-right:1px solid #999;
+				// border-right:1px solid #ccc;
 			}
 		}
 		#block5
@@ -166,12 +165,12 @@ section#joinUs
 				-o-transform: rotate(90deg);
 				transform: rotate(90deg);
 				margin-top: 40px;
-				margin-left: -17px;
+				margin-left: -16px;
 			}
 			.jobTitle
 			{
 				width:182px;
-				border-left:1px solid #999;
+				// border-left:1px solid #ccc;
 			}
 		}
 		#block6
@@ -192,7 +191,7 @@ section#joinUs
 			.jobTitle
 			{
 				width:152px;
-				border-left:1px solid #999;
+				// border-left:1px solid #ccc;
 			}
 		}
 
@@ -200,8 +199,8 @@ section#joinUs
 		{
 			// padding:15px;
 			line-height: 99px;
-			border-top:1px solid #999;
-			border-bottom:1px solid #999;
+			// border-top:1px solid #ccc;
+			// border-bottom:1px solid #ccc;
 			text-align: center;
 			color:#666;
 		}
@@ -224,7 +223,7 @@ section#joinUs
 
 section.tagCloud
 {
-	border-top:1px solid #b3b3b3;
+	border-top:1px solid #ccc;
 	margin-top: -90px;
 }
 

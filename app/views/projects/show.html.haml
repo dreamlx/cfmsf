@@ -31,3 +31,8 @@
     %a{href: "2.html"} 2
 
 = requirejs_include_tag "project"
+:javascript
+  $(document).ready(function(){
+    var mt = $("#projectInfo").outerHeight() * -1;
+    $("#projectInfo").css("margin-top", mt)
+  });

@@ -9,13 +9,13 @@ article#servicesPage
 	height:auto;
 	margin:0 auto;
 	margin-top:44px;
-	border-bottom: 1px solid #b3b3b3;
+	border-bottom: 1px solid #ccc;
 	article.security
 	{
 		border:13px solid #808080;
 		width:842px - 54px;
 		height:142px;
-		
+		margin:0 auto;
 		margin-bottom:65px;
 		padding: 0px 27px;
 		h3
@@ -29,7 +29,7 @@ article#servicesPage
 		p
 		{
 			color:#666;
-			font-size: 16px;
+			font-size: 15px;
 			font-weight: normal;
 		}
 		&::before

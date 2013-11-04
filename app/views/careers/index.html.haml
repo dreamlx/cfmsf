@@ -130,8 +130,10 @@
         %article.jobWarningBlock
           .jobWarning
             No phone calls, please. We greatly appreciate your interest in Tangdigital. Only those selected for the interview process will be contacted.
-          %span{:style=>"background-color:#{career.color}"}
-            I’m interested
+          .secondImIntBlock
+            %span#secondImInt{:style=>"background-color:#{career.color}"}
+              I’m interested
+            %span#secondImIntArrow{:style=>"border-top-color:#{career.color}"}
         %article.jobContact
           %p
             Qualified candidates please e-mail cover letter, including salary requirements, and CV in Chinese or English to 

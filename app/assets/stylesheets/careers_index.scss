@@ -288,10 +288,12 @@ section#joblist
 			width:501px;
 			float:left;
 			background-color: white;
+			margin-bottom: 14px;
 			.jobPic
 			{
 				width:100%;
 				background-color: #cccccc;
+				img{display: block}
 			}
 			.jobTitle
 			{
@@ -301,11 +303,23 @@ section#joblist
 				{
 					color:white;
 					margin:0;
-					width:300px;
+					width:auto;
 					font-size:21px;
-					text-indent:44px;
+					// text-indent:44px;
 					line-height: 60px;
+					margin-left:44px;
 					float:left;
+					&::after
+					{
+						content:"";
+						display: block;
+						border:6px solid #fff;
+						border-top-color:#4d4d4d;
+						width:0;
+						height:0;
+						margin:0 auto;
+						// position: absolute;
+					}
 				}
 				span
 				{
@@ -319,18 +333,7 @@ section#joblist
 					margin-top:10px;
 					text-indent: 11px;
 				}
-				&::after
-				{
-					content:"";
-					display: block;
-					border:6px solid #fff;
-					border-top-color:#4d4d4d;
-					width:0;
-					height:0;
-					margin-top:60px;
-					margin-left:128px;
-					position: absolute;
-				}
+				
 			}
 			h5
 			{
@@ -352,8 +355,8 @@ section#joblist
 			article.jobDesc
 			{
 				padding-left:42px;
-				border-left:1px solid #666;
-				border-right:1px solid #666;
+				border-left:1px solid #dadada;
+				border-right:1px solid #dadada;
 				padding-top:24px;
 				padding-bottom:12px;
 			}
@@ -363,6 +366,8 @@ section#joblist
 				padding-left:42px;
 				padding-top:14px;
 				padding-bottom:15px;
+				border-left:1px solid #dadada;
+				border-right:1px solid #dadada;
 			}
 			ul
 			{
@@ -379,8 +384,8 @@ section#joblist
 			article.jobReq
 			{
 				padding-left:42px;
-				border-left:1px solid #666;
-				border-right:1px solid #666;
+				border-left:1px solid #dadada;
+				border-right:1px solid #dadada;
 				padding-top:14px;
 				padding-bottom:15px;
 			}
@@ -403,23 +408,27 @@ section#joblist
 					line-height: 16px;
 					float: left;
 				}
-				span
+				.secondImIntBlock
 				{
 					width:183px;
-					height:38px;
-					color:white;
-					line-height: 38px;
-					font-size:18px;
-					display: block;
-					float: right;
+					height:60px;
 					margin-top:30px;
-					text-indent: 11px;
-					&::after
+					float: right;
+					span#secondImInt
 					{
-						content:"";
+						width:183px;
+						height:38px;
+						color:white;
+						line-height: 38px;
+						font-size:18px;
+						display: block;
+						text-indent: 11px;
+						
+					}
+					span#secondImIntArrow
+					{
 						display: block;
 						border:6px solid #eaeaea;
-						border-top-color:#d43d6d;
 						width:0;
 						height:0;
 						margin-top:0px;

@@ -8,7 +8,7 @@
   %table
     = f.input :name
     = f.input :desc, :as => :kindeditor,:input_html => { :items => ['source','formatblock', 'hr', 'link', 'unlink', '|', 'about'] }
-    = f.input :content, :as => :kindeditor,:input_html => { :items => ['formatblock', 'image', 'multiimage', 'hr', 'link', 'unlink', '|', 'about'] }
+    = f.input :content, :as => :kindeditor,:input_html => { :items => ['source','formatblock', 'image', 'multiimage', 'hr', 'link', 'unlink', '|', 'about'] }
     / = f.input :albums, input_html: {multiple: :true, :name => 'albums[]'}, :as => :file
     = f.input :thumb, :as => :file, input_html: {id: 'image_file'}
     - if action_name == 'new'

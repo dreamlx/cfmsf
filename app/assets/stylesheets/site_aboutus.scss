@@ -9,7 +9,7 @@ article#contactInfo,
 	width:984px - 114px;
 	height:auto;
 	margin:0 auto;
-	border-bottom: 1px solid #b3b3b3;
+	border-bottom: 1px solid #ccc;
 }
 
 
@@ -17,31 +17,41 @@ article#contactInfo,
 article#aboutus
 {
 	padding-top:87px;
+	h1{margin-bottom:56px;}
 	h2
 	{
 		font-size:24px;
-		color:#808080;
+		color:#999;
 		font-weight: normal;
-		text-shadow:#bcbcbc 2px 2px 1px;
+		text-shadow: #C0BEBE 1px 1px 2px;
+		// margin-top:56px;
 		b
 		{
 			font-weight: normal;
 			color:#fc475d;
 		}
+		&#line2
+		{
+			margin-bottom:44px;
+		}
 	}
 	p
 	{
 		font-size:16px;
-		color:#808080;
+		color:#999;
+		letter-spacing: 0.03em;
+		line-height: 21px;
+		margin:20px 0px;
 	}
 	a
 	{
-		@include linkBtn(174px, 32px);
+		@include linkBtn(194px, 32px);
 		background-color:white;
-		font-size:14px;
+		font-size:12px;
 		color:#999;
 		line-height:32px;
-		box-shadow: -1px 1px 1px 1px #b8b8b8
+		box-shadow: -1px 1px 1px 1px #b8b8b8;
+		margin-top:40px;
 	}
 }
 

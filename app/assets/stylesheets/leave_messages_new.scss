@@ -9,7 +9,7 @@ article#faqPage
 	height:auto;
 	margin:0 auto;
 	margin-top:86px;
-	border-bottom: 1px solid #b3b3b3;
+	border-bottom: 1px solid #ccc;
 }
 
 article#questions
@@ -25,7 +25,7 @@ article#questions
 		padding:0;
 		li
 		{
-			line-height: 30px;
+			line-height: 42px;
 			a
 			{
 				color:#666666;
@@ -45,16 +45,17 @@ section#answers
 	width:984px;
 	padding:43px 52px 43px 52px;
 	margin:0 auto;
-	border-bottom: 1px solid #b3b3b3;
+	border-bottom: 1px solid #ccc;
 	h1
 	{
 		font-size:27px;
-		color:#1a1a1a;
+		color:#555;
 		font-weight: normal;
 	}
 	p
 	{
-		color:#666;
+		color:#999;
+		margin:30px 0;
 	}
 }
 

@@ -9,6 +9,14 @@ a
 	text-decoration: none;
 }
 
+input {
+outline: none;
+}
+ 
+textarea {
+outline: none;
+}
+
 @mixin linkBtn($w, $h)
 {
 	display: block;

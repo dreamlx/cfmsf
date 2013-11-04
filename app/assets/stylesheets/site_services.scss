@@ -11,13 +11,13 @@ article#servicesPage
 	height:auto;
 	margin:0 auto;
 	margin-top:44px;
-	border-bottom: 1px solid #b3b3b3;
+	border-bottom: 1px solid #ccc;
 	a.security
 	{
 		border:13px solid #808080;
 		width:842px - 54px;
 		height:142px;
-		
+		margin:0 auto;
 		margin-bottom:65px;
 		padding: 0px 27px;
 		display: block;
@@ -32,7 +32,7 @@ article#servicesPage
 		p
 		{
 			color:#666;
-			font-size: 13px;
+			font-size: 15px;
 			font-weight: normal;
 		}
 		&::before
@@ -136,7 +136,7 @@ article#servicesPage
 		width:100%;
 		height:auto;
 		color:#666;
-		border-top:2px dashed #666;
+		border-top:1px dashed #666;
 		margin-top:24px;
 		h6
 		{
@@ -204,14 +204,20 @@ article#servicesPage
 			div.clientWords
 			{
 				float:left;
-				width:auto;
+				width:655px;
 				height:78px;
 				background-color: #808080;
-				padding:0px 13px;
+				padding:0px 53px;
 				p
 				{
-					width:400px;
+					font-size:14px;
+					width:100%;
 					color:#fff;
+					font-family: Georgia;
+					font-style: italic;
+					margin: 14px auto;
+					line-height: 17px;
+					letter-spacing: 0.01em;
 				}
 				&::before
 				{
@@ -223,7 +229,7 @@ article#servicesPage
 					border-bottom:8px solid #FFF;
 					content: "";
 					position: absolute;
-					margin-left:-29px;
+					margin-left:-69px;
 					margin-top:30px;
 				}
 			}
