@@ -23,7 +23,7 @@ module Admin
 
     def create
       @work = @project.works.build(params[:work])
-      @work.thumb = crop_image(@work.thumb) unless params[:work][:thumb].nil?
+      @work.thumb = crop_image(params[:work][:thumb]) unless params[:work][:thumb].nil?
       if @work.save
     	  redirect_to admin_project_works_url(@project), notice: 'work was successful created'
       else
