@@ -54,4 +54,14 @@ $(document).ready(function(){
         $('#width').val("");
         $('heigth').val("")
     };
+    var countries = [
+   { value: 'Andorra'},
+  
+   { value: 'Zimbabwe'}
+];
+    options = { serviceUrl: "/admin/projects/auto_complete_tag.json"}
+    alert(options)
+    $('#project_tag_list').autocomplete({
+         lookup: options
+    });
 })

@@ -26,6 +26,10 @@ Bancheng::Application.routes.draw do
     resources :leave_messages
     
     resources :projects do
+      collection do 
+        get :auto_complete_tag
+      end
+
       resources :works
     end
   end
