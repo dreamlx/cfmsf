@@ -106,39 +106,64 @@
               = career.title
             %span{:style=>"background-color:#{career.color}"}
               I’m interested
-        %article.jobDesc
-          %h5
-            Job Description:
-          %p
-            = career.desc
-        %article.jobRes
-          %h5
-            Responsibility:
-          %ul
-            - @r = career.responsibility.split("\n")
-            - @r.each do |res|
-              %li
-                = res
-        %article.jobReq
-          %h5
-            Requirements:
-          %ul
-            - @m = career.requirements.split("\n")
-            - @m.each do |res|
-              %li
-                = res
-        %article.jobWarningBlock
-          .jobWarning
-            No phone calls, please. We greatly appreciate your interest in Tangdigital. Only those selected for the interview process will be contacted.
-          .secondImIntBlock
-            %span#secondImInt{:style=>"background-color:#{career.color}"}
-              I’m interested
-            %span#secondImIntArrow{:style=>"border-top-color:#{career.color}"}
-        %article.jobContact
-          %p
-            Qualified candidates please e-mail cover letter, including salary requirements, and CV in Chinese or English to 
-            %a{:href=>"mailto:"}
-              hr@tangdigital.com
-            \. Please specify 2D artist in the subject line of your e-mail.
+        %section.jobMoreInfo{:id=>"job#{career.id}"}
+          %article.jobDesc
+            %h5
+              Job Description:
+            %p{:rel=>"job#{career.id}"}
+              = career.desc
+          %article.jobRes
+            %h5
+              Responsibility:
+            %ul
+              - @r = career.responsibility.split("\n")
+              - @r.each do |res|
+                %li
+                  = res
+          %article.jobReq
+            %h5
+              Requirements:
+            %ul
+              - @m = career.requirements.split("\n")
+              - @m.each do |res|
+                %li
+                  = res
+          %article.jobWarningBlock
+            .jobWarning
+              No phone calls, please. We greatly appreciate your interest in Tangdigital. Only those selected for the interview process will be contacted.
+            .secondImIntBlock
+              %span#secondImInt{:style=>"background-color:#{career.color}"}
+                I’m interested
+              %span#secondImIntArrow{:style=>"border-top-color:#{career.color}"}
+          %article.jobContact
+            %p
+              Qualified candidates please e-mail cover letter, including salary requirements, and CV in Chinese or English to 
+              %a{:href=>"mailto:"}
+                hr@tangdigital.com
+              \. Please specify 2D artist in the subject line of your e-mail.
 
 = javascript_include_tag "salvattore"
+:javascript
+  $("document").ready(function(){
+    $(".jobDesc").each(function(i,job){
+      var clone = $(job).clone();
+
+      var p = $(job).find("p");
+      var linkHash = p.attr("rel");
+      var fullText = p.text();
+      var lessText = fullText.substr(0,100)+"...";
+      // console.log(lessText);
+      var more = new Image();
+      more.src = "assets/careers/more.png";
+      var moreBtn = $(more).wrap("<a class='moreBtn' href='#"+linkHash+"' title='click to get more info' ></a>").parent();
+      clone.find("p").text(lessText).append(moreBtn);
+      $(job).parent().before(clone);
+    });
+
+    $(".moreBtn").click(function(e){
+      // console.log(this.hash);
+      $(this.hash).show();
+      $(this).parents(".jobDesc").hide();
+      e.preventDefault();
+    });
+  })
