@@ -18,7 +18,7 @@ module Admin
 
     def create
       @client = Client.new(params[:client])
-      (@client.pic = crop_image(@client.pic)) unless params[:client][:pic].nil?
+      (@client.pic = crop_image(params[:client][:pic])) unless params[:client][:pic].nil?
       if @client.save
         redirect_to admin_clients_path, notice: 'client was successful created'
       else

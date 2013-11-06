@@ -4,7 +4,7 @@ module Admin
     before_filter :find_project, :except => [:index, :new, :create, :auto_complete_tag]
 
     def index
-    	@projects = Project.page(params[:page]).order("top DESC")
+    	@projects = Project.page(params[:page]).order("top desc", "created_at desc")
     end
 
     def show

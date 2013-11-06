@@ -75,4 +75,6 @@ $(document).ready(function(){
     $('#project_tag_list').autocomplete({
         lookup: result
     });
+
+    
 })
