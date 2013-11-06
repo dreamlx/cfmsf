@@ -3,4 +3,8 @@ class ApplicationController < ActionController::Base
   after_filter :reset_last_captcha_code!
 
   protect_from_forgery
+
+  def recommendProjects
+  	@tags = Project.tag_counts_on(:tags)
+  end
 end

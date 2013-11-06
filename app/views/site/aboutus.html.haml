@@ -52,30 +52,10 @@
     \-
 
 %section.tagCloud
-  %a{:href=>"#"}
-    2D Production
-  %a{:href=>"#"}
-    3D Models
-  %a{:href=>"#"}
-    Textures
-  %a{:href=>"#"}
-    Concept Design
-  %a{:href=>"#"}
-    Illustration
-  %a{:href=>"#"}
-    Special Effect
-  %a{:href=>"#"}
-    Skin
-  %a{:href=>"#"}
-    Animation
-  %a{:href=>"#"}
-    Characters
-  %a{:href=>"#"}
-    Scenes
-  %a{:href=>"#"}
-    Props
-  %a{:href=>"#"}
-    Weapons
+  - @tags.each do |tag|
+    %a{href: projects_tag_path(tag)}          
+      = tag
+  
 
 %section.recommandProjects
   %section#clientComment

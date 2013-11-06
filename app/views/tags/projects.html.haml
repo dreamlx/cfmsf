@@ -42,11 +42,10 @@
           %a{href: "/projects/#{project.id}"}
             %img{alt: "", src: "#{project.thumb}?imageView/1/w/201/h/251"}/
         %h6 
-          = project.name
+          = project.company
         %p 
-          = raw(project.desc)
+          = project.name
   .scrollLoading
-  .navigation
-    %a{href: "2.html"} 2
+  = paginate @projects
 
-= requirejs_include_tag "projects"
+= javascript_include_tag "jquery.infinitescroll","salvattore","projects"
