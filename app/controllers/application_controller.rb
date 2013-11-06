@@ -6,5 +6,6 @@ class ApplicationController < ActionController::Base
 
   def recommendProjects
   	@tags = Project.tag_counts_on(:tags)
+  	@recommendProjects =  Project.random_top(4)
   end
 end

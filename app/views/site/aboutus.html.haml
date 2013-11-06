@@ -39,14 +39,13 @@
     \-
   %p
     New Business Opportunities:  
-    %a{:href=>"#"}
-      Simon Shi
+    %a{:href=>"mailto:business@tangdigital.com?cc=tang.liji@tangdigital.com&cc=teng.shi@tangdigital.com"}
+      business@tangdigital.com
 
-    %a{:href=>"#"}
-      Liji Tang
+    
   %p
     Job Opportunities:  
-    %a{:href=>"#"}
+    %a{:href=>"mailto:hr@tangdigital.com"}
       SH JOB
   %p
     \-
@@ -62,27 +61,14 @@
     %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
     %p Art Director at EA China
   %section.projectList
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 ubi
-      %p SPLINTER CELL BLACKLIST
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 2
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 3
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 4
-      %p
+    - @recommendProjects.each do |project|
+
+      %article
+        %figure
+          %a{href: "/projects/#{project.id}"}
+            %img{alt: "", src: "#{project.thumb}?imageView/1/w/201/h/251"}
+        %h6 
+          = project.company
+        %p 
+          = project.name
+    

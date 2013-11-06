@@ -8,19 +8,16 @@
       %td title
       %td color
       %td thumb
-      %td desc
-      %td responsibility
-      %td requirements
+      
       %td
-      %tbody
-      - @careers.each do |career|
-        %tr
-          %td= career.title
-          %td{style:"background-color: #{career.color}"}
-          %td
-            %img{:src => "#{career.thumb}?imageView/1/w/50/h/50"}
-          %td= career.responsibility
-          %td= career.requirements
-          %td
-            = link_to 'Edit', edit_admin_career_path(career)
-            = link_to 'Destroy', admin_career_path(career), :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %tbody
+    - @careers.each do |career|
+      %tr
+        %td= career.title
+        %td{style:"background-color: #{career.color}"}
+        %td
+          %img{:src => "#{career.thumb}?imageView/1/w/50/h/50"}
+        
+        %td
+          = link_to 'Edit', edit_admin_career_path(career)
+          = link_to 'Destroy', admin_career_path(career), :method => :delete, :data => { :confirm => 'Are you sure?' }

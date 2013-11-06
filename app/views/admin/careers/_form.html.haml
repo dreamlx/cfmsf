@@ -2,11 +2,14 @@
   = f.error_notification
   %table
     = f.input :title
-    = f.input :color, input_html:{id:"colorpicker"}
+    = f.input :color, input_html:{id:"colorpicker",style:"background-color:#{@career.color}"}
     = f.input :thumb, as: :file
-    = f.input :desc
-    = f.input :responsibility, as: "text", input_html:{rows:"3"}
-    = f.input :requirements, as: "text", input_html:{rows:"3"}
+    - if action_name == 'edit'
+      - if !@career.thumb.nil?
+        %img{id:"preview", :src => "#{@career.thumb}?imageView/1/w/50/h/50"}
+    = f.input :desc, as: "text", input_html:{rows:"5",style:"width:700px"}
+    = f.input :responsibility, as: "text", input_html:{rows:"9",style:"width:700px"}
+    = f.input :requirements, as: "text", input_html:{rows:"9",style:"width:700px"}
   .form-inputs
 
   .form-actions
