@@ -1,7 +1,7 @@
 module Admin
 
   class ProjectsController < Admin::BaseController
-    before_filter :find_project, :except => [:index, :new, :create]
+    before_filter :find_project, :except => [:index, :new, :create, :auto_complete_tag]
 
     def index
     	@projects = Project.page(params[:page]).order("top DESC")
@@ -44,15 +44,9 @@ module Admin
     	@project = Project.new 
     end
 
-    def auto_complete_tag
-      @tags = Project.tag_counts
-      respond_to do |format|
-        foramt.json {render json: @tags}
-      end
-    end
-
     def find_project
         @project = Project.find(params[:id])
     end
   end
 end
+

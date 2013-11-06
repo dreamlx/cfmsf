@@ -26,10 +26,6 @@ Bancheng::Application.routes.draw do
     resources :leave_messages
     
     resources :projects do
-      collection do 
-        get :auto_complete_tag
-      end
-
       resources :works
     end
   end
@@ -41,6 +37,10 @@ Bancheng::Application.routes.draw do
   resources :tags do 
     member do
       get :projects
+    end
+
+    collection do 
+        get :auto_complete_tag
     end
   end
   # The priority is based upon order of creation:

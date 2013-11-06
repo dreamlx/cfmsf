@@ -5,4 +5,15 @@ class TagsController < ApplicationController
 		@projects = Project.tagged_with(tag)
 		@css = "projects_index"
 	end
+
+	def auto_complete_tag
+      @tags = Project.tag_counts
+      t = Array.new
+      @tags.each do |tag|
+        t.push(tag.name)
+      end
+      respond_to do |format|
+        format.json {render json: t}
+      end
+    end
 end
