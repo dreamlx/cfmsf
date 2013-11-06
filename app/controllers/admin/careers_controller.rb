@@ -1,7 +1,7 @@
 module Admin
   class CareersController < Admin::BaseController
     def index
-      @careers = Career.all
+      @careers = Career.order("id desc")
     end
 
     def show

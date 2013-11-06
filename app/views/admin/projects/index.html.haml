@@ -11,6 +11,7 @@
   %table.table.center.table-bordered
     %thead
       %tr
+        %td id
         %td name
         %td desc
         %td company
@@ -22,6 +23,7 @@
     %tbody
     - @projects.each do |project|
       %tr
+        %td= project.id
         %td= project.name
         %td= raw(project.desc)
         %td= project.company

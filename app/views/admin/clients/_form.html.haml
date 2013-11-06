@@ -9,7 +9,7 @@
     = f.input :company
     = f.input :name
     = f.input :title
-    = f.input :words
+    = f.input :words, as:"text", input_html:{rows:"5",style:"width:500px"}
     = f.input :service, collection: 1..10
     = f.input :pic, :as => :file, input_html: {id: 'image_file'}
     - if action_name == 'new' 

@@ -2,6 +2,7 @@ class SiteController < ApplicationController
 
   def aboutus
     @css = "site_aboutus"
+    recommendProjects
   end
 
   def services
@@ -16,10 +17,4 @@ class SiteController < ApplicationController
     @css = "site_security"
   end
 
-  def faq
-    
-  end
-
-  def careers
-  end
 end

@@ -38,9 +38,8 @@
           = project.company
         %p 
           = project.name
-  = paginate @projects
+  
   .scrollLoading
-  .navigation
-    %a{href: "2.html"} 2
+  = paginate @projects
 
-= requirejs_include_tag "projects"
+= javascript_include_tag "jquery.infinitescroll","salvattore","projects"

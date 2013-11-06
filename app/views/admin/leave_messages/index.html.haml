@@ -3,14 +3,16 @@
 %table.table.center.table-bordered
   %thread
     %tr
-      %th name
-      %th email
-      %th website
+      %td id
+      %td name
+      %td email
+      %td website
       %td comment
       %td 
   %tbody
     - @leave_messages.each do |leave_message|
       %tr
+        %td= leave_message.id
         %td= leave_message.name
         %td= leave_message.email
         %td= leave_message.website

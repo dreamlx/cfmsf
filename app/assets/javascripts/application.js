@@ -15,4 +15,5 @@
 //= require jcrop
 //= require kindeditor
 //= require bootstrap-datepicker/core
+//= require bootstrap-colorpicker
 //= require jquery.autocomplete

@@ -1,7 +1,7 @@
 module Admin
   class ClientsController < Admin::BaseController
     def index
-      @clients = Client.page(params[:page])
+      @clients = Client.page(params[:page]).order("id desc")
     end
 
     def show
