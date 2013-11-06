@@ -6,7 +6,7 @@ module Admin
 
     def crop_image(thumb)
       avatar_path = Rails.root + "public/uploads/image"
-      photo_name = "thumb.jpg"
+      photo_name = thumb.original_filename
       img = MiniMagick::Image.from_blob(thumb.read)
       Dir.chdir avatar_path
       img.write "#{photo_name}"

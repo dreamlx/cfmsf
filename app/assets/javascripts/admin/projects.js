@@ -54,4 +54,25 @@ $(document).ready(function(){
         $('#width').val("");
         $('heigth').val("")
     };
+
+    
+    function get_tags(){
+        result = new Array
+        $.ajax({
+            cache: true,
+            type: "GET",
+            dataType:"json",
+            async: false,
+            url: "/tags/auto_complete_tag",
+            success: function(data) {
+                result = data
+            }
+        });
+    }
+    
+    get_tags();
+  
+    $('#project_tag_list').autocomplete({
+        lookup: result
+    });
 })

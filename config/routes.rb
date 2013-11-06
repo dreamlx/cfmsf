@@ -38,6 +38,10 @@ Bancheng::Application.routes.draw do
     member do
       get :projects
     end
+
+    collection do 
+        get :auto_complete_tag
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

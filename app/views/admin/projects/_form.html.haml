@@ -5,9 +5,10 @@
       %ul
         - @project.errors.full_messages.each do |msg|
           %li= msg
+  / %div.foo{"data-url": }
   %table
     = f.input :name
-    = f.input :desc, :as => :kindeditor
+    = f.input :desc, :as => :kindeditor, :input_html => { :items => ['source','formatblock', 'hr', 'link', 'unlink', '|', 'about'] }
     = f.input :tag_list
     = f.input :company
     = f.input :release_time, :as => :date_picker
@@ -27,5 +28,3 @@
   .actions
     = f.submit 'Save'
 
-
-        
