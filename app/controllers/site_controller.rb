@@ -7,6 +7,7 @@ class SiteController < ApplicationController
 
   def services
     @css = "site_services"
+    recommendProjects
   end
 
   def contact
