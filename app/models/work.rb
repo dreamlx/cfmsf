@@ -5,4 +5,5 @@ class Work < ActiveRecord::Base
   mount_uploader :thumb, AvatarUploader
   belongs_to :project
   has_many :albums
+  paginates_per 12
 end

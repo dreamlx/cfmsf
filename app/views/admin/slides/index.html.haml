@@ -1,0 +1,21 @@
+%h1 Listing slides
+
+= link_to 'New Slide', new_admin_slide_path
+
+%table.table.center.table-bordered
+  %thead
+    %tr
+      %td id
+      %td name
+      %td pic
+      %td
+  %tbody
+  - @slides.each do |slide|
+    %tr
+      %td= slide.id
+      %td= slide.name
+      %td
+        %img{src:"#{slide.pic}?imageView/1/w/50/h/50"} 
+      %td
+        = link_to t(:edit, scope: "crud"), edit_admin_slide_path(slide)
+        = link_to t(:destroy, scope: "crud"), admin_slide_path(slide), :method => :delete, :data => { :confirm => 'Are you sure?' }

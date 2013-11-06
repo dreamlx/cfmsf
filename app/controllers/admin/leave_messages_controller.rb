@@ -1,7 +1,7 @@
 module Admin
   class LeaveMessagesController <  Admin::BaseController
     def index
-      @leave_messages = LeaveMessage.all
+      @leave_messages = LeaveMessage.order("id desc")
     end
 
     def destroy

@@ -5,6 +5,7 @@
 %table.table.center.table-bordered
   %thead
     %tr
+      %td id
       %td title
       %td color
       %td thumb
@@ -13,6 +14,7 @@
     %tbody
     - @careers.each do |career|
       %tr
+        %td= career.id
         %td= career.title
         %td{style:"background-color: #{career.color}"}
         %td

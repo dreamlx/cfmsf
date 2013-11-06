@@ -2,7 +2,7 @@ module Admin
 
   class UsersController < Admin::BaseController
     def index
-    	@users = User.all
+    	@users = User.order("id desc")
     end
 
     def show

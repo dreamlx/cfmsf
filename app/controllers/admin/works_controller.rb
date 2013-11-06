@@ -4,7 +4,7 @@ module Admin
     before_filter :find_project
 
     def index
-      @works = @project.works
+      @works = @project.works.page(params[:page]).order("id desc")
     end
 
     def show

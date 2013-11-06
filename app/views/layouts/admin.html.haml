@@ -35,6 +35,7 @@
               %li= link_to "LeaveMessage", admin_leave_messages_path
               %li= link_to "Career", admin_careers_path
               %li= link_to "Client", admin_clients_path
+              %li= link_to "Slide", admin_slides_path
               - if user_signed_in?
                 %li= link_to "LoginOut", destroy_user_session_path, :method => :delete
               -else

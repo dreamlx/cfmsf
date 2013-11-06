@@ -24,6 +24,7 @@ Bancheng::Application.routes.draw do
     resources :users
     resources :home
     resources :leave_messages
+    resources :slides
     
     resources :projects do
       resources :works
