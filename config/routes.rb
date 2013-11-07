@@ -7,8 +7,6 @@ Bancheng::Application.routes.draw do
 
   get "site/aboutus"
 
-  get "site/services"
-
   get "site/contact" 
 
   get "site/security"

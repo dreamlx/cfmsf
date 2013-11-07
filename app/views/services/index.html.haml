@@ -22,10 +22,10 @@
     #clientBlockTitle
       Clients
     %ul
-      %li
-        9You
-      %li
-        Bluehole Studio
+      - @companyList.each do |company|
+        %li
+          = company
+        
 
   %section.service
     %h6

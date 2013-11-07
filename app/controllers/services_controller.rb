@@ -9,5 +9,8 @@ class ServicesController < ApplicationController
 	    @services_4 = Client.where("service = 4")
 	    @services_5 = Client.where("service = 5")
 	    @services_6 = Client.where("service = 6")
+
+	    @clients = Client.all
+	    @companyList = @clients.map{|c| c.company}.uniq
 	end
 end

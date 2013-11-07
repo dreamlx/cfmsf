@@ -5,17 +5,14 @@ class SiteController < ApplicationController
     recommendProjects
   end
 
-  def services
-    @css = "site_services"
-    recommendProjects
-  end
-
   def contact
     @css = "site_contact"
+    recommendProjects
   end
 
   def security
     @css = "site_security"
+    recommendProjects
   end
 
 end
