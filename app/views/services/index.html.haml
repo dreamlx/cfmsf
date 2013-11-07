@@ -1,0 +1,174 @@
+%article#servicesPage
+  %a.security{:href=>"/site/security"}
+    %h3 client security &amp; ip protection
+    %p 
+      Tangdigital not only provides a focus on quality production but also the Protection of Client Intellectual Property Rights. In this modern age where Piracy and IP Theft is rampant a focus on this effort goes hand-in-hand with production to ensure Tangdigital remains competitive via a highly differentiating Code of Conduct and Operating Best Practices.
+
+  %h1.pageTitle
+    services
+
+  %section#important
+    %p
+      If you need more information and images of our company.
+    %p
+      Please contact us for samples of our production.
+    %p.importantLink
+      / %a.mail{:href=>"#"}
+        
+      %a.click{:href=>"mailto:business@tangdigital.com"}
+        Click Here
+
+  %section#clientList
+    #clientBlockTitle
+      Clients
+    %ul
+      - @companyList.each do |company|
+        %li
+          = company
+        
+
+  %section.service
+    %h6
+      3D MODEL &amp; TEXTURES: Roles, Scenes, Props, Vehicles
+    %p
+      We could provide high reductive 3d models and textures.according to customer’s need,the model could be high polygon or low polygon.As such,we could also offer textures in high precision and in big size,including normalmap,specularmap,as well as small refined textures.
+    
+    - @services_1.each do |client|
+      %div.client
+        .clientImg
+          %img{:src=>"#{client.pic}?imageView/1/w/78/h/78"}
+        .clientName
+          %p
+            = client.name
+          %p.clientTitle
+            = client.title
+          %h6
+            = client.company
+        .clientWords
+          %p
+            = client.words
+    
+  %section.service
+    %h6
+      UI DESIGN &amp; 2D PRODUCTION
+    %p
+      We are good at providing our customers with a whole set of menu designs and make it based on their original styles.
+
+    - @services_2.each do |client|
+      %div.client
+        .clientImg
+          %img{:src=>"#{client.pic}?imageView/1/w/78/h/78"}
+        .clientName
+          %p
+            = client.name
+          %p.clientTitle
+            = client.title
+          %h6
+            = client.company
+        .clientWords
+          %p
+            = client.words
+
+  %section.service
+    %h6
+      CONCEPT DESIGN &amp; ILLUSTRATION: Roles, Scenes, Props, Vehicles
+    %p
+      We could provide our customers with concept designs in all variety based on customers’ s need. Furthermore, when we make designer, we could also take it into consideration of it’ s convenience for futher making them into 3d model and texture.
+    - @services_3.each do |client|
+      %div.client
+        .clientImg
+          %img{:src=>"#{client.pic}?imageView/1/w/78/h/78"}
+        .clientName
+          %p
+            = client.name
+          %p.clientTitle
+            = client.title
+          %h6
+            = client.company
+        .clientWords
+          %p
+            = client.words
+
+  %section.service
+    %h6
+      SKIN &amp; ANIMATION
+    %p
+      We could provide customers with roles’s skeleton’s making and skin,also with key frame animations in game.Including human,monster,animal,etc.Original styles or cartoon styles.
+    - @services_4.each do |client|
+      %div.client
+        .clientImg
+          %img{:src=>"#{client.pic}?imageView/1/w/78/h/78"}
+        .clientName
+          %p
+            = client.name
+          %p.clientTitle
+            = client.title
+          %h6
+            = client.company
+        .clientWords
+          %p
+            = client.words
+
+  %section.service
+    %h6
+      SPECIAL EFFECTS
+    %p
+      We are able to provide for example.Water,fire,dust,weapons etc special effects products.
+    - @services_5.each do |client|
+      %div.client
+        .clientImg
+          %img{:src=>"#{client.pic}?imageView/1/w/78/h/78"}
+        .clientName
+          %p
+            = client.name
+          %p.clientTitle
+            = client.title
+          %h6
+            = client.company
+        .clientWords
+          %p
+            = client.words
+
+  %section.service
+    %h6
+      CG MOVIE
+    %p
+      We are able to provide our customers with game previews or in-game CG movies.
+    
+    - @services_6.each do |client|
+      %div.client
+        .clientImg
+          %img{:src=>"#{client.pic}?imageView/1/w/78/h/78"}
+        .clientName
+          %p
+            = client.name
+          %p.clientTitle
+            = client.title
+          %h6
+            = client.company
+        .clientWords
+          %p
+            = client.words
+
+
+%section.tagCloud
+  - @tags.each do |tag|
+    %a{href: projects_tag_path(tag)}          
+      = tag
+  
+
+%section.recommandProjects
+  %section#clientComment
+    %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
+    %p Art Director at EA China
+  %section.projectList
+    - @recommendProjects.each do |project|
+
+      %article
+        %figure
+          %a{href: "/projects/#{project.id}"}
+            %img{alt: "", src: "#{project.thumb}?imageView/1/w/201/h/251"}
+        %h6 
+          = project.company
+        %p 
+          = project.name

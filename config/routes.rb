@@ -7,8 +7,6 @@ Bancheng::Application.routes.draw do
 
   get "site/aboutus"
 
-  get "site/services"
-
   get "site/contact" 
 
   get "site/security"
@@ -35,6 +33,13 @@ Bancheng::Application.routes.draw do
   resources :projects 
   resources :careers
   resources :works
+  
+  resources :services do
+    member do
+      get :clients
+    end
+  end
+
   resources :tags do 
     member do
       get :projects

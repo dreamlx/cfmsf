@@ -14,6 +14,7 @@
  *= require bootstrap-colorpicker
 
  *= require jcrop
+ *= require admin/projecttags
  
  */
 .autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }

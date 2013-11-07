@@ -58,8 +58,12 @@
 
 %section.recommandProjects
   %section#clientComment
-    %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
-    %p Art Director at EA China
+    %h3 
+      =# @clientWord.words
+    %p
+      = @clientWord.title
+      at
+      = @clientWord.company
   %section.projectList
     - @recommendProjects.each do |project|
 

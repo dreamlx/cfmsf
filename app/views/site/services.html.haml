@@ -62,57 +62,23 @@
           “Tangdigital provided us with good customer service and delivered solid quality code for our project. It’s clear they are committed to their clients and their work.”
 
 %section.tagCloud
-  %a{:href=>"#"}
-    2D Production
-  %a{:href=>"#"}
-    3D Models
-  %a{:href=>"#"}
-    Textures
-  %a{:href=>"#"}
-    Concept Design
-  %a{:href=>"#"}
-    Illustration
-  %a{:href=>"#"}
-    Special Effect
-  %a{:href=>"#"}
-    Skin
-  %a{:href=>"#"}
-    Animation
-  %a{:href=>"#"}
-    Characters
-  %a{:href=>"#"}
-    Scenes
-  %a{:href=>"#"}
-    Props
-  %a{:href=>"#"}
-    Weapons
+  - @tags.each do |tag|
+    %a{href: projects_tag_path(tag)}          
+      = tag
+  
 
 %section.recommandProjects
   %section#clientComment
     %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
     %p Art Director at EA China
   %section.projectList
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 ubi
-      %p SPLINTER CELL BLACKLIST
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 2
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 3
-      %p
-    %article
-      %figure
-        %a{href: "#"}
-          %img{alt: "", src: ""}/
-      %h6 4
-      %p
+    - @recommendProjects.each do |project|
+
+      %article
+        %figure
+          %a{href: "/projects/#{project.id}"}
+            %img{alt: "", src: "#{project.thumb}?imageView/1/w/201/h/251"}
+        %h6 
+          = project.company
+        %p 
+          = project.name

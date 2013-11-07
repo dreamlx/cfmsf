@@ -10,7 +10,7 @@
     = f.input :name
     = f.input :title
     = f.input :words, as:"text", input_html:{rows:"5",style:"width:500px"}
-    = f.input :service, collection: 1..10
+    = f.input :service, collection: {"3D MODEL & TEXTURES"=>1,"UI DESIGN & 2D PRODUCTION"=>2,"CONCEPT DESIGN & ILLUSTRATION"=>3, "SKIN & ANIMATION"=>4, "SPECIAL EFFECTS"=>5, "CG MOVIE"=>6}
     = f.input :pic, :as => :file, input_html: {id: 'image_file'}
     - if action_name == 'new' 
       %img{id:"preview", src:"#", alt:"your image"}

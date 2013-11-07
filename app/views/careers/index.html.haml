@@ -44,18 +44,25 @@
       \:
 
   #peoplesayContent
-    %h1
+    %h1#words_1
       “ We believe in being warm, honest, open and direct with each other and with pinners. Everything we do should reflect our values. ”
-
+    %h1#words_2
+      “ We believe in being warm, honest,  ”
+    %h1#words_3
+      “ We believe in being warm, honest,  Everything we do should reflect our values. ”
+    %h1#words_4
+      “  Everything we do should reflect our values. ”
+    %h1#words_5
+      “ open and direct with each other and with pinners.”
   #peoplelist
-    .onePeople
+    .onePeople#people_1
       .peoplePic
       .peopleName
         %h5
           Alexander
         %p
           Project Leader
-    .onePeople
+    .onePeople#people_2
       .peoplePic
       .peopleName
         %h5
@@ -64,14 +71,14 @@
           Translators 
         %p
           & Writers
-    .onePeople
+    .onePeople#people_3
       .peoplePic
       .peopleName
         %h5
           Tang
         %p
           Designer
-    .onePeople
+    .onePeople#people_4
       .peoplePic
       .peopleName
         %h5
@@ -80,7 +87,7 @@
           3D Models 
         %p
           &amp; Textures artists
-    .onePeople
+    .onePeople#people_5
       .peoplePic
       .peopleName
         %h5
@@ -142,7 +149,7 @@
                 hr@tangdigital.com
               \. Please specify 2D artist in the subject line of your e-mail.
 
-= javascript_include_tag "salvattore"
+= javascript_include_tag "salvattore","careers"
 :javascript
   $("document").ready(function(){
     $(".jobDesc").each(function(i,job){

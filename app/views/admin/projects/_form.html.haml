@@ -9,7 +9,12 @@
   %table
     = f.input :name
     = f.input :desc, :as => :kindeditor, :input_html => { :items => ['source','formatblock', 'hr', 'link', 'unlink', '|', 'about'] }
-    = f.input :tag_list
+    %ul#tag_list
+      %li 标签：
+    %p
+      %input#addTagInput{:name=>"addTag"}
+      %input#addTagBtn{:type=>"button",:value=>"add tag"}
+    = f.input :tag_list, :as => :hidden
     = f.input :company
     = f.input :release_time, :as => :date_picker
     = f.input :top, :type => :checkbox, label: "is_top?"
@@ -27,4 +32,7 @@
     %input{id: 'heigth', type: 'hidden', size: '4'}
   .actions
     = f.submit 'Save'
+
+
+= javascript_include_tag "admin/tags"
 
