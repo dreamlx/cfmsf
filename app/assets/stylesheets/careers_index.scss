@@ -173,6 +173,8 @@ section#peoplesay
 		h1
 		{
 			width:740px;
+			height:287px;
+			// background-color: black;
 			font-family: Georgia;
 			font-size:36px;
 			color:#4d4d4d;
@@ -182,19 +184,38 @@ section#peoplesay
 			text-align: center;
 			line-height:50px;
 			font-style: italic;
+			display: none;
 		}
 		&::after
 		{
 			content:"";
 			display: block;
 			border:8px solid #dedede;
-			border-top-color:#f2f2f2;
-			
+			border-top-color:#f2f2f2;			
 			width:0;
 			height:0;
-			margin-top:137px;
-			margin-left:336px;
+			margin-top:0px;
 		}
+	}
+	.peoplesay_1:after
+	{
+		margin-left:130px;
+	}
+	.peoplesay_2:after
+	{
+		margin-left:335px;
+	}
+	.peoplesay_3:after
+	{
+		margin-left:530px;
+	}
+	.peoplesay_4:after
+	{
+		margin-left:740px;
+	}
+	.peoplesay_5:after
+	{
+		margin-left:950px;
 	}
 
 	#peoplelist
@@ -206,6 +227,7 @@ section#peoplesay
 		{
 			float:left;
 			margin-right:3px;
+			cursor:pointer;
 			&:last-child
 			{
 				margin-right: 0;
