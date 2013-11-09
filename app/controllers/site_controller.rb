@@ -15,4 +15,12 @@ class SiteController < ApplicationController
     recommendProjects
   end
 
+  def life
+    @css = "life_index"
+  end
+
+  def lifepost
+    @css = "life_show"
+  end
+
 end

@@ -11,6 +11,10 @@ Bancheng::Application.routes.draw do
 
   get "site/security"
 
+  get "site/life"
+
+  get "site/lifepost"
+
   # match ':site(/:action(/:id))(.:format)'
 
   resources :leave_messages
