@@ -1,0 +1,21 @@
+%h1 Listing Comments
+
+%table.table.center.table-bordered
+  %thread
+    %tr
+      %td id
+      %td name
+      %td email
+      %td website
+      %td comment
+      %td 
+  %tbody
+    - @comments.each do |comment|
+      %tr
+        %td= comment.id
+        %td= comment.name
+        %td= comment.email
+        %td= comment.website
+        %td= comment.content
+        %td
+          = link_to t(:destroy, scope: "crud"), admin_leave_message_path(comment), :method => :delete, :data => { :confirm => 'Are you sure?' }

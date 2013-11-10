@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def recommendProjects
   	@tags = Project.tag_counts_on(:tags)
   	@clients = Client.all
-  	@clientWord = @clients.sample(1)
+  	@clientWord = @clients.sample(1).first
   	@recommendProjects =  Project.random_top(4)
   end
 end
