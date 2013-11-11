@@ -1,2 +1,179 @@
 @import "main";
 @import "commonProjectAndTag";
+
+h1#lifeSlogon
+{
+	margin:0 auto;
+	width:1024px;
+	height:206px;
+	line-height: 206px;
+	text-align: center;
+	font-size: 27px;
+	color:#808080;
+	b
+	{
+		color:#d60004
+	}
+}
+
+section#main
+{
+	margin:0 auto;
+	width:1024px;
+	section#lifeposts
+	{
+		float:left;
+		width:768px;
+		article.post
+		{
+			margin-bottom:40px;
+			.postTitles
+			{
+				width:100%;
+				height:97px;
+				border-top:1px solid #4d4d4d;
+				border-bottom:1px solid #4d4d4d;
+				.postData
+				{
+					width:95px;
+					height:27px;
+					line-height: 27px;
+					background-color: #808080;
+					color:white;
+					font-size: 12px;
+					text-align: center;
+				}
+			}
+			.postInfo
+			{
+				width:100%;
+				height:70px;
+				div{display: inline-block;}
+				.postTitle
+				{
+					width:486px;
+					h2
+					{
+						font-size:16px;
+						font-weight: 100;
+						color:#4d4d4d;
+						margin:18px 0px 5px 20px;
+					}
+					p
+					{
+						margin:0;
+						margin-left:18px;
+						color:#999;
+						font-size:13px;
+						a
+						{
+							font-size:13px;
+							color:#999999;
+
+						}
+					}
+				}
+				.postCommentNum
+				{
+					width:150px;
+					// height:
+					margin-top:18px;
+					font-size:13px;
+					color:#808080;
+					vertical-align: top;
+				}
+				.postShare{vertical-align: top;margin-top:8px;}
+			}
+		}
+
+		#paginate
+		{
+			border-top:1px solid #4d4d4d;
+			padding-top:40px;
+			a
+			{
+				font-size:18px;
+				color:#999999;
+			}
+			.newerEntries
+			{
+				
+			}
+			.prevEntries
+			{
+				float:right
+			}
+		}
+	}
+	aside
+	{
+		float:right;
+		width:220px;
+		.rightpart
+		{
+			width:100%;
+			border-top:1px solid #4D4D4D;
+			margin-bottom: 20px;
+			.rightPartTitle
+			{
+				display: inline-block;
+				background-color: #808080;
+				font-size:12px;
+				color:white;
+				height: 27px;
+				line-height: 27px;
+				text-align: center;
+				padding:0px 12px;
+			}
+			ul
+			{
+				// margin:0;
+				// margin: 
+				// padding:0;
+				padding-left:12px;
+				list-style: none;
+				li
+				{
+					line-height:18px;
+					a
+					{
+
+						font-size:12px;
+						color:#999;
+					}
+				}
+			}
+			input
+			{
+				border:1px solid #4D4D4D;
+				background-color: #f2f2f2;
+				width:219px;
+				height:32px;
+				font-size:12px;
+				color:#999;
+				margin-top:9px;
+			}
+			p
+			{
+				font-size:12px;
+				color:#999;
+				&.noMargin
+				{
+					margin:0
+				}
+				a
+				{
+					color:#999;
+				}
+			}
+			h6
+			{
+				font-size:12px;
+				color:#666;
+				font-weight: normal;
+				margin: 0;
+				margin-top:16px;
+			}
+		}
+	}
+}
