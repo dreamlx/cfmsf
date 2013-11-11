@@ -1,0 +1,24 @@
+%p title:
+=@life.title
+%p author:
+=@life.author
+%p addDate:
+=@life.created_at
+%p content:
+=@life.content
+
+- @tags.each do |tag|
+  %li
+    = tag
+
+%p comments
+
+- @comments.each do |comment|
+  %li
+    = comment.name
+  %li
+    = comment.email
+  %li
+    = comment.website
+  %li
+    = comment.content

@@ -31,13 +31,20 @@ Bancheng::Application.routes.draw do
     resources :projects do
       resources :works
     end
+
+    resources :lifes do
+      resources :comments
+    end
   end
 
   root :to => 'projects#index'
   resources :projects 
   resources :careers
   resources :works
-  
+  resources :lifes do
+    resources :comments
+  end
+
   resources :services do
     member do
       get :clients

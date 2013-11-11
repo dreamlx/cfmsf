@@ -2,7 +2,7 @@ class TagsController < ApplicationController
 	def projects
 		@tags = Project.tag_counts_on(:tags)
 		tag = @tags.find(params[:id])
-		@projects = Project.tagged_with(tag)
+		@projects = Project.tagged_with(tag).page(params[:page])
 		@css = "projects_index"
 	end
 

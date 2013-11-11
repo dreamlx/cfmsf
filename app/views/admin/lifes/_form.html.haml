@@ -1,0 +1,23 @@
+- if param[:action] = 'new'
+= simple_form_for @life, url: admin_lifes_path, method: 'POST' do |f|
+- else param[:action] = ''
+= simple_form_for @life, url: admin_life_path, method: 'PUT' do |f|
+  - if @life.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@life.errors.count, "error")} prohibited this life from being saved:"
+      %ul
+        - @life.errors.full_messages.each do |msg|
+          %li= msg
+  / %div.foo{"data-url": }
+  %table
+    = f.input :title
+    = f.input :content, :as => :kindeditor, :input_html => { :items => ['source','formatblock', 'hr', 'link', 'unlink', '|', 'about'] }
+    %ul#tag_list
+      %li 标签：
+    %p
+      %input#addTagInput{:name=>"addTag"}
+      %input#addTagBtn{:type=>"button",:value=>"add tag"}
+    = f.input :tag_list, :as => :hidden
+    = f.input :author
+  .actions
+    = f.submit 'Save'

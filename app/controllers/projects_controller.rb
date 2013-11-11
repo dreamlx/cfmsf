@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
 	def index
 		@projects = Project.page(params[:page]).order("top desc", "id desc")
 		if @projects.length < 1
-			render nothing: true
 			redirect_to "2.html" #redirect to a error page make js stop loading
 		else
 			@tags = Project.tag_counts_on(:tags)

@@ -1,0 +1,26 @@
+%h1 Listing lifes
+
+%table
+  %thead
+    %tr
+      %td id
+      %td addDate
+      %td title
+      %td tags
+      %td content
+      %td comments
+      %td author
+      %td
+  %tbody
+  - @lifes.each do |life|
+    %tr
+      %td= link_to life.id, life_path(life)
+      %td= life.created_at.to_date unless life.created_at.blank?
+      %td= life.title  
+      %td= life.tag_list
+      %td= raw(life.content)
+      %td= life.comments.size
+      %td= life.author
+    
+
+= paginate @lifes
