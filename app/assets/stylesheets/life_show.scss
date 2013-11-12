@@ -242,13 +242,21 @@ section#leaveMsg
 		{
 			width:101px;
 			height:32px;
+			display: block;
+			clear:both;
 		}
 	}
 	img#captcha_img
 	{
-		display: block;
+		// display: inline-block;
 		margin-top:24px;
 		margin-bottom: 7px;
+		cursor:pointer;
+	}
+	img#reloadCaptcha
+	{
+		vertical-align: 80%;
+		margin-left: 15px;
 		cursor:pointer;
 	}
 	textarea

@@ -1,11 +1,11 @@
 class LifesController < ApplicationController
   def index
    @lifes = Life.page(params[:page]).order("id desc")
-   @css = 'lifes'
+   @css = 'life_index'
   end
 
   def show
-    @css = 'lifes'
+    @css = 'life_show'
     @life = Life.find(params[:id])
     @tags = Life.tag_counts_on(:tags)
     @comments = @life.comments

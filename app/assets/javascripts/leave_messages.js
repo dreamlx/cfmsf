@@ -1,7 +1,8 @@
 //= require validate
 
 $(document).ready(function(){
-   $("#captcha_img").click(function(){
+   $("#captcha_img").after("<img src='/assets/reload.png' id='reloadCaptcha' alt='click to reload' />")
+    $("#reloadCaptcha").click(function(){
         $.ajax({
                 cache: true,
                 type: "GET",
@@ -37,6 +38,8 @@ $(document).ready(function(){
         validator.setMessage('required','请填必填项！');
         validator.setMessage('max_length','字符长度过长！');
         validator.setMessage('valid_email','邮箱格式错误！');
+
+        $("#captcha").attr("placeholder","code");
     }
 );
 

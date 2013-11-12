@@ -66,12 +66,6 @@
     for an answer.
 
 %section#leaveMsg
-  / - if @errors.size > 0
-  /   #error_explanation
-  /     %h2= "#{pluralize(@errors.count, "error")} prohibited this leave_message from being saved:"
-  /     %ul
-  /     - @errors.each do |msg|
-  /       %li= msg
   
   = simple_form_for @leave_message, html: { name: "leave_message"}  do |f|
     = f.error_notification
