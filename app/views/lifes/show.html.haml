@@ -37,7 +37,7 @@
             = comment.content
           %p
             = comment.name
-            = #comment.timestamps
+            = comment.created_at.strftime("%y-%m-%d %H:%M:%S") unless comment.created_at.blank?
 
     %section#leaveMsg
       = simple_form_for @comment, url: life_comments_path(@life), method: "POST", html: { name: "comment"}  do |f|
@@ -55,41 +55,25 @@
 
       = javascript_include_tag "comments"
 
-
-    
     %section#paginate 
-      %a.newerEntries{:href => "#{}"}
-        ← NEWER ENTRIES
-      %a.prevEntries{:href => "#{}"} 
-        PREVIOUS ENTRIES →
+      = link_to  "← NEWER ENTRIES", life_path(@life.next),:class => 'newerEntries' unless @life.next.blank?
+      = link_to "PREVIOUS ENTRIES →", life_path(@life.prev), :class => 'prevEntries' unless @life.prev.blank?
 
   %aside
     .rightpart
       .rightPartTitle
         CATEGORIES
       %ul
-        %li
-          %a{:href => "#"}
-            EVENT
-        %li
-          %a{:href => ""} 
-            AWARD
-        %li
-          %a{:href => ""} 
-            JOBS
+        - @tags.each do |tag|
+          %li
+            = link_to "#{tag}", lifes_path(:tag_id => tag.id)
     .rightpart
       .rightPartTitle
         ARCHIVES
       %ul
-        %li
-          %a{:href => "#{}"} 
-            JUNE 2013
-        %li 
-          %a{:href => "#{}"} 
-            MAY 2013
-        %li 
-          %a{:href => "#{}"} 
-            APRIL 2013
+        - @lifes.map{|life| life.created_at.strftime("%m %Y")}.uniq.each do |time|
+          %li
+            = link_to time, lifes_path(:month => time.split(' ').first)
 
     .rightpart
       .rightPartTitle

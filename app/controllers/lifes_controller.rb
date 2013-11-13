@@ -1,11 +1,21 @@
 class LifesController < ApplicationController
   def index
-   @lifes = Life.page(params[:page]).order("id desc")
-   @css = 'life_index'
+    if !params[:month].blank?
+      @lifes = Life.find_by_month(params[:month].to_i).page(params[:page]).order("id desc")
+    elsif !params[:tag_id].blank?
+      @tags = Life.tag_counts_on(:tags)
+      tag = @tags.find(params[:tag_id])
+      @lifes = Life.tagged_with(tag).page(params[:page])
+    else
+      @lifes = Life.page(params[:page]).order("id desc")
+    end
+    @tags = Life.tag_counts_on(:tags)
+    @css = 'life_index'
   end
 
   def show
     @css = 'life_show'
+    @lifes = Life.all
     @life = Life.find(params[:id])
     @tags = Life.tag_counts_on(:tags)
     @comments = @life.comments

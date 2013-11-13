@@ -56,6 +56,10 @@ Bancheng::Application.routes.draw do
       get :projects
     end
 
+    member do
+      get :lifes
+    end
+
     collection do 
         get :auto_complete_tag
     end

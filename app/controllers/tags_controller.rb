@@ -6,6 +6,13 @@ class TagsController < ApplicationController
 		@css = "projects_index"
 	end
 
+  def lifes
+    @tags = Life.tag_counts_on(:tags)
+    tag = @tags.find(params[:id])
+    @lifes = Life.tagged_with(tag).page(params[:page])
+    @css = 'life_index'
+  end
+
 	def auto_complete_tag
       @tags = Project.tag_counts
       t = Array.new
