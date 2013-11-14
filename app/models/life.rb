@@ -5,6 +5,11 @@ class Life < ActiveRecord::Base
 
   has_many :comments
 
+  define_index  do
+    indexes :title
+    indexes :content  
+  end
+
   def prev
   	Life.where("id < ?", self.id).order("id DESC").first
   end

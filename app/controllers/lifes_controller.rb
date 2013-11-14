@@ -6,6 +6,8 @@ class LifesController < ApplicationController
       @tags = Life.tag_counts_on(:tags)
       tag = @tags.find(params[:tag_id])
       @lifes = Life.tagged_with(tag).page(params[:page])
+    elsif !params[:search].blank?
+      @lifes = Life.search params[:search]
     else
       @lifes = Life.page(params[:page]).order("id desc")
     end
