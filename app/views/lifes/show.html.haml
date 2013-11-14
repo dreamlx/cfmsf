@@ -15,14 +15,14 @@
             %h2
               = @life.title
             %p
-              - @tags.each do |tag|
+              - @life.tags.each do |tag|
                 %a{:href => "#{}"} 
                   = tag
                 ,
                 
           .postCommentNum
             %i
-              =@comments.size
+              =@life.comments.size - 1
             Comments
           .postShare
             %img{:src => "/assets/projects/tencent.jpg", :alt => ""}/ 
@@ -32,6 +32,7 @@
     
     %section#commentBlock
       .comments
+        - binding.pry
         - @comments.each do |comment|
           .commentContent
             = comment.content
