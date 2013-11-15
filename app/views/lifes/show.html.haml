@@ -32,13 +32,13 @@
     
     %section#commentBlock
       .comments
-        - binding.pry
         - @comments.each do |comment|
-          .commentContent
-            = comment.content
-          %p
-            = comment.name
-            = comment.created_at.strftime("%Y-%m-%d %H:%M:%S") unless comment.created_at.blank?
+          - if !comment.id.nil?
+            .commentContent
+              = comment.content
+            %p
+              = comment.name
+              = comment.created_at.strftime("%Y-%m-%d %H:%M:%S") unless comment.created_at.blank?
 
     %section#leaveMsg
       = simple_form_for @comment, url: life_comments_path(@life), method: "POST", html: { name: "comment"}  do |f|
