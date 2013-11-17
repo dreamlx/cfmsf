@@ -1,4 +1,4 @@
-var projectTags;
+var projectTags = [];
 var tagList = [];
 
 $(document).ready(function(){
@@ -12,7 +12,11 @@ $(document).ready(function(){
         lookup: tagList
     });
 
-    projectTags = $("input#life_tag_list").val().split(",");
+    if($("input#life_tag_list").val() != "")
+    {    
+        projectTags = $("input#life_tag_list").val().split(",");
+    }
+
     projectTags.forEach(trimSpace)
     for(var tag in projectTags)
     {
@@ -57,7 +61,7 @@ $(document).ready(function(){
     	}
     });
 
-    $("form.edit_life").submit(function(){
+    $("form").submit(function(){
     	var tags = projectTags.join(",");
     	$("input#life_tag_list").val(tags);
     });

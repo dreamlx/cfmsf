@@ -1,4 +1,4 @@
-var projectTags;
+var projectTags = [];
 var tagList = [];
 
 $(document).ready(function(){
@@ -12,8 +12,12 @@ $(document).ready(function(){
         lookup: tagList
     });
 
-    projectTags = $("input#project_tag_list").val().split(",");
-    projectTags.forEach(trimSpace)
+    if($("input#project_tag_list").val() != "")
+    {    
+        projectTags = $("input#project_tag_list").val().split(",");
+    }
+
+    projectTags.forEach(trimSpace);
     for(var tag in projectTags)
     {
     	$("#tag_list").append("<li><b>"+projectTags[tag]+"</b><a href='#'>X</a></li>");
@@ -57,7 +61,7 @@ $(document).ready(function(){
     	}
     });
 
-    $("form.edit_project").submit(function(){
+    $("form").submit(function(){
     	var tags = projectTags.join(",");
     	$("input#project_tag_list").val(tags);
     });
