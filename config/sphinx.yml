@@ -4,7 +4,6 @@ development:
   config_file: "config/sphinx/development.sphinx.conf"
   bin_path: /usr/local/bin
   ngram_len: 1
-  charset_type: zh_cn.utf-8
   ngram_chars: "U+3000..U+2FA1F"
   searchd_binary_name: searchd
   indexer_binary_name: indexer
