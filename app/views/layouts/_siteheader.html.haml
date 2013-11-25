@@ -16,6 +16,6 @@
         %a{href: "/careers"} CAREERS
       %li{class: action_name == "life" ? "selected" : ""}
         %a{href: "/lifes"} LIFE
-  %form{action: ""}
-    %input{placeholder: "Search", type: "search"}
+  = form_tag projects_path, method: :get do 
+    = text_field_tag "search", nil ,:placeholder => "search"
 #headerGap
