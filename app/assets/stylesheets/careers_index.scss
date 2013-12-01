@@ -39,6 +39,10 @@ article#careersTitle
 		text-align: center;
 		line-height: 34px;
 		margin-top:62px;
+		a
+		{
+			color:white;
+		}
 	}
 }
 
@@ -314,7 +318,7 @@ section#joblist
 			.jobPic
 			{
 				width:100%;
-				background-color: #cccccc;
+				background-color: #dedede;
 				img{display: block}
 			}
 			.jobTitle
@@ -384,7 +388,7 @@ section#joblist
 				border-left:1px solid #dadada;
 				border-right:1px solid #dadada;
 				padding-top:24px;
-				padding-bottom:12px;
+				padding-bottom:26px;
 				p > a
 				{
 					margin-left:30px;

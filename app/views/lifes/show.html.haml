@@ -25,7 +25,9 @@
               =@life.comments.size - 1
             Comments
           .postShare
-            %img{:src => "/assets/projects/tencent.jpg", :alt => ""}/ 
+            %a.bshareDiv{:href=>"http://www.bshare.cn/share"}
+              分享按钮
+            %script{:type=>"text/javascript",:charset=>"utf-8",:src=>"http://static.bshare.cn/b/buttonLite.js#uuid=1f31a875-7b26-4e2c-9bf3-04c492591dc8&style=0&textcolor=#bba15d&bp=sinaminiblog,weixin,douban,huaban,duitang,pinterest,renren&ssc=false"}
       .postContent
         = raw(@life.content)
 

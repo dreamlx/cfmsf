@@ -8,7 +8,7 @@
   / %div.foo{"data-url": }
   %table
     = f.input :name
-    = f.input :desc, :as => :kindeditor, :input_html => { :items => ['source','formatblock', 'hr', 'link', 'unlink', '|', 'about'] }
+    = #f.input :desc, :as => :kindeditor, :input_html => { :items => ['source','formatblock', 'hr', 'link', 'unlink', '|', 'about'] }
     %ul#tag_list
       %li 标签：
     %p

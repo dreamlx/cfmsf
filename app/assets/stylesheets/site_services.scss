@@ -204,7 +204,7 @@ article#servicesPage
 			div.clientWords
 			{
 				float:left;
-				width:655px;
+				max-width:655px;
 				height:78px;
 				background-color: #808080;
 				padding:0px 53px;
@@ -218,6 +218,7 @@ article#servicesPage
 					margin: 14px auto;
 					line-height: 17px;
 					letter-spacing: 0.01em;
+					word-wrap: break-word;
 				}
 				&::before
 				{

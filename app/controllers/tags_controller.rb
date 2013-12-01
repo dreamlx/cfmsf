@@ -13,6 +13,7 @@ class TagsController < ApplicationController
     @css = 'life_index'
   end
 
+
 	def auto_complete_tag
       @tags = Project.tag_counts
       t = Array.new

@@ -1,21 +1,57 @@
-%header#globalHeader
+%header#globalHeader{:name=>"top"}
   %hgroup
+    %button#navToggle{:type=>"button"}
+      %span.navBtnLine
+      %span.navBtnLine
+      %span.navBtnLine
     %h1#logo
       %a{href: "/"}
   %nav
     %ul
-      %li{class: action_name == "aboutus" ? "selected" : ""}
-        %a{href: "/site/aboutus"} ABOUT
+      %li{class: action_name == "projects" ? "selected" : ""}
+        %a{href: "/projects"} WORK
       %li{class: action_name == "services" ? "selected" : ""}
         %a{href: "/services"} SERVICES
-      %li{class: action_name == "projects" ? "selected" : ""}
-        %a{href: "/projects"} PROJECTS
-      %li{class: action_name == "contact" ? "selected" : ""}
-        %a{href: "/site/contact"} CONTACT
-      %li{class: action_name == "careers" ? "selected" : ""}
-        %a{href: "/careers"} CAREERS
       %li{class: action_name == "life" ? "selected" : ""}
         %a{href: "/lifes"} LIFE
+      %li{class: action_name == "aboutus" ? "selected" : ""}
+        %a{href: "/site/aboutus"} ABOUT
+      %li{class: action_name == "careers" ? "selected" : ""}
+        %a{href: "/careers"} CAREERS
+      %li{class: action_name == "contact" ? "selected" : ""}
+        %a{href: "/site/contact"} CONTACT
   %form{action: ""}
     %input{placeholder: "Search", type: "search"}
+#mobileNav
+  %form{action: ""}
+    %input{type: "search"}
+  %nav
+    %ul
+      %li.projectTagListLi{class: action_name == "projects" ? "selected" : ""}
+        %a#projectTagListBtn{href: "#"} 
+          WORK
+          %span.expendArrow
+        %ul#mobileNavProjectTagList
+          %li.selected
+            %a{href:"/"}
+              SHUFFLE
+              %span
+                245
+          %li
+            %a{href:"/"}
+              2D PRODUCTION
+              %span
+                5
+      %li{class: action_name == "services" ? "selected" : ""}
+        %a{href: "/services"} SERVICES
+      %li{class: action_name == "life" ? "selected" : ""}
+        %a{href: "/lifes"} LIFE
+      %li{class: action_name == "aboutus" ? "selected" : ""}
+        %a{href: "/site/aboutus"} ABOUT
+      %li{class: action_name == "careers" ? "selected" : ""}
+        %a{href: "/careers"} CAREERS
+      %li{class: action_name == "contact" ? "selected" : ""}
+        %a{href: "/site/contact"} CONTACT
+  #faqlink
+    %a{href: "/leave_messages/new"} F.A.Q
 #headerGap

@@ -10,10 +10,10 @@
           #projectInfo
             %p
               = @project.tag_list
-            %p
+            %p#releaseTime
               = @project.release_time.strftime('%Y.%m') unless @project.release_time.nil? 
             %span
-              2
+              = @works.size
       %h6 
         = @project.company
       %p

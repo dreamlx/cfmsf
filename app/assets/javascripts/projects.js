@@ -42,4 +42,18 @@ $(document).ready(function(){
 		salvattore['append_elements'](grid, newEle.toArray());
 
 	});
+
+	
+
+	$('#slide').slidesjs({
+        width: '100%',
+        height: '100%',
+        navigation: false,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+  	});
 });

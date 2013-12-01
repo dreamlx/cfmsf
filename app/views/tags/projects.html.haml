@@ -1,13 +1,10 @@
+#slide
+  - @slides.each do |slide|
+    #div{:style=>"background-image:url('#{slide.pic}')"}
+%section#clientComment
+    %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
+    %p Art Director at EA China
 %aside
-  %section#lastestNews
-    %article
-      %figure
-        %img{alt: "", src: ""}/
-      %u 05/13
-      %hr/
-      %p
-        “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and ...
-      %a{href: "#"} more
   %ul#tagList
     %li
       %a{href: "/projects"}
@@ -31,10 +28,7 @@
             = Project.tagged_with("#{tag}").size
   #faqlink
     %a{href: "/leave_messages/new"} F.A.Q
-.projects
-  %section#clientComment
-    %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
-    %p Art Director at EA China
+.projects  
   %section.projectList{"data-columns" => ""}
     - @projects.each do |project|
       %article
@@ -48,4 +42,4 @@
   .scrollLoading
   = paginate @projects
 
-= javascript_include_tag "jquery.infinitescroll","salvattore","projects"
+= javascript_include_tag "jquery.infinitescroll","jquery.slides.min","salvattore","projects"

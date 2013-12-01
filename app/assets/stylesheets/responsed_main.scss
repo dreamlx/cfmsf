@@ -1,0 +1,147 @@
+@media screen and (max-width: 1080px){
+	header#globalHeader
+	{
+		min-width: 640px;
+		height:90px;
+		position:static;
+		hgroup
+		{
+			float:none;
+			button
+			{
+				display: block;
+				float:left;
+				padding:0;
+				margin-left:34px;
+				margin-top:26px;
+			}
+			h1
+			{
+				width:167px;
+				height:30px;
+				float:left;
+				margin-left:165px;
+				margin-top:32px;
+				a
+				{
+					display: inline-block;
+					background:url("/assets/logo_640.png") scroll no-repeat 0px 0px !important;
+				}
+			}
+			
+		}
+		nav
+		{
+			display: none;
+		}
+		form
+		{
+			display: none;
+		}
+	}
+	#headerGap
+	{
+		display: none;
+	}
+	aside
+	{
+		display: none;
+	}
+	.column
+	{
+		width:292px;
+		margin-right:23px;
+	}
+	section#clientComment
+	{
+		margin-left:0px;
+		h3
+		{
+			width:445px;
+		}
+	}
+	div.projects
+	{
+		
+		section.projectList
+		{
+			min-width: 640px;
+			margin-left:16px;
+			article
+			{
+				width:292px - 38px;
+				height:438px - 38px;
+				padding:19px;
+				figure
+				{
+					width:254px;
+					height:318px;
+				}
+			}
+		}
+	}
+	
+}
+
+@media screen and (max-width: 1300px)
+{
+	footer
+	{
+		section
+		{
+			display: none;
+		}
+		#minfooter
+		{
+			display: block;
+			
+		}
+	}
+}
+
+@media screen and (max-width: 640px)
+{
+	#slide
+	{
+		display: block;
+		width: 640px;
+		height: 640px;
+		background-color: #6d6e70;
+	}
+	section#clientComment
+	{
+		margin:0 auto;
+		margin-top:60px;
+		margin-bottom: 60px;
+		padding-top:52px;
+		width:445px;
+		border-top:1px solid #b3b3b4;
+		border-bottom:1px solid #b3b3b4;
+		height:187px-52px;
+	}
+	footer
+	{
+		padding-top:47px;
+		height:865px;
+		#minfooter
+		{
+			&>div
+			{
+				margin-left:48px;
+				margin-top:47px;
+				display: inline;
+			}
+			a{
+				margin-bottom:47px;
+			}
+		}
+		#minlogo
+		{
+			display: block;
+		}
+		p
+		{
+			color:#ccc;
+		}
+	}
+}
