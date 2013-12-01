@@ -52,6 +52,10 @@
         %a{href: "/careers"} CAREERS
       %li{class: action_name == "contact" ? "selected" : ""}
         %a{href: "/site/contact"} CONTACT
-  #faqlink
-    %a{href: "/leave_messages/new"} F.A.Q
+      %li{class: action_name == "careers" ? "selected" : ""}
+        %a{href: "/careers"} CAREERS
+      %li{class: action_name == "life" ? "selected" : ""}
+        %a{href: "/lifes"} LIFE
+  = form_tag projects_path, method: :get do 
+    = text_field_tag "search", nil ,:placeholder => "search"
 #headerGap

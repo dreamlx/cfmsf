@@ -60,7 +60,8 @@
     .rightpart
       .rightPartTitle
         SEARCH
-      %input{:placeholder=>"type and hit enter"}
+      = form_tag lifes_path, method: :get do 
+        = text_field_tag "search", nil ,:placeholder => "type and hit enter"
 
     .rightpart
       .rightPartTitle
