@@ -20,8 +20,8 @@
         %a{href: "/careers"} CAREERS
       %li{class: action_name == "contact" ? "selected" : ""}
         %a{href: "/site/contact"} CONTACT
-  %form{action: ""}
-    %input{placeholder: "Search", type: "search"}
+  = form_tag projects_path, method: :get do 
+    = text_field_tag "search", nil ,:placeholder => "search"
 #mobileNav
   %form{action: ""}
     %input{type: "search"}

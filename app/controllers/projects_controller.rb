@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 		else
 			search_by_tag(params[:search])
 		end
+		@slides = Slide.order("id desc")
 		if @projects.length < 1
 			redirect_to "2.html" #redirect to a error page make js stop loading
 		else
