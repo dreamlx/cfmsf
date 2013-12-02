@@ -15,13 +15,18 @@ class TagsController < ApplicationController
 
 
 	def auto_complete_tag
-      @tags = Project.tag_counts
-      t = Array.new
-      @tags.each do |tag|
-        t.push(tag.name)
-      end
-      respond_to do |format|
-        format.json {render json: t}
-      end
+    @tags = Project.tag_counts
+    t = Array.new
+    @tags.each do |tag|
+      t.push(tag.name)
     end
+    respond_to do |format|
+      format.json {render json: t}
+    end
+  end
+
+  def index
+    @tags = Project.tag_counts_on(:tags)
+    render :json => @tags
+  end
 end
