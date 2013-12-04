@@ -9,10 +9,8 @@
       %td addDate
       %td title
       %td tags
-      %td content
       %td comments
       %td author
-      %td
       %td 
   %tbody
   - @lifes.each do |life|
@@ -21,7 +19,6 @@
       %td= life.created_at.to_date unless life.created_at.blank?
       %td= life.title  
       %td= life.tag_list
-      %td= raw(life.content)
       %td= link_to life.comments.size, admin_life_comments_path(life)
       %td= life.author
       %td

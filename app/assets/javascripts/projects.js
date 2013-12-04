@@ -48,12 +48,20 @@ $(document).ready(function(){
 	$('#slide').slidesjs({
         width: '100%',
         height: '100%',
-        navigation: false,
+        navigation: 
+        {
+        	active:false
+        },
+        pagination:
+        {
+        	active:false
+        },
         play: {
           active: true,
           auto: true,
+          effect:"fade",
           interval: 4000,
-          swap: true
+          swap: false
         }
   	});
 });

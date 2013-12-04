@@ -23,8 +23,8 @@
   = form_tag projects_path, method: :get do 
     = text_field_tag "search", nil ,:placeholder => "search"
 #mobileNav
-  %form{action: ""}
-    %input{type: "search"}
+  = form_tag projects_path, method: :get do 
+    = text_field_tag "search", nil ,:placeholder => "search"
   %nav
     %ul
       %li.projectTagListLi{class: action_name == "projects" ? "selected" : ""}
@@ -52,10 +52,7 @@
         %a{href: "/careers"} CAREERS
       %li{class: action_name == "contact" ? "selected" : ""}
         %a{href: "/site/contact"} CONTACT
-      %li{class: action_name == "careers" ? "selected" : ""}
-        %a{href: "/careers"} CAREERS
-      %li{class: action_name == "life" ? "selected" : ""}
-        %a{href: "/lifes"} LIFE
-  = form_tag projects_path, method: :get do 
-    = text_field_tag "search", nil ,:placeholder => "search"
+  #faqlink
+    %a{href:"/site/faq"}
+      F.A.Q
 #headerGap

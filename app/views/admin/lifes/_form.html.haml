@@ -11,7 +11,7 @@
   / %div.foo{"data-url": }
   %table
     = f.input :title
-    = f.input :content, :as => :kindeditor, :input_html => { :items => ['source','formatblock', 'image','hr', 'link', 'unlink', '|', 'about'] }
+    = f.input :content, :as => :kindeditor, :input_html => { :items => ['source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste','plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript', 'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/', 'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold','italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'multiimage','flash', 'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak', 'anchor', 'link', 'unlink', '|', 'about'] }
     %ul#tag_list
       %li 标签：
     %p
