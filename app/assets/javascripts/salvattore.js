@@ -5,7 +5,7 @@
 */
 
 
-(function() {
+(function($) {
   (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
       return define(factory);
@@ -14,7 +14,7 @@
     } else {
       return root.salvattore = factory();
     }
-  })(this, function() {
+  })(this, function($) {
     var add_columns, add_to_dataset, append_elements, create_list_of_fragments, get_css_rules, get_stylesheets, grids, media_query_change, media_rule_has_columns_selector, next_element_column_index, obtain_grid_settings, prepend_elements, recreate_columns, register_grid, remove_columns, scan_media_queries, setup;
 
     grids = [];
@@ -156,6 +156,9 @@
           }
         });
       });
+      // add by Ike
+      buildCompletedHandler();
+
       return mediaQueries.forEach(function(mql) {
         return mql.addListener(media_query_change);
       });
@@ -254,6 +257,18 @@
       Array.prototype.forEach.call(document.querySelectorAll('[data-columns]'), register_grid);
       return scan_media_queries();
     };
+    
+
+    buildCompletedHandler = function()
+    {
+      var articles = document.querySelectorAll('[data-columns] article');
+      Array.prototype.forEach.call(articles, showArticle);
+    };
+    showArticle = function(article)
+    {
+      article.style.display = "block";
+      // getComputedStyle(grid).display = 'static';
+    }
     setup();
     return {
       append_elements: append_elements,
@@ -262,4 +277,4 @@
     };
   });
 
-}).call(this);
+}).call(this,$);

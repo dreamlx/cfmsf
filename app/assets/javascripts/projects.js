@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	$('.projectList').infinitescroll({
 	    loading: {
@@ -39,11 +40,13 @@ $(document).ready(function(){
 	    maxPage:undefined // to manually control maximum page (when maxPage is undefined, maximum page limitation is not work)
 	},function(newEle){
 		var grid = document.querySelector('.projectList');
-		salvattore['append_elements'](grid, newEle.toArray());
+		var articles = newEle.toArray();
+		Array.prototype.forEach.call(articles, function(article) {
+		    article.style.display = "block";
+      	});
+		salvattore['append_elements'](grid, articles);
 
 	});
-
-	
 
 	$('#slide').slidesjs({
         width: '100%',
