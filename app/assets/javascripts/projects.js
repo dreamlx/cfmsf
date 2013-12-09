@@ -48,6 +48,8 @@ $(document).ready(function(){
 
 	});
 
+	
+
 	$('#slide').slidesjs({
         width: '100%',
         height: '100%',
@@ -67,4 +69,40 @@ $(document).ready(function(){
           swap: false
         }
   	});
+
+	updateSlideBg(mql.matches);
+
 });
+
+
+
+updateSlideBg = function(matches)
+{
+	$("div.slidesjs-slide").each(function(index,slide){
+		var largeImage = $(slide).attr("data-src-1000px").toString();
+		var littleImage = $(slide).attr("data-src-640px").toString();
+		// console.log("large image is "+largeImage,"little image is "+littleImage);
+		if(matches){
+
+			$(slide).css("background-image",largeImage);
+		}else
+		{
+			$(slide).css("background-image",littleImage);
+
+		}
+	})
+	
+}
+
+var mql = window.matchMedia("screen and (min-width:640px)");
+
+mql.addListener(function(mql) {
+	// console.log("media change!!");
+	updateSlideBg(mql.matches);
+	// console.log("655555555555555550");
+});
+
+// var mql2 = window.matchMedia("screen and (max-width:640px)");
+// mql2.addListener(function(mql){
+// 	console.log("6444444444444440");
+// });
