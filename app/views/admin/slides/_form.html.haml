@@ -10,10 +10,17 @@
     = f.input :name
     = f.input :pic, :as => :file
     - if action_name == 'new' 
-      %img{id:"preview", src:"#", alt:"your image"}
+      %img{id:"pic_preview", src:"#", alt:"your image"}
     - else action_name == 'edit'
       - if !@slide.pic.nil?
-        %img{id:"preview", :src => "#{@slide.pic}?imageView/1/w/50/h/50"}
+        %img{id:"pic_preview", :src => "#{@slide.pic}?imageView/1/w/50/h/50"}
+    = f.input :thumb, :as => :file
+    - if action_name == 'new' 
+      %img{id:"thumb_preview", src:"#", alt:"your image"}
+    - else action_name == 'edit'
+      - if !@slide.pic.nil?
+        %img{id:"thumb_preview", :src => "#{@slide.thumb}?imageView/1/w/50/h/50"}
+
   .actions
     = f.submit 'Save'
 

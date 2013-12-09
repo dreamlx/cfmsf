@@ -25,6 +25,17 @@ class TagsController < ApplicationController
     end
   end
 
+  def auto_complete_life_tag
+    @tags = Life.tag_counts
+    t = Array.new
+    @tags.each do |tag|
+      t.push(tag.name)
+    end
+    respond_to do |format|
+      format.json {render json: t}
+    end
+  end
+
   def index
     @tags = Project.tag_counts_on(:tags)
     render :json => @tags

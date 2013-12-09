@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110090148) do
+ActiveRecord::Schema.define(:version => 20131209033745) do
 
   create_table "albums", :force => true do |t|
     t.integer  "work_id"
@@ -20,28 +20,6 @@ ActiveRecord::Schema.define(:version => 20131110090148) do
     t.datetime "updated_at",       :null => false
     t.string   "cover_image_uid"
     t.string   "cover_image_name"
-  end
-
-  create_table "careers", :force => true do |t|
-    t.string   "title"
-    t.string   "color"
-    t.string   "thumb"
-    t.string   "desc"
-    t.string   "responsibility"
-    t.string   "requirements"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "clients", :force => true do |t|
-    t.string   "company"
-    t.string   "name"
-    t.string   "title"
-    t.string   "words"
-    t.string   "pic"
-    t.integer  "service"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -65,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20131110090148) do
 
   create_table "lives", :force => true do |t|
     t.string   "title"
-    t.string   "content"
+    t.text     "content"
     t.string   "author"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -79,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20131110090148) do
     t.datetime "updated_at",   :null => false
     t.string   "thumb"
     t.string   "company"
-    t.boolean  "top"
+    t.string   "top"
   end
 
   create_table "slides", :force => true do |t|
@@ -87,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20131110090148) do
     t.string   "pic"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "thumb"
   end
 
   create_table "taggings", :force => true do |t|

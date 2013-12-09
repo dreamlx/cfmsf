@@ -75,7 +75,7 @@ function get_tags(){
         type: "GET",
         dataType:"json",
         async: false,
-        url: "/tags/auto_complete_tag",
+        url: "/tags/auto_complete_life_tag",
         success: function(data) {
             tagList = data
         }

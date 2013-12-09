@@ -17,5 +17,7 @@
       %td
         %img{src:"#{slide.pic}?imageView/1/w/50/h/50"} 
       %td
+        %img{src:"#{slide.thumb}?imageView/1/w/50/h/50"}
+      %td
         = link_to t(:edit, scope: "crud"), edit_admin_slide_path(slide)
         = link_to t(:destroy, scope: "crud"), admin_slide_path(slide), :method => :delete, :data => { :confirm => 'Are you sure?' }
