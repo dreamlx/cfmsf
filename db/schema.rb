@@ -22,6 +22,28 @@ ActiveRecord::Schema.define(:version => 20131209033745) do
     t.string   "cover_image_name"
   end
 
+  create_table "careers", :force => true do |t|
+    t.string   "title"
+    t.string   "color"
+    t.string   "thumb"
+    t.string   "desc"
+    t.string   "responsibility"
+    t.string   "requirements"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "company"
+    t.string   "name"
+    t.string   "title"
+    t.string   "words"
+    t.string   "pic"
+    t.integer  "service"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "life_id"
     t.string   "content"
@@ -41,12 +63,18 @@ ActiveRecord::Schema.define(:version => 20131209033745) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "lifes", :force => true do |t|
+    t.string "title"
+    t.string "content"
+    t.string "author"
+  end
+
   create_table "lives", :force => true do |t|
     t.string   "title"
-    t.text     "content"
+    t.text     "content",    :limit => 255
     t.string   "author"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
   end
 
   create_table "projects", :force => true do |t|
@@ -57,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20131209033745) do
     t.datetime "updated_at",   :null => false
     t.string   "thumb"
     t.string   "company"
-    t.string   "top"
+    t.boolean  "top"
   end
 
   create_table "slides", :force => true do |t|

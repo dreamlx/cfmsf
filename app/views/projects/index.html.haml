@@ -1,6 +1,6 @@
 #slide
   - @slides.each do |slide|
-    #div{:style=>"background-image:url('#{slide.pic}')"}
+    %div(data-src-1000px="url('#{slide.pic}')" data-src-640px="url('#{slide.thumb}')" )
 %section#clientComment
   %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
   %p Art Director at EA China

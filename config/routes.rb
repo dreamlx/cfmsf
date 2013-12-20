@@ -62,6 +62,7 @@ Bancheng::Application.routes.draw do
 
     collection do 
         get :auto_complete_tag
+        get :auto_complete_life_tag
     end
   end
   # The priority is based upon order of creation:
