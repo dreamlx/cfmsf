@@ -23,7 +23,6 @@ module Admin
       def create
         @life = Life.new(params[:life])
         @life.author = current_user.email
-        binding.pry
         if @life.save
           redirect_to admin_lifes_path, notice: 'life was successful created'
         else
