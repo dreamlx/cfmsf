@@ -1,10 +1,10 @@
 $(document).ready(function(){
 	$("#navToggle").click(function(e){
-		$("#mobileNav").slideToggle();
+		$("#mobileNav").slideToggle(200);
 	});
 	$("#projectTagListBtn").click(function(e){
 		$("span.expendArrow").toggleClass("rotateArrow");
-		$("ul#mobileNavProjectTagList").slideToggle(400,function(){
+		$("ul#mobileNavProjectTagList").slideToggle(200,function(){
 			if($("ul#mobileNavProjectTagList").css("display") === "block")
 			{
 				if(!$("ul#mobileNavProjectTagList").hasClass("DataLoaded"))

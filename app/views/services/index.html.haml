@@ -159,13 +159,12 @@
 
 %section.recommandProjects
   %section#clientComment
-    %section#clientComment
-      %h3 
-        = @clientWord.words
-      %p
-        = @clientWord.title
-        at
-        = @clientWord.company
+    %h3 
+      = @clientWord.words
+    %p
+      = @clientWord.title
+      at
+      = @clientWord.company
   %section.projectList
     - @recommendProjects.each do |project|
 

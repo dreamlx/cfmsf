@@ -12,6 +12,7 @@ section.recommandProjects
 section.tagCloud
 {
 	padding-top:34px;
+	clear: both;
 	a
 	{
 		display: inline-block;
@@ -120,6 +121,77 @@ section.projectList
 			font:
 			{
 				size:11px;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px)
+{
+	.projects
+	{
+		max-width: 607px;
+		section.projectList
+		{
+			min-width:500px !important;
+			article h6
+			{
+				font-size:28px;
+			}
+			article p
+			{
+				font-size:22px;
+			}
+		}
+	}
+	.scrollLoading
+	{
+		display: inline;
+	}
+	.column:last-child
+	{
+		margin-right:0px !important;
+	}
+}
+
+@media screen and (max-width: 1080px)
+{
+	.column
+	{
+		width:292px !important;
+		margin-right:23px !important;
+	}
+	section#clientComment
+	{
+		// margin-left:0px;
+		h3
+		{
+			width:445px;
+		}
+	}
+	div.projects,
+	section.recommandProjects
+	{
+		
+		margin:0 auto;
+		section#clientComment
+		{
+			margin-bottom:60px;
+		}
+		section.projectList
+		{
+			
+			article
+			{
+				width:292px - 38px;
+				height:438px - 38px;
+				padding:19px;
+				margin-right:16px;
+				figure
+				{
+					width:254px;
+					height:318px;
+				}
 			}
 		}
 	}
