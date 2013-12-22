@@ -31,15 +31,15 @@
           = raw(life.content)
 
     %section#paginate 
-      = link_to_next_page @lifes, "← NEWER ENTRIES", :remote => true, :class => 'newerEntries'
-      = link_to_previous_page @lifes, "PREVIOUS ENTRIES →", :remote => true, :class => 'prevEntries'
+      = link_to_next_page @lifes, "NEWER ENTRIES", :remote => true, :class => 'newerEntries'
+      = link_to_previous_page @lifes, "PREVIOUS ENTRIES", :remote => true, :class => 'prevEntries'
         
 
   %aside
     .rightpart
       .rightPartTitle
         CATEGORIES
-      %ul
+      %ul.categories
         - @tags.each do |tag|
           %li
             = link_to "#{tag}", lifes_path(:tag_id => tag.id)
@@ -47,7 +47,7 @@
       .rightPartTitle
         ARCHIVES
       %ul
-        - @lifes.map{|life| life.created_at.strftime("%m %Y")}.uniq.each do |time|
+        - @lifes.map{|life| life.created_at.strftime("%^B %Y")}.uniq.each do |time|
           %li
             = link_to time, lifes_path(:month => time.split(' ').first)
     .rightpart

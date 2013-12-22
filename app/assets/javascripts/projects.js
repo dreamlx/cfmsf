@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	$('.projectList').infinitescroll({
 	    loading: {
@@ -49,26 +48,16 @@ $(document).ready(function(){
 	});
 
 	
-
-	$('#slide').slidesjs({
-        width: '100%',
-        height: '100%',
-        navigation: 
-        {
-        	active:false
-        },
-        pagination:
-        {
-        	active:false
-        },
-        play: {
-          active: true,
-          auto: true,
-          effect:"fade",
-          interval: 4000,
-          swap: false
-        }
-  	});
+	var elem = document.getElementById('slide');
+	if(window.Swipe)
+	{
+		window.mySwipe = Swipe(elem, {
+			speed:400,
+			auto: 5000,
+		});
+	
+	}
+	
 
 	updateSlideBg(mql.matches);
 
@@ -78,15 +67,16 @@ $(document).ready(function(){
 
 updateSlideBg = function(matches)
 {
-	$("div.slidesjs-slide").each(function(index,slide){
+	$("div.swipe-wrap > div > section").each(function(index,slide){
 		var largeImage = $(slide).attr("data-src-1000px").toString();
 		var littleImage = $(slide).attr("data-src-640px").toString();
 		// console.log("large image is "+largeImage,"little image is "+littleImage);
 		if(matches){
-
+			console.log("matches ture!!! use largeImage");
 			$(slide).css("background-image",largeImage);
 		}else
 		{
+			console.log("matches false!!! use littleImage");
 			$(slide).css("background-image",littleImage);
 
 		}
@@ -94,7 +84,7 @@ updateSlideBg = function(matches)
 	
 }
 
-var mql = window.matchMedia("screen and (min-width:640px)");
+var mql = window.matchMedia("screen and (min-width:641px)");
 
 mql.addListener(function(mql) {
 	// console.log("media change!!");

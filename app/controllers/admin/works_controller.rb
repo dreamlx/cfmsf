@@ -27,7 +27,7 @@ module Admin
       if @work.save
     	  redirect_to admin_project_works_url(@project), notice: 'work was successful created'
       else
-    	render action: "new"
+      	render action: "new"
       end
     end
 

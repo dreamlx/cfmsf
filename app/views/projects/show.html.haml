@@ -22,7 +22,7 @@
     - @works.each do |work|
       %article
         %figure
-          %a{href: "/works/#{work.id}"}
+          %a{href: "#{work.content}"}
             %img{alt: "", src: "#{work.thumb}?imageView/2/w/231"}/
         %h6 
           = work.name
@@ -30,9 +30,12 @@
   .navigation
     %a{href: "2.html"} 2
 
-= requirejs_include_tag "project"
+= stylesheet_link_tag("magnific-popup", :media => "all")
+= javascript_include_tag "jquery.infinitescroll","salvattore","jquery.magnific-popup.min","projects"
 :javascript
   $(document).ready(function(){
     var mt = $("#projectInfo").outerHeight() * -1;
-    $("#projectInfo").css("margin-top", mt)
+    $("#projectInfo").css("margin-top", mt);
+
+    $('.workList article figure a').magnificPopup({type:'image'});
   });

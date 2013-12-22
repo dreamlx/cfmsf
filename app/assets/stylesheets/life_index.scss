@@ -111,7 +111,8 @@ section#main
 		#paginate
 		{
 			border-top:1px solid #4d4d4d;
-			padding-top:40px;
+			padding-top:30px;
+			padding-bottom:50px;
 			a
 			{
 				font-size:18px;
@@ -119,11 +120,30 @@ section#main
 			}
 			.newerEntries
 			{
-				
+				background:url("/assets/life/nextpage.png") scroll no-repeat 0px 5px;
+				display: block;
+				width:200px;
+				height:18px;
+				text-indent:22px; 
+				&:hover
+				{
+					color:#333;
+					background-position: 0px -13px;
+				}
 			}
 			.prevEntries
 			{
-				float:right
+				float:right;
+				background:url("/assets/life/prevpage.png") scroll no-repeat right 5px;
+				display: block;
+				width:200px;
+				height:18px;
+				text-indent:0; 
+				&:hover
+				{
+					color:#333;
+					background-position: right -13px;
+				}
 			}
 		}
 	}
@@ -163,6 +183,10 @@ section#main
 						font-size:12px;
 						color:#999;
 					}
+				}
+				&.categories li a
+				{
+					text-transform: uppercase;
 				}
 			}
 			input

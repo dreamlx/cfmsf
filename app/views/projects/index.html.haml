@@ -1,6 +1,13 @@
-#slide
-  - @slides.each do |slide|
-    %div(data-src-1000px="url('#{slide.pic}')" data-src-640px="url('#{slide.thumb}')" )
+#slide.swipe
+  .swipe-wrap
+    - @slides.each do |slide|
+      %div
+        %section(data-src-1000px="url('#{slide.pic}')" data-src-640px="url('#{slide.thumb}')" )
+          .floater
+          .content
+            %p
+              = slide.name
+
 %section#clientComment
   %h3 “TANGDigital has proven to be a very reliable and trustworthy outsourcing partner, that delivers on time, quality and budget.”
   %p Art Director at EA China
@@ -45,4 +52,4 @@
   .scrollLoading
   = paginate @projects
 
-= javascript_include_tag "jquery.infinitescroll","jquery.slides.min","salvattore","projects"
+= javascript_include_tag "jquery.infinitescroll","salvattore","swipe","projects"

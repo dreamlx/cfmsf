@@ -140,6 +140,14 @@ div.projects
   	
 }
 
+@media screen and (max-width: 640px)
+{
+	.projects #clientComment
+	{
+		margin-top: 150px;
+	}
+}
+
 section.workList
 {
 	article
@@ -149,10 +157,10 @@ section.workList
 		margin-bottom:18px;
 		background-color: white;
 		float:left;
-		border:1px solid inherite;
+		border:1px solid inherit;
 		border-radius:7px;
 		box-shadow:#aaa 0px 0px 2px;
-
+		display: none;
 		figure
 		{
 			width:100%;
@@ -194,3 +202,5 @@ section.workList
 		}
 	}
 }
+
+@import "responsed_main.scss";

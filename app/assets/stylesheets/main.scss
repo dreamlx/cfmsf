@@ -52,7 +52,7 @@ header#globalHeader
 				display: block;
 				width:43px;
 				height:9px;
-				background-color: #808080;
+				background-color: white;
 				margin-bottom: 6px;
 			}
 		}
@@ -128,7 +128,7 @@ header#globalHeader
 #mobileNav
 {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top:90px;
 	left:0;
 	z-index: 200;
@@ -138,7 +138,7 @@ header#globalHeader
 	{
 		width:100%;
 		height:93px;
-		border-bottom:1px solid #4d4d4d;
+		border-bottom:1px solid #302F2F;
 		text-align: center;
 		line-height: 93px;
 		input
@@ -147,7 +147,7 @@ header#globalHeader
 			height:61px;
 			text-indent: 60px;
 			border:none;
-			background: url(/assets/search_icon.png) #fff no-repeat scroll 21px 12px;
+			background: url(/assets/search_icon_m.png) #fff no-repeat scroll 21px 12px;
 			background-size: 37px 37px;
 		}
 	}
@@ -162,7 +162,7 @@ header#globalHeader
 				width:100%;
 				height:86px;
 				
-				border-bottom:1px solid #4d4d4d;
+				border-bottom:1px solid #302F2F;
 				&>a
 				{
 					display: block;
@@ -191,13 +191,13 @@ header#globalHeader
 					// line-height: 86px;
 
 					-webkit-transform: rotate(0deg);
-					-webkit-transition-duration:.5s;
+					-webkit-transition-duration:.2s;
 					-webkit-transform-origin:20px;
 				}
 				span.rotateArrow
 				{
 					-webkit-transform: rotate(-90deg);
-					-webkit-transition-duration:.5s;
+					-webkit-transition-duration:.2s;
 					-webkit-transform-origin:20px;
 				}
 				height:auto;
@@ -210,8 +210,8 @@ header#globalHeader
 					{
 						a
 						{
-							background-color: #666666;
-							border-bottom:1px solid #cccccc;
+							background-color: #444;
+							border-bottom:1px solid #4d4d4d;
 							text-indent: 82px;
 							span
 							{
@@ -363,7 +363,7 @@ footer
 		display: none;
 		&>div
 		{
-			width:16%;
+			width:33%;
 			display: inline-block;
 			text-align: center;
 		}
@@ -377,6 +377,7 @@ footer
 			color:white;
 			font-size:24px;
 			line-height: 151px;
+			margin-bottom:47px;
 		}
 		#circleFAQ a{background-color: #7ac943}
 		#circleAbout a{background-color: #bdccd4}

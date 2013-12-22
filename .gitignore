@@ -11,7 +11,7 @@
 
 /config/application.yml
 #Ignore 
-/public/uploads/*.*
+/public/uploads/
 
 #Ignore
 /public/assets/*.*

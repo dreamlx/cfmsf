@@ -66,7 +66,7 @@
     .rightpart
       .rightPartTitle
         CATEGORIES
-      %ul
+      %ul.categories
         - @tags.each do |tag|
           %li
             = link_to "#{tag}", lifes_path(:tag_id => tag.id)
@@ -74,7 +74,7 @@
       .rightPartTitle
         ARCHIVES
       %ul
-        - @lifes.map{|life| life.created_at.strftime("%m %Y")}.uniq.each do |time|
+        - @lifes.map{|life| life.created_at.strftime("%^B %Y")}.uniq.each do |time|
           %li
             = link_to time, lifes_path(:month => time.split(' ').first)
 

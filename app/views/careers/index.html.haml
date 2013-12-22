@@ -150,6 +150,34 @@
                 hr@tangdigital.com
               \. Please specify 2D artist in the subject line of your e-mail.
 
+              
+%section.tagCloud
+  - @tags.each do |tag|
+    %a{href: projects_tag_path(tag)}          
+      = tag
+  
+
+%section.recommandProjects
+  %section#clientComment
+    %section#clientComment
+      %h3 
+        = @clientWord.words
+      %p
+        = @clientWord.title
+        at
+        = @clientWord.company
+  %section.projectList
+    - @recommendProjects.each do |project|
+
+      %article
+        %figure
+          %a{href: "/projects/#{project.id}"}
+            %img{alt: "", src: "#{project.thumb}?imageView/1/w/201/h/251"}
+        %h6 
+          = project.company
+        %p 
+          = project.name
+
 = javascript_include_tag "salvattore","careers"
 :javascript
   $("document").ready(function(){

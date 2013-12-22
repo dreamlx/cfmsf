@@ -5,7 +5,7 @@
 
 article#servicesPage
 {
-	min-width: 984px;
+	// min-width: 984px;
 	padding:0px 0px 63px 0px;
 	width:984px - 114px;
 	height:auto;
@@ -16,11 +16,12 @@ article#servicesPage
 	{
 		border:13px solid #808080;
 		width:842px - 54px;
-		height:142px;
 		margin:0 auto;
 		margin-bottom:65px;
 		padding: 0px 27px;
+		padding-bottom:15px;
 		display: block;
+		position: relative;
 		h3
 		{
 			font-size:24px;
@@ -34,16 +35,16 @@ article#servicesPage
 			color:#666;
 			font-size: 15px;
 			font-weight: normal;
-		}
-		&::before
-		{
-			width:84px;
-			height:83px;
-			background: url("/assets/services/security.png") no-repeat scroll;
-			content: "";
-			margin-top: 72px;
-			margin-left: 744px;
-			position: absolute;
+			&::before
+			{
+				width:84px;
+				height:83px;
+				background: url("/assets/services/security.png") no-repeat scroll;
+				content: "";
+				bottom:-13px;
+				right:-13px;
+				position: absolute;
+			}
 		}
 	}
 
@@ -238,3 +239,32 @@ article#servicesPage
 		}
 	}
 }
+
+@media screen and (max-width: 1080px)
+{
+	article#servicesPage
+	{
+		// display: none;
+		// min-width: 540px;
+		// max-width: 640px;
+		// min-width:640px;
+		width:600px;
+		// margin:0 auto;
+		a.security
+		{
+			width:85%;
+		}
+
+		section#clientList
+		{
+			ul
+			{
+				width:600px - 92px;
+			}
+		}
+	}
+	
+}
+
+
+@import "responsed_main.scss";
