@@ -7,13 +7,20 @@
     %tr
       %td id
       %td name
+      %td background_color
+      %td font_color
+      %td link
       %td pic
+      %td thumb
       %td
   %tbody
   - @slides.each do |slide|
     %tr
       %td= slide.id
       %td= slide.name
+      %td{style:"background-color: #{slide.background_color}"}
+      %td{style:"background-color: #{slide.font_color}"}
+      %td= slide.link
       %td
         %img{src:"#{slide.pic}?imageView/1/w/50/h/50"} 
       %td

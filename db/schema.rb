@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131209033745) do
+ActiveRecord::Schema.define(:version => 20131222132613) do
 
   create_table "albums", :force => true do |t|
     t.integer  "work_id"
@@ -91,9 +91,12 @@ ActiveRecord::Schema.define(:version => 20131209033745) do
   create_table "slides", :force => true do |t|
     t.string   "name"
     t.string   "pic"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "thumb"
+    t.string   "background_color"
+    t.string   "font_color"
+    t.string   "link"
   end
 
   create_table "taggings", :force => true do |t|

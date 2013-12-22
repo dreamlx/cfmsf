@@ -60,4 +60,4 @@ end
 
 after "deploy:update", "deploy:symlink_shared" 
 after "deploy:update", "deploy:migrate"
-after "deploy:migrate", "deploy:precompile"
+# after "deploy:migrate", "deploy:precompile"

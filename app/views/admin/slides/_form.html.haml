@@ -8,6 +8,9 @@
   / %div.foo{"data-url": }
   %table
     = f.input :name
+    = f.input :background_color, input_html:{id:"background_color",style:"background-color:#{@slide.background_color}"}
+    = f.input :font_color, input_html:{id:"font_color",style:"background-color:#{@slide.font_color}"}
+    = f.input :link
     = f.input :pic, :as => :file
     - if action_name == 'new' 
       %img{id:"pic_preview", src:"#", alt:"your image"}
