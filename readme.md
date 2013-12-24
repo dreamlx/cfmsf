@@ -5,6 +5,7 @@ The current version of SJTU CFMSF web portal is not powerful enough to support t
 
 ## Information
 system requirement: 
+        
         Ubuntu 12.04
         Ruby On Rails
         Mysql
