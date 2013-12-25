@@ -35,7 +35,7 @@ Bancheng::Application.routes.draw do
     resources :lifes do
       resources :comments
     end
-    resources :categorys, except: :show
+    resources :categories, except: :show
     resources :articles, except: :show
   end
 

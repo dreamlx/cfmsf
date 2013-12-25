@@ -1,9 +1,21 @@
 = simple_form_for [:admin, @user] do |f|
   = f.error_notification
-  %table
-    = f.input :username
-    = f.input :password
-    = f.input :password_confirmation
-    = f.input :role
+  %div.row
+    %div.span3
+      %table
+        = f.input :username
+        = f.input :email
+        = f.input :password
+        = f.input :password_confirmation
+        = f.input :role, as: :select, collection:["admin", "editor"]
+    %div.span3
+      - if @user.role == "editor"
+        %p Editor Permission
+        %ul
+        - @categories.each do |category|
+          %li	        
+            = check_box_tag "category_ids[]", category.id, (@user.categories.include?(category) ? true :  false) 
+            = category.chinese_name
+
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', :class => 'btn'

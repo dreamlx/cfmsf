@@ -31,11 +31,20 @@
               %li= link_to "Career", admin_careers_path
               %li= link_to "Client", admin_clients_path
               %li= link_to "Slide", admin_slides_path
-              %li= link_to "Category Management", admin_categorys_path
+              %li= link_to "Category Management", admin_categories_path
+              %li= link_to "Article Management", admin_articles_path
               - if user_signed_in?
                 %li= link_to "LoginOut", destroy_user_session_path, :method => :delete
               -else
                 %li= link_to 'SignIn',new_user_session_path
+    - unless alert.blank?
+      .alert.alert-error.fade.in
+        %a.close{"data-dismiss" => "alert"} &times;
+        = alert
+    - unless notice.blank?
+      .alert.alert-success.fade.in
+        %a.close{"data-dismiss" => "alert"} &times;
+        = notice
     - if params[:action] == "new" || params[:action] == "edit"
       %div.span2
       %div.span10.container

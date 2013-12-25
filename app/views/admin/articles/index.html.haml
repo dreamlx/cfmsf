@@ -1,0 +1,26 @@
+%h1 Article Management
+
+= link_to 'New Article', new_admin_article_path
+
+.btn-group.pull-right
+  %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+    Category
+    %span.caret
+  %ul.dropdown-menu
+    - Category.all.each do |category|
+      %li 
+        = link_to category.chinese_name, "#"
+
+%table.table.center.table-bordered
+  %thead
+    %tr
+      %td Article Name
+      %td Status
+      %td Operation
+    %tbody
+    - @articles.each do |article|
+      %tr
+        %td= article.chinese_title
+        %td= article.status
+        %td
+          = link_to 'Edit', edit_admin_article_path(article)

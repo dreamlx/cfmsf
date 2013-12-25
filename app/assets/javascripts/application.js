@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jcrop
 //= require kindeditor
+//= require twitter/bootstrap
 //= require bootstrap-datepicker/core
 //= require bootstrap-colorpicker
 //= require jquery.autocomplete

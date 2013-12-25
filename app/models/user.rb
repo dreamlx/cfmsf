@@ -1,16 +1,22 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :role, :login
   attr_accessor :login
 
+  validates :role, presence: true
+  validates :username, presence: true
+
   validates :username,
     :uniqueness => {
       :case_sensitive => false
     }
+
+  has_many :user_categories
+  has_many :categories, through: :user_categories
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
