@@ -35,6 +35,8 @@ Bancheng::Application.routes.draw do
     resources :lifes do
       resources :comments
     end
+    resources :categorys, except: :show
+    resources :articles, except: :show
   end
 
   root :to => 'projects#index'

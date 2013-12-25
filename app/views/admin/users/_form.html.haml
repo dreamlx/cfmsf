@@ -1,13 +1,9 @@
 = simple_form_for [:admin, @user] do |f|
-  - if @user.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      %ul
-        - @user.errors.full_messages.each do |msg|
-          %li= msg
+  = f.error_notification
   %table
-    = f.input :email
+    = f.input :username
     = f.input :password
     = f.input :password_confirmation
+    = f.input :role
   .actions
     = f.submit 'Save'
