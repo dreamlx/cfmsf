@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131223084618) do
+ActiveRecord::Schema.define(:version => 20131225004210) do
 
   create_table "albums", :force => true do |t|
     t.integer  "work_id"
@@ -20,6 +20,24 @@ ActiveRecord::Schema.define(:version => 20131223084618) do
     t.datetime "updated_at",       :null => false
     t.string   "cover_image_uid"
     t.string   "cover_image_name"
+  end
+
+  create_table "articles", :force => true do |t|
+    t.string   "chinese_title"
+    t.string   "franch_title"
+    t.string   "chinese_content"
+    t.string   "franch_content"
+    t.string   "status"
+    t.integer  "category_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "chinese_name"
+    t.string   "franch_name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -101,10 +119,13 @@ ActiveRecord::Schema.define(:version => 20131223084618) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "username"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
   create_table "works", :force => true do |t|
     t.integer  "project_id"
