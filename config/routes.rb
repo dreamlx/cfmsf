@@ -36,7 +36,12 @@ Bancheng::Application.routes.draw do
       resources :comments
     end
     resources :categories, except: :show
-    resources :articles, except: :show
+    resources :articles, except: :show do
+      member do
+        put :reject
+        put :approve
+      end
+    end
   end
 
   root :to => 'projects#index'

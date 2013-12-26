@@ -4,12 +4,12 @@
 
 .btn-group.pull-right
   %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-    Category
+    = @current_category.chinese_name
     %span.caret
   %ul.dropdown-menu
-    - Category.all.each do |category|
+    - current_user.categories.all.each do |category|
       %li 
-        = link_to category.chinese_name, "#"
+        = (link_to category.chinese_name, admin_articles_path(category_id: category.id)) unless @current_category.id == category.id
 
 %table.table.center.table-bordered
   %thead
@@ -19,8 +19,9 @@
       %td Operation
     %tbody
     - @articles.each do |article|
-      %tr
+      %tr{class: article_status_class(article)}
         %td= article.chinese_title
         %td= article.status
         %td
-          = link_to 'Edit', edit_admin_article_path(article)
+          - if current_user.role == "admin" || (current_user.role == "editor" and article.status == "pending")
+            = link_to 'Edit', edit_admin_article_path(article)

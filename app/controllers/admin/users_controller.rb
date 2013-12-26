@@ -27,8 +27,6 @@ module Admin
           category = Category.find(category_id)
           @user.categories << category
         end
-      elsif @user.role == "admin"
-        @user.categories << Category.all
       end
           
       if @user.save
