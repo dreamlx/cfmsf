@@ -1,0 +1,16 @@
+%table.table.center.table-bordered
+  %thead
+    %tr
+      %td Article Name
+      %td Status
+      - if controller_name == "articles"
+        %td Operation
+    %tbody
+    - @articles.each do |article|
+      %tr{class: article_status_class(article)}
+        %td= article.chinese_title
+        %td= article.status
+        %td
+          - if controller_name == "articles"
+            - if current_user.role == "admin" || (current_user.role == "editor" and article.status == "pending")
+              = link_to 'Edit', edit_admin_article_path(article)

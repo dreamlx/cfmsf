@@ -22,7 +22,6 @@ group :assets do
 end
 
 
-gem 'thinking-sphinx', '2.0.10' #全文搜索
 gem 'jquery-rails'
 gem "ransack" 
 gem 'bootstrap-datepicker-rails'

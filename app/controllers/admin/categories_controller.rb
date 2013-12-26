@@ -1,5 +1,6 @@
 module Admin
   class CategoriesController < Admin::BaseController
+
     def index
       @categories = Category.all
     end
@@ -19,6 +20,7 @@ module Admin
     def create
       @category = Category.new(params[:category])
       if @category.save
+        current_user.categories << @category if current_user.role == "admin"
         redirect_to admin_categories_path, notice: 'category was successful created'
       else
         render action: "new", alert: 'category was failed created'

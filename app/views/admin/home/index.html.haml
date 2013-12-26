@@ -1,4 +1,13 @@
-%div.center.hero-unit
-  %h1 
-    = t("welcome")
+%h1 On this site management, you can do the user, category and article management
+.btn-group.pull-right
+  %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+    = @current_category.chinese_name unless @current_category.blank?
+    %span.caret
+  %ul.dropdown-menu
+    - current_user.categories.all.each do |category|
+      %li 
+        = (link_to category.chinese_name, admin_home_index_path(category_id: category.id)) unless @current_category.id == category.id 
+
+= render "admin/articles/list"
+ 
 

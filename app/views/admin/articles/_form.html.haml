@@ -5,7 +5,6 @@
     = f.input :category_id do
       = f.select :category_id, current_user.categories.map{|c| [c.chinese_name, c.id]}, include_blank: false
     = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold','italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'media', 'insertfile', 'table', 'hr', 'emoticons'] }
-
     %p Franch
     = f.input :franch_title
     = f.input :franch_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold','italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 'media', 'insertfile', 'table', 'hr', 'emoticons'] }

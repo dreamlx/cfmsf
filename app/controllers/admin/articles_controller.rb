@@ -5,7 +5,8 @@ module Admin
       if @current_category.blank?
         @current_category = current_user.categories.first
       end
-      @articles = @current_category.articles
+      @articles = Array.new
+      @articles = @current_category.articles unless @current_category.blank?
     end
 
     def reject
