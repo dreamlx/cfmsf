@@ -3,6 +3,8 @@ Bancheng::Application.routes.draw do
 
   devise_for :users
 
+  resources :home, only: :index
+
   namespace :admin do
     resources :users
     resources :home, only: :index
@@ -15,6 +17,6 @@ Bancheng::Application.routes.draw do
     end
   end
 
-  root :to => 'admin/home#index'
+  root :to => 'home#index'
 
 end

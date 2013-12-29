@@ -1,0 +1,51 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, button, input, textarea {margin:0;padding:0;border:0;outline:0;font-size:100%; font-family:Arial, Helvetica, sans-serif;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+h1, h2, h3, h4, h5, h6 {font-weight:normal;}
+img {border:none;}
+table {border-collapse:collapse;border-spacing:0;}
+q:before, q:after, blockquote:before, blockquote:after {content: "";}
+ol, ul {list-style:none;}
+input, textarea {border:none;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal;}
+a {text-decoration:none; color:#fff;}
+
+#content{ width:780px; height:700px; background:url(/assets/bg.jpg) no-repeat; margin:0 auto;}
+#head{ clear:both; padding-top:57px; padding-left:50px;}
+#head .nave{ float:left; height:42px; padding-top:5px; background:url(/assets/plug.gif) no-repeat 2px 12px; padding-left:14px; padding-right:44px; margin-bottom:19px;}
+#head .nave nav{ clear:both; font-size:12px; font-weight:bold; line-height:20px;}
+#head .nave nav a{ color:#fff;}
+#head .nave p{ clear:both; font-size:12px; line-height:21px;}
+#head .nave p a{ color:#fff;}
+
+#head .nave:hover{background:none;}
+#head .nave:hover a{ color:#f0f0f0;}
+
+.main{ clear:both; height:324px;}
+.mlt{ float:left; width:418px; height:255px; position:relative;}
+.mlt_01{ position:absolute; height:46px; width:110px; padding:7px 6px 5px 7px; left:109px; top:186px; line-height:16px; color:#185a8d; font-size:12px; font-weight:bold;}
+.mlt_02{ position:absolute; height:46px; width:110px; padding:7px 6px 5px 7px; left:295px; top:186px; line-height:16px; color:#185a8d; font-size:12px; font-weight:bold;}
+.mrt{ float:left; width:246px; height:201px; padding:20px 0px 27px 27px;}
+.mrt p{ clear:both; line-height:20px; color:#fff; font-size:12px; margin-bottom:5px;}
+.mrt h3{ clear:both; line-height:28px; color:#fce55d; font-weight:bold; font-size:30px; margin-bottom:5px;}
+.search{ clear:both; height:20px; padding:26px 30px 24px 52px; margin-bottom:12px;}
+.inp_01{ height:20px; border:1px solid #c3c3c3; width:135px; line-height:20px;}
+.searchbtn{ height:22px;border:1px solid #c3c3c3; padding:0 5px; line-height:18px; background-color:#f8f8f7; font-size:14px; cursor:pointer;}
+
+.search_res{ clear:both; padding-top:8px; padding-left:75px; height:174px;}
+.question{ float:left; width:290px; height:170px;}
+.question h4{ clear:both; font-size:12px; line-height:20px; color:#fff; font-weight:normal;}
+.question h6{ clear:both; font-size:24px; line-height:26px; color:#fff; font-weight:normal; margin-bottom:10px;}
+.question p{ clear:both; font-size:12px; background:url(/assets/tip1.jpg) no-repeat 0 7px; padding-right:80px; padding-left:10px;}
+.question p a{ line-height:17px; color:#000;}
+.question p a:hover{ text-decoration:underline;}
+
+.university{ float:left; width:290px; height:170px;}
+.university h4{ clear:both; font-size:12px; line-height:20px; color:#fff; font-weight:normal;}
+.university h6{ clear:both; font-size:24px; line-height:26px; color:#fff; font-weight:normal; margin-bottom:10px;}
+.university p{ clear:both; font-size:12px; background:url(/assets/tip2.jpg) no-repeat 0 8px; padding-right:80px; padding-left:12px;}
+.university p a{ line-height:20px; color:#fff;}
+.university p a:hover{ text-decoration:underline;}
+
+
+#foot{ clear:both; text-align:center;}
+#foot p{ text-align:center; line-height:18px; color:#ffffff; font-size:10px; line-height:16px;}

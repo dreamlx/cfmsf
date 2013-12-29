@@ -9,5 +9,8 @@ class Article < ActiveRecord::Base
   	self.status ||= 'pending'
   end
 
+  def self.search_by_title(title)
+    self.where("chinese_title like ? ", "%#{title}%")
+  end
 end
 
