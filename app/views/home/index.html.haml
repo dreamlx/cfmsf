@@ -1,30 +1,17 @@
 #content
   %header#head
-    .nave
-      %nav
-        %a{href: ""} CURRENT
-      %p
-        %a{href: ""} students
-    .nave
-      %nav
-        %a{href: ""} PROSPECTIVE
-      %p
-        %a{href: ""} students
-    .nave
-      %nav
-        %a{href: ""} ALUMNI AND
-      %p
-        %a{href: ""} friends
-    .nave
-      %nav
-        %a{href: ""} FACULTY AND
-      %p
-        %a{href: ""} stuff
-    .nave
-      %nav
-        %a{href: ""} TECHNOLOGY AND
-      %p
-        %a{href: ""} invention
+    - @categories.each do |category|
+      .nave
+        %nav
+          = link_to category.chinese_name, "#"
+    -# TODO %p??
+    - # %p ??     
+    / .nave
+    /   %nav
+    /     %a{href: ""} CURRENT
+    /   %p
+    /     %a{href: ""} students
+
   %article.main
     .mlt
       .mlt_01

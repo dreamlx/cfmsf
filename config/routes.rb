@@ -17,6 +17,6 @@ Bancheng::Application.routes.draw do
     end
   end
 
-  root :to => 'admin/home#index'
+  root :to => 'home#index'
 
 end

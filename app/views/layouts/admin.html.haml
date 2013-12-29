@@ -17,12 +17,13 @@
     %div.container
       %div.row
         %div.span3
-          %ul.nav.nav-list.sidenav.affix-top
-            %li{class: ("active" if controller_name == "home")}= link_to "Home", admin_home_index_path
-            - if current_user.role == "admin"
-              %li{class: ("active" if controller_name == "users")}= link_to "User Management", admin_users_path
-              %li{class: ("active" if controller_name == "categories")}= link_to "Category Management", admin_categories_path
-            %li{class: ("active" if controller_name == "articles")}= link_to "Article Management", admin_articles_path
+          - if user_signed_in?
+            %ul.nav.nav-list.sidenav.affix-top
+              %li{class: ("active" if controller_name == "home")}= link_to "Home", admin_home_index_path
+              - if current_user.role == "admin"
+                %li{class: ("active" if controller_name == "users")}= link_to "User Management", admin_users_path
+                %li{class: ("active" if controller_name == "categories")}= link_to "Category Management", admin_categories_path
+              %li{class: ("active" if controller_name == "articles")}= link_to "Article Management", admin_articles_path
         %div.span9.content
           - unless alert.blank?
             .alert.alert-error.fade.in
