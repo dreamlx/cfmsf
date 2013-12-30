@@ -4,7 +4,11 @@ Bancheng::Application.routes.draw do
   devise_for :users
 
   resources :home, only: :index
-
+  resources :articles do
+    collection do
+      get :search
+    end
+  end
   namespace :admin do
     resources :users
     resources :home, only: :index

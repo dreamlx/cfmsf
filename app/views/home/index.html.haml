@@ -4,14 +4,6 @@
       .nave
         %nav
           = link_to category.chinese_name, "#"
-    -# TODO %p??
-    - # %p ??     
-    / .nave
-    /   %nav
-    /     %a{href: ""} CURRENT
-    /   %p
-    /     %a{href: ""} students
-
   %article.main
     .mlt
       .mlt_01
@@ -43,10 +35,14 @@
         AT EVERY TECHNOLOGICAL
         %br/
         AND INVENTIVE JOB
-    .search
-      %input.inp_01{type: "text"}>/
-      \  
-      %input.searchbtn{type: "submit", value: "SEARCH"}/
+    = form_tag search_articles_path, method: :GET do |f|
+      .search
+        = text_field_tag 'search', '', class:"inp_01"
+        = submit_tag 'SEARCH',  class:"searchbtn"
+    / .search
+    /   %input.inp_01{type: "text"}>/
+    /   \  
+    /   %input.searchbtn{type: "submit", value: "SEARCH"}/
     .search_res
       .question
         %h4 FREQUENTLY ASKED

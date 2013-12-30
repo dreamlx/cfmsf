@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20131225040108) do
 
+  create_table "albums", :force => true do |t|
+    t.integer  "work_id"
+    t.string   "cover_image"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "cover_image_uid"
+    t.string   "cover_image_name"
+  end
+
   create_table "articles", :force => true do |t|
     t.string   "chinese_title"
     t.string   "franch_title"
@@ -29,6 +38,72 @@ ActiveRecord::Schema.define(:version => 20131225040108) do
     t.string   "franch_name"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "life_id"
+    t.string   "content"
+    t.string   "name"
+    t.string   "email"
+    t.string   "website"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "leave_messages", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "website"
+    t.string   "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "lives", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "author"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.string   "desc"
+    t.datetime "release_time"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "thumb"
+    t.string   "company"
+    t.boolean  "top"
+  end
+
+  create_table "slides", :force => true do |t|
+    t.string   "name"
+    t.string   "pic"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "thumb"
+    t.string   "background_color"
+    t.string   "font_color"
+    t.string   "link"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
   create_table "user_categories", :force => true do |t|
@@ -58,5 +133,16 @@ ActiveRecord::Schema.define(:version => 20131225040108) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
+
+  create_table "works", :force => true do |t|
+    t.integer  "project_id"
+    t.string   "name"
+    t.string   "desc"
+    t.string   "content"
+    t.string   "tag"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "thumb"
+  end
 
 end
