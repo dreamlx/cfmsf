@@ -1,3 +1,5 @@
+//= require validate
+
 $(document).ready(function(){
 	$("#user_role").change(function(){
 		var role = $("#user_role").val(); 
@@ -8,4 +10,27 @@ $(document).ready(function(){
 		}
 
 	})
+	var validator = new FormValidator('user', [{
+            name: 'user[username]',
+            display: 'required',    
+            rules: 'required|max_length[10]|min_length[4]'
+        }, {
+            name: 'user[email]',
+            rules: 'required|valid_email'
+        }], function(errors) {
+            if (errors.length > 0) {
+                console.info(errors);
+                $('#new_user input').removeClass('error');
+                $('.spanerror').remove();
+                for(var err in errors)
+                {
+                    var input = $("#"+errors[err].id);
+                    input.attr('value','').addClass('error').after('<span style="color:red",class=spanerror>'+errors[err].message+'</span>');
+                };
+            }
+        });
+        validator.setMessage('required','请填必填项！');
+        validator.setMessage('min_length','字符长度过短');
+        validator.setMessage('max_length','字符长度过长！');
+        validator.setMessage('valid_email','邮箱格式错误！');
 });

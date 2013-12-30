@@ -8,8 +8,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   validates :role, presence: true
-  validates :username, presence: true
-
+  validates :username, presence: true, length:{maximum: 10, minimum: 4}
   validates :username,
     :uniqueness => {
       :case_sensitive => false

@@ -1,6 +1,7 @@
-= simple_form_for [:admin, @user] do |f|
+= simple_form_for [:admin, @user], html:{name:"user"}do |f|
   %div.row
-    %div.span3
+    %div.span5
+      = f.error_notification
       %table
         = f.input :username
         = f.input :email

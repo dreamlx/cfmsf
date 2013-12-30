@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+zh-CN:
+  activerecord:
+      errors:
+        models:
+          user:
+            attributes:
+              password:
+                blank: 密码不能为空
+                confirmation: 密码输入不一致
+              username:
+                blank: 用户名不能为空
+              email:
+                blank: 邮箱不能为空
+                invalid: 邮箱格式不对
+
