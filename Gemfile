@@ -50,18 +50,19 @@ gem "mini_magick"
 gem 'easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 
-gem 'sqlite3'
+# gem 'sqlite3'
 # gem 'figaro'
 
 
 group :development, :test do
   gem "pry-nav"
   gem 'pry'
-  gem 'mysql2'
+  gem 'pg'
 end
 
 group :production do
-  gem 'mysql2'
+  # gem 'mysql2'
+  gem 'pg'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
