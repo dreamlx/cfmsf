@@ -5,7 +5,6 @@
 #   git config --global core.excludesfile ~/.gitignore_global
 
 #Ignore database.yml
-/config/database.yml
 /config/database.yml.server
 /config/application.yml
 
