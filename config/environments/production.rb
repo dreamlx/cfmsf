@@ -46,10 +46,10 @@ Bancheng::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( 
-    admin/*.js,
-    validate.js
-   )
+  # config.assets.precompile += %w( 
+  #   admin/*.js,
+  #   validate.js
+  #  )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -64,31 +64,7 @@ Bancheng::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.assets.precompile += %w( 
-    leave_messages.js
-    project.js
-    projects.js
-    salvattore.js
-    site.js
-    validate.js
-    admin/*.js
-    admin/*.css
-    careers.css
-    careers_index.css
-    commonProjectAndTag.css
-    leave_messages.css
-    leave_messages_new.css
-    main.css
-    projects_index.css
-    projects_show.css
-    scaffolds.css
-    site_aboutus.css
-    site_contact.css
-    site_security.css
-    site_services.css
-    works_show.css
-    
-    )
+  # config.assets.precompile += %w()
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
