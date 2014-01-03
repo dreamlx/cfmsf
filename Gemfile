@@ -51,7 +51,7 @@ gem 'easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 
 gem 'rails_12factor'
-# gem 'sqlite3'
+gem 'sqlite3'
 # gem 'figaro'
 
 
