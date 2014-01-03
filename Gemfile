@@ -51,14 +51,13 @@ gem 'easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 
 gem 'rails_12factor'
-gem 'sqlite3'
 # gem 'figaro'
 
 
 group :development, :test do
   gem "pry-nav"
   gem 'pry'
-  gem 'pg'
+  gem 'sqlite3'
 end
 
 group :production do
