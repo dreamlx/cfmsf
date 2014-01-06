@@ -19,9 +19,6 @@ $(document).ready(function(){
             name: 'user[username]',
             display: 'required',    
             rules: 'required|max_length[10]|min_length[4]'
-        },{name: 'user[password]',
-           display: 'required',
-           rules: 'required|max_length[10|min_length[4]'
         }], function(errors) {
             if (errors.length > 0) {
                 console.info(errors);

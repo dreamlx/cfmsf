@@ -10,7 +10,16 @@ zh-CN:
                 confirmation: 密码输入不一致
               username:
                 blank: 用户名不能为空
+                taken: 用户名已注册
+                too_long: 用户名太长
+                too_short: 用户名太短
               email:
                 blank: 邮箱不能为空
                 invalid: 邮箱格式不对
-
+                taken: 邮箱已注册
+          category:
+            attributes:
+              chinese_name:
+                taken: 该名字已使用
+              franch_name:
+                taken: 该名字已使用

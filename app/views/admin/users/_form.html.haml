@@ -4,8 +4,9 @@
       = f.error_notification
       %table
         = f.input :username
-        = f.input :email
         = f.input :password
+        - if action_name == "edit"
+          %div{style:"color: #D8AC83"}  leave it blank if you don't want to change it
         = f.input :password_confirmation
         = f.input :role, as: :select, collection:["editor","admin"], include_blank: false
     %div.span3#editor_permission
@@ -18,5 +19,4 @@
 
   .actions
     = f.submit 'Save', :class => 'btn'
-
-= javascript_include_tag "admin/users"
+    = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"

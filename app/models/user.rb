@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :role, :login
+  attr_accessible :password, :password_confirmation, :remember_me, :username, :role, :login
   attr_accessor :login
 
   validates :role, presence: true
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
     if login = conditions.delete(:login)
-      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+      where(conditions).where(["lower(username) = :value", { :value => login.downcase }]).first
     else
       where(conditions).first
     end
@@ -33,5 +33,13 @@ class User < ActiveRecord::Base
       categories = Category.all
       self.categories << categories
     end
+  end
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
   end
 end

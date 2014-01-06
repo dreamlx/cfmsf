@@ -8,9 +8,14 @@
     %tbody
     - @articles.each do |article|
       %tr{class: article_status_class(article)}
-        %td= article.chinese_title
+        %td
+          - if article.chinese_title.nil? || article.chinese_title.blank?
+            = article.franch_title
+          - else
+            = article.chinese_title
         %td= article.status
         %td
           - if controller_name == "articles"
             - if current_user.role == "admin" || (current_user.role == "editor" and article.status == "pending")
               = link_to 'Edit', edit_admin_article_path(article)
+              = link_to 'Delete', admin_article_path(article), method: :delete

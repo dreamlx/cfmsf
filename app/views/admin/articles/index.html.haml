@@ -1,7 +1,9 @@
-%h1 Article Management
-
-= link_to 'New Article', new_admin_article_path
-
+.row
+  .span6
+    %h3 Article Management
+  .span3
+    %h3
+      = link_to 'New Article', new_admin_article_path
 .btn-group.pull-right
   %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
     = @current_category.chinese_name unless @current_category.blank?

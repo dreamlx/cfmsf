@@ -1,12 +1,16 @@
-%h1 Article Management
-= link_to 'Go to the Article list', admin_articles_path
+.row
+  .span6
+    %h3 Article Management
+  .span3
+    %h3
+      = link_to 'Go to the Article list', admin_articles_path
 
 - if current_user.role == "admin"
   - if @article.status == "pending"
-    = simple_form_for @article, url: approve_admin_article_path, html:{class:"pull-right"},method: "PUT" do |f|
+    = simple_form_for @article, url: approve_admin_article_path, method: "PUT" do |f|
       = f.button :submit, "Approve", class:"btn btn-success"
   - elsif @article.status == "public"
-    = simple_form_for @article, url: reject_admin_article_path, html:{class:"pull-right"},method: "PUT" do |f|
+    = simple_form_for @article, url: reject_admin_article_path, method: "PUT" do |f|
       = f.button :submit, "Reject", class:"btn btn-danger"
 
 = render 'form'

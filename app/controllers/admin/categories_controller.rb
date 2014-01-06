@@ -1,6 +1,7 @@
 module Admin
   class CategoriesController < Admin::BaseController
-
+    load_and_authorize_resource
+    
     def index
       @categories = Category.all
     end
@@ -29,7 +30,7 @@ module Admin
 
     def update
       @category = Category.find(params[:id])
-      if @category.save
+      if @category.update_attributes(params[:category])
         redirect_to admin_categories_path, notice: 'category was successful updated'
       else
         render action: "edit", alert: 'category was failed updated'

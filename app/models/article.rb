@@ -5,6 +5,9 @@ class Article < ActiveRecord::Base
 
   before_save :default_status
 
+  validates :chinese_title, length:{maximum: 200}
+  validates :franch_title, length: {maximum: 200}
+
   def default_status
   	self.status ||= 'pending'
   end

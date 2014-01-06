@@ -1,4 +1,11 @@
-%h1 User Management
-
-=link_to "Go to the User List", admin_users_path
+.row
+  .span6
+    %h3 User Management
+  .span3
+    %h3
+      =link_to "Go to the User List", admin_users_path
 = render 'form'
+
+
+= javascript_include_tag "admin/edit_user"
+= stylesheet_link_tag "admin/users"

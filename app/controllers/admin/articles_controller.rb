@@ -1,5 +1,7 @@
 module Admin
   class ArticlesController < Admin::BaseController
+    load_and_authorize_resource
+    
     def index
       @current_category = Category.find(params[:category_id]) unless params[:category_id].blank?
       if @current_category.blank?
@@ -43,6 +45,7 @@ module Admin
       @article = Article.find(params[:id])
     end
 
+
     def create
       @article = Article.new(params[:article])
       if @article.save
@@ -54,7 +57,7 @@ module Admin
 
     def update
       @article = Article.find(params[:id])
-      if @article.save
+      if @article.update_attributes(params[:article])
         redirect_to admin_articles_path, notice: 'article was successful updated'
       else
         render action: "edit", alert: 'article was failed updated'
@@ -63,7 +66,7 @@ module Admin
 
     def destroy
       @article = Article.find(params[:id])
-      if @article.destroy
+      if @article.update_attributes(status:"deleted")
         redirect_to admin_articles_path, notice: 'article was successful deleted'
       else
         render action: "index", alert: "article was failed deleted"

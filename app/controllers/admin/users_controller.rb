@@ -1,6 +1,8 @@
 module Admin
 
   class UsersController < Admin::BaseController
+    load_and_authorize_resource
+    
     def index
       @users = User.order("id desc")
     end
@@ -8,6 +10,7 @@ module Admin
     def show
       @user = User.find(params[:id])
     end
+
     def edit
       @user = User.find(params[:id])
       @categories = Category.all
@@ -21,13 +24,19 @@ module Admin
 
     def create
       @user = User.new(params[:user])
-      category_ids = params[:category_ids] if (@user.role == "editor" and !params[:category_ids].blank?)
       if @user.save
-        category_ids.each do |category_id|
-          category = Category.find(category_id)
-          @user.categories << category
+        if @user.role == "editor"
+          category_ids = params[:category_ids]
+          if !category_ids.nil?
+            category_ids.each do |category_id|
+              category = Category.find(category_id)
+              @user.categories << category
+            end
+          end
+          redirect_to admin_users_path, notice: 'User was successful created'
+        else @user.role == "admin"
+          redirect_to admin_users_path, notice: 'User was successful created'
         end
-        redirect_to admin_users_path, notice: 'User was successful created'
       else
         @categories = Category.all
         render action: "new", notice: 'User was failed created'
@@ -35,12 +44,26 @@ module Admin
     end
 
     def update
-      @user = User.find(params[:id]) 
-      category_ids = params[:category_ids] if (@user.role == "editor" and !params[:category_ids].blank?)
+      if params[:user][:password].blank?
+        params[:user].delete("password")
+        params[:user].delete("password_confirmation")
+        params[:user].delete(:current_password)
+      end
+
+      @user = User.find(params[:id])
       if @user.update_attributes(params[:user])
-        category_ids.each do |category_id|
-          category = Category.find(category_id)
-          @user.categories << category
+        @user.categories.delete_all
+        if @user.role == "editor"
+          category_ids = params[:category_ids]
+          if !category_ids.nil?
+            category_ids.each do |category_id|
+              category = Category.find(category_id)
+              @user.categories << category
+            end
+          end
+        else @user.role == "admin"
+          categories = Category.all
+          @user.categories << categories
         end
         redirect_to admin_users_path, notice: 'User was successful updated'
       else
