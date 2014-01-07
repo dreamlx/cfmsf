@@ -11,17 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140106061457) do
+ActiveRecord::Schema.define(:version => 20140107025030) do
 
   create_table "articles", :force => true do |t|
     t.string   "chinese_title"
     t.string   "franch_title"
-    t.string   "chinese_content"
-    t.string   "franch_content"
+    t.text     "chinese_content", :limit => 255
+    t.text     "franch_content",  :limit => 255
     t.string   "status"
     t.integer  "category_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "categories", :force => true do |t|

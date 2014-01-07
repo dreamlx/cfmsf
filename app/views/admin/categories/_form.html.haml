@@ -5,6 +5,7 @@
     = f.input :franch_name, label: "Category FR Name"
   .form-actions
     = f.button :submit
-    = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
+    - if action_name == 'new'
+      = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
 
 = javascript_include_tag "admin/categories"

@@ -19,4 +19,5 @@
 
   .actions
     = f.submit 'Save', :class => 'btn'
-    = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
+    - if action_name == 'new'
+      = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
