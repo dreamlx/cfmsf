@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-  	@categories = current_user.categories
+  	@categories = Category.all
   end
 end
