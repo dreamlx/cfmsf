@@ -13,7 +13,7 @@ class Article < ActiveRecord::Base
   end
 
   def self.search_by_title(title)
-    self.where("chinese_title like ? ", "%#{title}%")
+    self.where("chinese_title like ? or franch_title like ?", "%#{title}%", "%#{title}%")
   end
 end
 
