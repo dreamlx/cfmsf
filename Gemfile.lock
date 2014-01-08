@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     actionmailer (3.2.13)
       actionpack (= 3.2.13)
@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
+    addressable (2.3.5)
     arel (3.0.2)
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
@@ -45,11 +46,19 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    capybara (2.1.0)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
     carrierwave-qiniu (0.0.6)
+    childprocess (0.3.9)
+      ffi (~> 1.0, >= 1.0.11)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -59,6 +68,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     commonjs (0.2.7)
+    database_cleaner (1.0.1)
     default_value_for (2.0.3)
     devise (3.1.0)
       bcrypt-ruby (~> 3.0)
@@ -79,6 +89,14 @@ GEM
       yard (>= 0.7.0)
     erubis (2.7.0)
     execjs (2.0.1)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.2.1)
+      factory_girl (~> 4.2.0)
+      railties (>= 3.0.0)
+    faker (1.1.2)
+      i18n (~> 0.5)
+    ffi (1.9.3)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -100,6 +118,8 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.3.0)
+      addressable (~> 2.3)
     less (2.4.0)
       commonjs (~> 0.2.7)
     less-rails (2.4.2)
@@ -113,6 +133,7 @@ GEM
     mime-types (1.25)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
+    mini_portile (0.5.2)
     multi_json (1.8.0)
     nested_form (0.3.2)
     net-scp (1.1.1)
@@ -122,6 +143,8 @@ GEM
     net-ssh (2.6.7)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
     pg (0.16.0)
     polyamorous (0.6.4)
@@ -193,6 +216,7 @@ GEM
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
     ruby-hmac (0.4.0)
+    rubyzip (1.1.0)
     rvm-capistrano (1.3.0)
       capistrano (>= 2.0.0)
     sass (3.2.10)
@@ -200,6 +224,11 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    selenium-webdriver (2.33.0)
+      childprocess (>= 0.2.5)
+      multi_json (~> 1.0)
+      rubyzip
+      websocket (~> 1.0.4)
     simple_form (2.1.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -237,6 +266,9 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.3)
       rack (>= 1.0)
+    websocket (1.0.7)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
     yard (0.8.7.2)
 
 PLATFORMS
@@ -248,17 +280,22 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   cancan
   capistrano
+  capybara (= 2.1.0)
   carrierwave
   carrierwave-qiniu
   coffee-rails (~> 3.2.1)
+  database_cleaner (~> 1.0.1)
   default_value_for (~> 2.0.1)
   devise
   dragonfly (~> 0.9.15)
   easy_captcha
+  factory_girl_rails (~> 4.2.1)
+  faker (~> 1.1.2)
   haml-rails
   jcrop-rails
   jquery-rails
   kaminari (~> 0.14.1)
+  launchy (~> 2.3.0)
   less-rails
   mini_magick
   nested_form
@@ -272,8 +309,10 @@ DEPENDENCIES
   rails_kindeditor (~> 0.4.0)
   ransack
   requirejs-rails
+  rspec-rails (~> 2.14.0)
   rvm-capistrano
   sass-rails (~> 3.2.3)
+  selenium-webdriver (~> 2.33.0)
   simple_form
   sqlite3
   state_machine
