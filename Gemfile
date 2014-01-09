@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.13'
 
@@ -51,6 +51,7 @@ gem 'easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 
 gem 'rails_12factor'
+gem 'rubyzip'
 # gem 'figaro'
 
 
@@ -58,11 +59,28 @@ group :development, :test do
   gem "pry-nav"
   gem 'pry'
   gem 'sqlite3'
+  gem "rspec-rails", "~> 2.14.0"
+  gem "factory_girl_rails", "~> 4.2.1"
+
+end
+
+group :development do
+  gem 'guard-rspec', '~> 3.0.2'
+  gem 'guard-spork', '~> 1.5.1'
+  gem 'spork-rails', github: 'sporkrb/spork-rails'
+  gem 'rb-fsevent', '~> 0.9.3'
 end
 
 group :production do
-  # gem 'mysql2'
   gem 'pg'
+end
+
+group :test do
+  gem 'capybara', '2.1.0'
+  gem "faker", "~> 1.1.2"
+  gem "database_cleaner", "~> 1.0.1"
+  gem "launchy", "~> 2.3.0"
+  gem "selenium-webdriver", "~> 2.33.0"
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

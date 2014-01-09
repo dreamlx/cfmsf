@@ -7,6 +7,17 @@ class Category < ActiveRecord::Base
 
   validates_uniqueness_of :chinese_name
   validates_uniqueness_of :franch_name
+
+  after_create :set_to_admin
+
+  private
+
+  	def set_to_admin
+  	  users = User.where(role: "admin")
+  	  users.each do |user|
+  	    user.categories << self
+  	  end
+  	end
 end
 
 
