@@ -3,4 +3,12 @@ class ApplicationController < ActionController::Base
   layout "application"
 
   protect_from_forgery
+  before_filter :get_all_category
+
+  private
+
+  def get_all_category
+  	@categories = Category.all
+  end
 end
+

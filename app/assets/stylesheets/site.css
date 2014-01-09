@@ -8,8 +8,10 @@ ol, ul {list-style:none;}
 input, textarea {border:none;}
 h1,h2,h3,h4,h5,h6 {font-weight:normal;}
 a {text-decoration:none; color:#fff;}
-
-#content{ width:780px; height:700px; background:url(/assets/bg.jpg) no-repeat; margin:0 auto;}
+body{
+  background-color: #ccc; 
+}
+#content{ width:780px;  margin:0 auto;}
 #head{ clear:both; padding-top:57px; padding-left:50px;}
 #head .nave{ float:left; height:42px; padding-top:5px; background:url(/assets/plug.gif) no-repeat 2px 12px; padding-left:14px; padding-right:44px; margin-bottom:19px;}
 #head .nave nav{ clear:both; font-size:12px; font-weight:bold; line-height:20px;}

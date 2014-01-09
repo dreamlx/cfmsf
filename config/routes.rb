@@ -4,6 +4,7 @@ Bancheng::Application.routes.draw do
   devise_for :users
 
   resources :home, only: :index
+  resources :categories, only: :show
   resources :articles do
     collection do
       get :search

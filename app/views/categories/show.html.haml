@@ -1,0 +1,8 @@
+= link_to "首页", root_path
+%span >  
+= link_to "#{(@category.chinese_name.blank? ? @category.franch_name : @category.chinese_name)}", category_path(@category)
+%ul
+  - @category.articles.each do |article|
+    - if article.status == "public"
+      %li
+        = link_to (article.chinese_title.blank? ? article.franch_title : article.chinese_title), article_path(article)
