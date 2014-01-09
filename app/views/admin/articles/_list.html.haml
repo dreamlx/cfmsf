@@ -16,6 +16,5 @@
         %td= article.status
         %td
           - if controller_name == "articles"
-            - if current_user.role == "admin" || (current_user.role == "editor" and article.status == "pending")
+            - if (current_user.role == "admin" and article.status != "deleted") || (current_user.role == "editor" and article.status == "pending")
               = link_to 'Edit', edit_admin_article_path(article)
-              = link_to 'Delete', admin_article_path(article), method: :delete

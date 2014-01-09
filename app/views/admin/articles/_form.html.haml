@@ -43,5 +43,8 @@
     = f.button :submit
     - if action_name == "new"
       = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
+    - if action_name == "edit"
+      = simple_form_for @article, url: admin_article_path(@article), method: :delete, data: {confirm: "Are you sure ?"} do |f|
+        = f.button :submit, "Delete", class:"btn btn-danger"
 
 = javascript_include_tag "admin/articles"

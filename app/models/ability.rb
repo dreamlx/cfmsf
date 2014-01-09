@@ -6,7 +6,7 @@ class Ability
     if user.role == 'admin'
       can :manage, :all
     elsif user.role == 'editor'
-      can [:read, :update, :destroy, :create, :edit, :new], Article
+      can [:read, :update, :create, :edit, :new], Article
     end
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?
