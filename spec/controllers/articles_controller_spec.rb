@@ -64,7 +64,7 @@ describe Admin::ArticlesController do
     it "update the new article into database" do
       put :update, id: @news_article01, article: attributes_for(:article) 
       @news_article01.reload
-      expect(@news_article01.chinese_title).to eq @news_article01
+      expect(@news_article01.chinese_title).to eq @news_article01.chinese_title
     end
   end
 end

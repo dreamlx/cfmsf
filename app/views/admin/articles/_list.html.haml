@@ -7,14 +7,15 @@
         %td Operation
     %tbody
     - @articles.each do |article|
-      %tr{class: article_status_class(article)}
-        %td
-          - if article.chinese_title.nil? || article.chinese_title.blank?
-            = article.franch_title
-          - else
-            = article.chinese_title
-        %td= article.status
-        %td
-          - if controller_name == "articles"
-            - if (current_user.role == "admin" and article.status != "deleted") || (current_user.role == "editor" and article.status == "pending")
-              = link_to 'Edit', edit_admin_article_path(article)
+      - if article.status != "deleted"
+        %tr{class: article_status_class(article)}
+          %td
+            - if article.chinese_title.nil? || article.chinese_title.blank?
+              = article.franch_title
+            - else
+              = article.chinese_title
+          %td= article.status
+          %td
+            - if controller_name == "articles"
+              - if (current_user.role == "admin") || (current_user.role == "editor" and article.status == "pending")
+                = link_to 'Edit', edit_admin_article_path(article)
