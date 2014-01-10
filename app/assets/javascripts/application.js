@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require kindeditor
 //= require twitter/bootstrap
+

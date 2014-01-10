@@ -10,7 +10,7 @@
           .span4
             .btn-group
               %button.btn.btn-primary.active.chinese_button{type: "button"} CHB
-              %button.btn.btn-primary.franch_button{type: "button"} FR
+              %button.btn.btn-primary.french_button{type: "button"} FR
       %select.article_category_id{name:"article[category_id]"}
         - current_user.categories.each do |category|
           - if action_name == "edit"
@@ -20,31 +20,29 @@
             %option{value:"#{category.id}"}
               = category.chinese_name
       = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
-    %div#franch_form{style:"display:none"}
+    %div#french_form{style:"display:none"}
       %div
-        %span franch_title
+        %span french_title
         .row
           .span5
-            = f.input :franch_title, input_html:{style:"width:100%"}, label: false
+            = f.input :french_title, input_html:{style:"width:100%"}, label: false
           .span4
             .btn-group
               %button.btn.btn-primary.chinese_button{type: "button"} CHB
-              %button.btn.btn-primary.active.franch_button{type: "button"} FR
+              %button.btn.btn-primary.active.french_button{type: "button"} FR
       %select.article_category_id{name:"article[category_id]"}
         - current_user.categories.each do |category|
           - if action_name == "edit"
             %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
-              = category.franch_name
+              = category.french_name
           - else
             %option{value:"#{category.id}"}
-              = category.franch_name
-      = f.input :franch_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
+              = category.french_name
+      = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
   .form-actions
     = f.button :submit
     - if action_name == "new"
       = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
-    - if action_name == "edit"
-      = simple_form_for @article, url: admin_article_path(@article), method: :delete, data: {confirm: "Are you sure ?"} do |f|
-        = f.button :submit, "Delete", class:"btn btn-danger"
 
 = javascript_include_tag "admin/articles"
+= stylesheet_link_tag "admin/error"

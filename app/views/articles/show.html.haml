@@ -1,6 +1,6 @@
 = link_to "首页", root_path
 %span >  
-= link_to "#{(@article.category.chinese_name.blank? ? @article.category.franch_name : @article.category.chinese_name)}", category_path(@article.category)
+= link_to "#{(@article.category.chinese_name.blank? ? @article.category.french_name : @article.category.chinese_name)}", category_path(@article.category)
 %p
-  = @article.chinese_title.blank? ? @article.franch_title : @article.chinese_title
-= raw(@article.chinese_content.blank? ? @article.franch_content : @article.chinese_content)
+  = @article.chinese_title.blank? ? @article.french_title : @article.chinese_title
+= raw(@article.chinese_content.blank? ? @article.french_content : @article.chinese_content)

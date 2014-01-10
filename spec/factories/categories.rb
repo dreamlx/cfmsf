@@ -5,7 +5,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :category do
-  	franch_name {Faker::Name.last_name}
+  	french_name {Faker::Name.last_name}
   	factory :news do
   	  chinese_name "新闻"
   	end

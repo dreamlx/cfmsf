@@ -2,10 +2,11 @@
   = f.error_notification
   %table
     = f.input :chinese_name, label: "Category CHN Name"
-    = f.input :franch_name, label: "Category FR Name"
+    = f.input :french_name, label: "Category FR Name"
   .form-actions
     = f.button :submit
     - if action_name == 'new'
       = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
 
 = javascript_include_tag "admin/categories"
+= stylesheet_link_tag "admin/error"

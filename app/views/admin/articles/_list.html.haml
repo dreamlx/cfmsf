@@ -3,19 +3,17 @@
     %tr
       %td Article Name
       %td Status
-      - if controller_name == "articles"
-        %td Operation
+      %td Operation
     %tbody
     - @articles.each do |article|
       - if article.status != "deleted"
         %tr{class: article_status_class(article)}
           %td
             - if article.chinese_title.nil? || article.chinese_title.blank?
-              = article.franch_title
+              = link_to article.french_title, edit_admin_article_path(article)
             - else
-              = article.chinese_title
+              = link_to article.chinese_title, edit_admin_article_path(article)
           %td= article.status
           %td
-            - if controller_name == "articles"
-              - if (current_user.role == "admin") || (current_user.role == "editor" and article.status == "pending")
-                = link_to 'Edit', edit_admin_article_path(article)
+            - if can? :edit, article
+              = link_to 'Edit', edit_admin_article_path(article)

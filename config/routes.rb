@@ -1,8 +1,6 @@
 Bancheng::Application.routes.draw do
   captcha_route
 
-  devise_for :users
-
   resources :home, only: :index
   resources :categories, only: :show
   resources :articles do
@@ -21,6 +19,8 @@ Bancheng::Application.routes.draw do
       end
     end
   end
+
+  devise_for :users, controllers: {sessions: "sessions"}
 
   root :to => 'home#index'
 

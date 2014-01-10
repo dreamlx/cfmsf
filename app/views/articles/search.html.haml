@@ -5,4 +5,4 @@
   - @articles.each do |article|
     - if article.status == "public"
       %li
-        = link_to (article.chinese_title.blank? ? article.franch_title : article.chinese_title), article_path(article)
+        = link_to (article.chinese_title.blank? ? article.french_title : article.chinese_title), article_path(article)

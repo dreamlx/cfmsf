@@ -16,9 +16,10 @@
     - @categories.each do |category|
       %tr
         %td= category.chinese_name
-        %td= category.franch_name
+        %td= category.french_name
         %td= category.articles.where("status != 'deleted'").size
         %td
-          = link_to 'Edit', edit_admin_category_path(category)
-          - if category.articles.size == 0
+          - if can? :edit, category
+            = link_to 'Edit', edit_admin_category_path(category)
+          - if category.articles.size == 0 and (can? :delete, category)
             = link_to 'Delete', admin_category_path(category), :method => :delete, :data => { :confirm => 'Are you sure?' }

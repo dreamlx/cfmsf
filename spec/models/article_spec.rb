@@ -14,16 +14,16 @@ describe Article do
 
   describe "filter by title" do
   	before :each do
-  	  @article01 = create(:article, chinese_title: "新闻", franch_title: "new")
-  	  @article02 = create(:article, chinese_title: "科技是什么", franch_title:"what is tech?")
-  	  @article03 = create(:article, chinese_title: "生活是什么", franch_title:"what is life?")
+  	  @article01 = create(:article, chinese_title: "新闻", french_title: "new")
+  	  @article02 = create(:article, chinese_title: "科技是什么", french_title:"what is tech?")
+  	  @article03 = create(:article, chinese_title: "生活是什么", french_title:"what is life?")
   	end
 
   	context "matching title by title" do
   	  it "return a sorted array of result that match chinese_title" do
   	    expect(Article.search_by_title("什么")).to eq [@article02, @article03]
   	  end
-  	  it "return a sorted array of result that match franch_title" do
+  	  it "return a sorted array of result that match french_title" do
   	  	expect(Article.search_by_title("what")).to eq [@article02, @article03]
   	  end
   	end
@@ -32,7 +32,7 @@ describe Article do
   	  it "return a sorted array of result that match chinese_title" do
   	    expect(Article.search_by_title("什么")).to_not include @article01
   	  end
-  	  it "return a sorted array of result that match franch_title" do
+  	  it "return a sorted array of result that match french_title" do
   	  	expect(Article.search_by_title("what")).to_not include @article01
   	  end
   	end
