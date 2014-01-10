@@ -13,14 +13,14 @@
       %td Status
     %tbody
     - @articles.each do |article|
-      - if article.status != "deleted"
-        %tr{class: article_status_class(article)}
-          %td
-            - if article.chinese_title.nil? || article.chinese_title.blank?
-              = link_to article.french_title, edit_admin_article_path(article)
-            - else
-              = link_to article.chinese_title, edit_admin_article_path(article)
+      - if article.status != "deleted" and can? :show, article
+          %tr{class: article_status_class(article)}
+            %td
+              - if article.chinese_title.nil? || article.chinese_title.blank?
+                = link_to article.french_title, edit_admin_article_path(article)
+              - else
+                = link_to article.chinese_title, edit_admin_article_path(article)
 
-          %td= article.status
+            %td= article.status
  
 
