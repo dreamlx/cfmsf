@@ -13,7 +13,8 @@
       %td Status
     %tbody
     - @articles.each do |article|
-      - if article.status != "deleted" and can? :show, article
+      - if article.status != "deleted" 
+        - if can? :edit, article
           %tr{class: article_status_class(article)}
             %td
               - if article.chinese_title.nil? || article.chinese_title.blank?
