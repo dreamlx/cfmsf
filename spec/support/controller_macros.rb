@@ -8,9 +8,15 @@ module ControllerMacros
 
   def login_editor
     before(:each) do
-      @request.env["devise.mapping"] = Devise.mappings[:user]
+      @request.env["devise.mapping"] = Devise.mappings[:editor]
       user = FactoryGirl.create(:editor)
       sign_in user
     end
+  end
+
+  def login_in(user)
+    visit new_user_session_path
+    fill_in "login", with: user.username
+    fill_in "password", with: user.password
   end
 end
