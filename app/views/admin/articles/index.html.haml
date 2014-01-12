@@ -3,7 +3,8 @@
     %h3 Article Management
   .span3
     %h3
-      = link_to 'New Article', new_admin_article_path
+      - if can? :read, @current_category
+        = link_to 'New Article', new_admin_article_path
 .pagination
   %ul
     - current_user.categories.all.each do |category|
