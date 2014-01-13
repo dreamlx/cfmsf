@@ -8,6 +8,8 @@ zh-CN:
               password:
                 blank: 密码不能为空
                 confirmation: 密码输入不一致
+                too_long: 密码太短
+                too_short: 密码太长
               username:
                 blank: 用户名不能为空
                 taken: 用户名已注册
