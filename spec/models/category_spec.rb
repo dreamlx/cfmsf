@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe Category do
   it "has a valid factory" do
-  	expect(FactoryGirl.build(:category)).to be_valid
+  	expect(FactoryGirl.build(:news)).to be_valid
+  	expect(FactoryGirl.build(:life)).to be_valid
+  	expect(FactoryGirl.build(:tech)).to be_valid
   end
 
   it "admin has self when create new" do

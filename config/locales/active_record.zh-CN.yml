@@ -23,5 +23,15 @@ zh-CN:
             attributes:
               chinese_name:
                 taken: 该名字已使用
-              franch_name:
+                blank: 不能为空
+                too_long: chinese_name 太长
+              french_name:
                 taken: 该名字已使用
+                blank: 不能为空
+                too_long: french_name 太长
+          article:
+            attributes:
+              chinese_title:
+                too_long: chinese_title 太长
+              french_title:
+                too_long: french_title 太长

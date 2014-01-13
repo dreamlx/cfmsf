@@ -1,13 +1,27 @@
 %h1 On this site management, you can do the user, category and article management
-.btn-group.pull-right
-  %a.btn.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-    = @current_category.chinese_name unless @current_category.blank?
-    %span.caret
-  %ul.dropdown-menu
+.pagination
+  %ul
     - current_user.categories.all.each do |category|
-      %li 
-        = (link_to category.chinese_name, admin_home_index_path(category_id: category.id)) unless @current_category.id == category.id 
+      %li.disabled
+        %span
+          = link_to category.chinese_name, admin_articles_path(category_id: category.id)
 
-= render "admin/articles/list"
+%table.table.center.table-bordered
+  %thead
+    %tr
+      %td Article Name
+      %td Status
+    %tbody
+    - @articles.each do |article|
+      - if article.status != "deleted" 
+        - if can? :edit, article
+          %tr{class: article_status_class(article)}
+            %td
+              - if article.chinese_title.nil? || article.chinese_title.blank?
+                = link_to article.french_title, edit_admin_article_path(article)
+              - else
+                = link_to article.chinese_title, edit_admin_article_path(article)
+
+            %td= article.status
  
 

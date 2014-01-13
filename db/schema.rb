@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140107025030) do
+ActiveRecord::Schema.define(:version => 20140110071501) do
 
   create_table "articles", :force => true do |t|
     t.string   "chinese_title"
-    t.string   "franch_title"
+    t.string   "french_title"
     t.text     "chinese_content", :limit => 255
-    t.text     "franch_content",  :limit => 255
+    t.text     "french_content",  :limit => 255
     t.string   "status"
     t.integer  "category_id"
     t.datetime "created_at",                     :null => false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20140107025030) do
 
   create_table "categories", :force => true do |t|
     t.string   "chinese_name"
-    t.string   "franch_name"
+    t.string   "french_name"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end

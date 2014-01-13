@@ -1,0 +1,4 @@
+%h3
+  = @article.chinese_title.blank? ? @article.french_title : @article.chinese_title
+
+= raw(@article.chinese_content.blank? ? @article.chinese_content : @article.french_content)
