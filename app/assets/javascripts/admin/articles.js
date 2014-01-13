@@ -20,4 +20,9 @@ $(document).ready(function(){
         var selectedIndex = $(".article_category_id").eq(1).val();
         $(".article_category_id").eq(0).val(selectedIndex);
 	})
+	$(".ke-outline").click(function(){
+      alert($(".ke-dialog-row").length)
+    })
+
+
 });

@@ -12,7 +12,6 @@ $(document).ready(function(){
 		}else if (role == "editor"){
 			$("#editor_permission").css("display", "block");
 		}
-
 	})
 
 	var validator = new FormValidator('user', [{
