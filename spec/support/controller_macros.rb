@@ -14,9 +14,13 @@ module ControllerMacros
     end
   end
 
-  def login_in(user)
-    visit new_user_session_path
-    fill_in "login", with: user.username
-    fill_in "password", with: user.password
+  def sign_in(user)
+    before(:each) do
+      visit "/users/sign_in"
+      fill_in "Login", with: user.username
+      fill_in "Password", with: user.password
+
+      click_button "Sign in"
+    end
   end
 end
