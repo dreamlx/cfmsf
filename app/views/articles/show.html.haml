@@ -1,6 +1,59 @@
-= link_to "首页", root_path
-%span >  
-= link_to "#{(@article.category.chinese_name.blank? ? @article.category.french_name : @article.category.chinese_name)}", category_path(@article.category)
-%p
-  = @article.chinese_title.blank? ? @article.french_title : @article.chinese_title
-= raw(@article.chinese_content.blank? ? @article.french_content : @article.chinese_content)
+= provide(:title, "ARTICLE")
+= render "shared/head"
+%article.main
+  .mltail
+    .mlt_h11
+      %img{:src => "/assets/h11.jpg"}/
+    .mlt_h12
+      %img{:src => "/assets/h12.jpg"}/
+    .mlt_h13
+      %img{:src => "/assets/h13.jpg"}/
+    .mlt_h14
+      %img{:src => "/assets/h14.jpg"}/
+    .mlt_h15
+      %img{:src => "/assets/h15.jpg"}/
+    .mlt_h16
+      %img{:src => "/assets/h16.jpg"}/
+    .mlt_h17
+      %img{:src => "/assets/h11.jpg"}/
+    .mlt_h18
+      %img{:src => "/assets/h12.jpg"}/
+    .mlt_h19
+      %img{:src => "/assets/h13.jpg"}/
+    .mlt_h10
+      %img{:src => "/assets/h14.jpg"}/
+    .mlt_h101
+      %img{:src => "/assets/h15.jpg"}/
+    .mlt_h21
+      %img{:src => "/assets/h21.jpg"}/
+    .mlt_h22
+      %img{:src => "/assets/h22.jpg"}/
+    .mlt_h23
+      %img{:src => "/assets/h23.jpg"}/
+    .mlt_h24
+      %img{:src => "/assets/h24.jpg"}/
+    .mlt_h25
+      %img{:src => "/assets/h25.jpg"}/
+    .mlt_h26
+      %img{:src => "/assets/h26.jpg"}/
+    .mlt_h27
+      %img{:src => "/assets/h21.jpg"}/
+    .mlt_h28
+      %img{:src => "/assets/h22.jpg"}/
+    .mlt_h29
+      %img{:src => "/assets/h23.jpg"}/
+    .mlt_h20
+      %img{:src => "/assets/h24.jpg"}/
+    .mlt_h201
+      %img{:src => "/assets/h25.jpg"}/
+  .maintit
+    %a{:href => root_path} 首页
+    \&gt;
+    = link_to "#{@article.category.chinese_name}", category_path(@article.category)
+  .searmain
+    .search_res
+      .tailtitle
+        = @article.chinese_title.blank? ? @article.french_title : @article.chinese_title
+      .tailcont
+        = raw(@article.chinese_content.blank? ? @article.french_content : @article.chinese_content)
+= javascript_include_tag "articles"

@@ -54,7 +54,7 @@ module Admin
     def update
       @article = Article.find(params[:id])
       if @article.update_attributes(params[:article])
-        redirect_to admin_articles_path, notice: 'article was successful updated'
+        render action:"edit", notice: 'article was successful updated'
       else
         render action: "edit", alert: 'article was failed updated'
       end

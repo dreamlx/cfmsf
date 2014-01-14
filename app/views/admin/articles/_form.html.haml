@@ -41,8 +41,7 @@
       = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
   .form-actions
     = f.button :submit
-    - if action_name == "new"
-      = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
+    = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
 
 = javascript_include_tag "admin/articles"
 = stylesheet_link_tag "admin/error"
