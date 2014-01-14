@@ -2,71 +2,50 @@
 %body
   #content
     %header#head
-      .nave
-        %nav
-          %a{:href => ""} CURRENT
-        %p
-          %a{:href => ""} students
-      .nave
-        %nav
-          %a{:href => ""} PROSPECTIVE
-        %p
-          %a{:href => ""} students
-      .nave
-        %nav
-          %a{:href => ""} ALUMNI AND
-        %p
-          %a{:href => ""} friends
-      .nave
-        %nav
-          %a{:href => ""} FACULTY AND
-        %p
-          %a{:href => ""} stuff
-      .nave
-        %nav
-          %a{:href => ""} TECHNOLOGY AND
-        %p
-          %a{:href => ""} invention
+      - @categories.each do |category|
+        .nave
+          %nav
+            = link_to "#{category.chinese_name}", category_path(category)
     %article.main
       .mlt
         .mlt_h11
-          %img{:src => "assets/images/h11.jpg"}/
+          %img{:src => "assets/h11.jpg"}/
         .mlt_h12
-          %img{:src => "images/h12.jpg"}/
+          %img{:src => "assets/h12.jpg"}/
         .mlt_h13
-          %img{:src => "images/h13.jpg"}/
+          %img{:src => "assets/h13.jpg"}/
         .mlt_h14
-          %img{:src => "images/h14.jpg"}/
+          %img{:src => "assets/h14.jpg"}/
         .mlt_h15
-          %img{:src => "images/h15.jpg"}/
+          %img{:src => "assets/h15.jpg"}/
         .mlt_h16
-          %img{:src => "images/h16.jpg"}/
+          %img{:src => "assets/h16.jpg"}/
         .mlt_h21
-          %img{:src => "images/h21.jpg"}/
+          %img{:src => "assets/h21.jpg"}/
         .mlt_h22
-          %img{:src => "images/h22.jpg"}/
+          %img{:src => "assets/h22.jpg"}/
         .mlt_h23
-          %img{:src => "images/h23.jpg"}/
+          %img{:src => "assets/h23.jpg"}/
         .mlt_h24
-          %img{:src => "images/h24.jpg"}/
+          %img{:src => "assets/h24.jpg"}/
         .mlt_h25
-          %img{:src => "images/h25.jpg"}/
+          %img{:src => "assets/h25.jpg"}/
         .mlt_h26
-          %img{:src => "images/h26.jpg"}/
+          %img{:src => "assets/h26.jpg"}/
         .mlt_h31
-          %img{:src => "images/h31.jpg"}/
+          %img{:src => "assets/h31.jpg"}/
         .mlt_h32
-          %img{:src => "images/h32.jpg"}/
+          %img{:src => "assets/h32.jpg"}/
         .mlt_h33
-          %img{:src => "images/h33.jpg"}/
+          %img{:src => "assets/h33.jpg"}/
         .mlt_h34
-          %img{:src => "images/h34.jpg"}/
+          %img{:src => "assets/h34.jpg"}/
         .mlt_h35
-          %img{:src => "images/h35.jpg"}/
+          %img{:src => "assets/h35.jpg"}/
         .mlt_h36
-          %img{:src => "images/h36.jpg"}/
+          %img{:src => "assets/h36.jpg"}/
         .mlt_h41
-          %img{:src => "images/h41.jpg"}/
+          %img{:src => "assets/h41.jpg"}/
         .mlt_01
           JANUARY
           %br>/
@@ -74,7 +53,7 @@
           %br>/
           PAPER ISSUE
         .mlt_h43
-          %img{:src => "images/h43.jpg"}/
+          %img{:src => "assets/h43.jpg"}/
         .mlt_02
           2007
           %br>/
@@ -103,7 +82,7 @@
         \&nbsp;&nbsp;
         %input.searchbtn{:type => "submit", :value => "SEARCH"}/
         .srnotice
-          %img{:src => "images/notebook.jpg"}/
+          %img{:src => "assets/notebook.jpg"}/
       .searmain
         .search_res
           .question
