@@ -1,27 +1,35 @@
 %header#head
   .nave
     %nav
-      = link_to Category.find(1)
-      %a{:href => get_category_id_by_name("current students")} CURRENT
-    %p
-      %a{:href => get_category_id_by_name("current students")} students
-  .nave
-    %nav
-      %a{:href => get_category_id_by_name("prospective students")} PROSPECTIVE
-    %p
-      %a{:href => get_category_id_by_name("prospective students")} students
-  .nave
-    %nav
-      %a{:href => get_category_id_by_name("alumni and friends")} ALUMNI AND
-    %p
-      %a{:href => get_category_id_by_name("alumni and friends")} friends
-  .nave
-    %nav
-      %a{:href => get_category_id_by_name("faculty and stuff")} FACULTY AND
-    %p
-      %a{:href => get_category_id_by_name("faculty and stuff")} stuff
-  .nave
-    %nav
-      %a{:href => get_category_id_by_name("technology and invention")} TECHNOLOGY AND
-    %p
-      %a{:href => get_category_id_by_name("technology and invention")} invention
+      = link_to t("home"), root_path
+  - @categories.each do |category|
+    .nave
+      %nav
+        = link_to category.chinese_name, category_path(category)
+
+
+  / .nave
+  /   %nav
+  /     %a{:href => get_category_id_by_name("current students")} CURRENT
+  /   %p
+  /     %a{:href => get_category_id_by_name("current students")} students
+  / .nave
+  /   %nav
+  /     %a{:href => get_category_id_by_name("prospective students")} PROSPECTIVE
+  /   %p
+  /     %a{:href => get_category_id_by_name("prospective students")} students
+  / .nave
+  /   %nav
+  /     %a{:href => get_category_id_by_name("alumni and friends")} ALUMNI AND
+  /   %p
+  /     %a{:href => get_category_id_by_name("alumni and friends")} friends
+  / .nave
+  /   %nav
+  /     %a{:href => get_category_id_by_name("faculty and stuff")} FACULTY AND
+  /   %p
+  /     %a{:href => get_category_id_by_name("faculty and stuff")} stuff
+  / .nave
+  /   %nav
+  /     %a{:href => get_category_id_by_name("technology and invention")} TECHNOLOGY AND
+  /   %p
+  /     %a{:href => get_category_id_by_name("technology and invention")} invention

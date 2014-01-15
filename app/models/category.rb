@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
   attr_accessible :chinese_name, :french_name, :id
 
-  has_many :user_categories
+  has_many :user_categories, dependent: :destroy
   has_many :users, through: :user_categories
   has_many :articles, dependent: :destroy, order:"created_at desc"
 

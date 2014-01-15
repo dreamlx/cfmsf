@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def get_all_category
-  	@categories = Category.all
+  	@categories = Category.limit(5).order("id asc")
   end
 end
 
