@@ -35,9 +35,11 @@
           - if action_name == "edit"
             %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
               = category.french_name
-          - else
-            %option{value:"#{category.id}"}
-              = category.french_name
+          - elsif action_name == "new"
+            - if !@current_category.nil?
+              %option{value:"#{category.id}", :selected => ("true" if @current_category.id == category.id)}
+                = category.french_name
+            
       = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
   .form-actions
     - if action_name == "new"

@@ -1,6 +1,7 @@
 %header#head
   .nave
     %nav
+      = link_to Category.find(1)
       %a{:href => get_category_id_by_name("current students")} CURRENT
     %p
       %a{:href => get_category_id_by_name("current students")} students

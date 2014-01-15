@@ -35,6 +35,7 @@ module Admin
 
     def new
       @article = Article.new
+      @current_category = Category.find(params[:category_id]) unless params[:category_id].blank?
     end
 
     def edit

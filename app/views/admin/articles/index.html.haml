@@ -4,7 +4,7 @@
   .span3
     %h3
       - if can? :read, @current_category
-        = link_to '添加新文章', new_admin_article_path
+        = link_to '添加新文章', new_admin_article_path(category_id: @current_category.id)
 .pagination
   %ul
     - current_user.categories.all.each do |category|

@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :chinese_name, :french_name
+  attr_accessible :chinese_name, :french_name, :id
 
   has_many :user_categories
   has_many :users, through: :user_categories
