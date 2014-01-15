@@ -55,22 +55,39 @@
       %br>/
       REPORT
   .mrt
-    %p
-      %strong HERE, AT
-    %h3
-      WEST
-      %br>/
-      UNIVERSITY OF
-      %br>/
-      TECHNOLOGY
-    %p
-      WE TEACH OUR STUDENTS
-      %br/
-      HOW TO BE THE BEST
-      %br/
-      AT EVERY TECHNOLOGICAL
-      %br/
-      AND INVENTIVE JOB
+    %p{style:"color:#333"} 欢迎来到
+    %img.logo{src:"/assets/logo.png"}
+    .school_name 上海交通大学医学院中法医学部
+    %table{style:"margin-top:30px;"}
+      %tr
+        %td
+          %a
+            %img.china{src:"/assets/china.jpg"}
+        %td
+          %a
+            %img.french{src:"/assets/french.jpg"}
+      %tr
+        %td
+          %span 中文版
+        %td
+          %span française
+      
+    / %p
+    /   %strong HERE, AT
+    / %h3
+    /   WEST
+    /   %br>/
+    /   UNIVERSITY OF
+    /   %br>/
+    /   TECHNOLOGY
+    / %p
+    /   WE TEACH OUR STUDENTS
+    /   %br/
+    /   HOW TO BE THE BEST
+    /   %br/
+    /   AT EVERY TECHNOLOGICAL
+    /   %br/
+    /   AND INVENTIVE JOB
   = form_tag search_articles_path, method: :GET do |f|
     .search
       = text_field_tag 'search', '', class:"inp_01"

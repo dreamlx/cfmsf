@@ -57,6 +57,12 @@ a {text-decoration:none; color:#fff;}
 .mlt_h36{ position:absolute; height:61px; width:61px; left:356px; top:131px;}
 .mlt_h41{ position:absolute; height:61px; width:61px; left:46px; top:193px;}
 .mlt_h43{ position:absolute; height:61px; width:61px; left:232px; top:193px;}
+.logo{width: 100px; height: 100px; float: left;}
+.school_name{height: 100px; font-family: "华文行楷"; font-size: 24px; text-align: center;}
+.china{cursor: pointer;width: 100px; height: 60px; margin-right: 30px}
+.french{cursor: pointer;width: 100px; height: 60px;}
+.font-china{width: 50px; margin: 0px 20px 0 50px;}
+.font-french{}
 
 .mrt{ float:right; width:334px; height:218px; padding:20px 0px 27px 27px; background:url(../images/hbg.jpg) no-repeat;}
 .mrt p{ clear:both; line-height:20px; color:#fff; font-size:12px; margin-bottom:5px;}
