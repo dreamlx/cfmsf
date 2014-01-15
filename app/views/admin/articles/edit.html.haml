@@ -1,9 +1,9 @@
 .row
   .span6
-    %h3 Article Management
+    %h3 文章编辑
   .span3
     %h3
-      = link_to 'Go to the Article list', admin_articles_path(category_id: @article.category_id )
+      = link_to '返回文章列表', admin_articles_path(category_id: @article.category_id )
 
 / - if current_user.role == "admin"
 
@@ -16,12 +16,12 @@
 
 - if can? :approve, @article
   = simple_form_for @article, url: approve_admin_article_path, method: "PUT", html:{class:"pull-left"} do |f|
-    = f.button :submit, "Approve", class:"btn btn-success"
+    = f.button :submit, "通过", class:"btn btn-success"
 - if can? :reject, @article
   = simple_form_for @article, url: reject_admin_article_path, method: "PUT", html:{class:"pull-left"} do |f|
-    = f.button :submit, "Reject", class:"btn btn-danger"
+    = f.button :submit, "撤回", class:"btn btn-danger"
 - if can? :delete, @article
   = simple_form_for @article, url: admin_article_path(@article), method: :delete do |f|
-    = f.button :submit, "Delete", class:"btn btn-danger", data: {confirm: "Are you sure ?"}
+    = f.button :submit, "删除", class:"btn btn-danger", data: {confirm: "确定 ?"}
 = render 'form'
 

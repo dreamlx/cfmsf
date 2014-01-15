@@ -1,37 +1,51 @@
 # -*- coding: utf-8 -*-
 zh-CN:
   activerecord:
-      errors:
-        models:
-          user:
-            attributes:
-              password:
-                blank: 密码不能为空
-                confirmation: 密码输入不一致
-                too_long: 密码太短
-                too_short: 密码太长
-              username:
-                blank: 用户名不能为空
-                taken: 用户名已注册
-                too_long: 用户名太长
-                too_short: 用户名太短
-              email:
-                blank: 邮箱不能为空
-                invalid: 邮箱格式不对
-                taken: 邮箱已注册
-          category:
-            attributes:
-              chinese_name:
-                taken: 该名字已使用
-                blank: 不能为空
-                too_long: chinese_name 太长
-              french_name:
-                taken: 该名字已使用
-                blank: 不能为空
-                too_long: french_name 太长
-          article:
-            attributes:
-              chinese_title:
-                too_long: chinese_title 太长
-              french_title:
-                too_long: french_title 太长
+    attributes:
+      user:
+        username: 用户名
+        password: 密码
+        password_confirmation: 再次确认密码
+        role: 角色
+      category:
+        chinese_name: 类别中文名
+        french_name: 类别法文名
+      article:
+        chinese_title: 中文标题
+        french_title: 法文标题
+        chinese_content: 中文内容
+        french_content: 法文内容
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: 密码不能为空
+              confirmation: 密码输入不一致
+              too_long: 密码太短
+              too_short: 密码太长
+            username:
+              blank: 用户名不能为空
+              taken: 用户名已注册
+              too_long: 用户名太长
+              too_short: 用户名太短
+            email:
+              blank: 邮箱不能为空
+              invalid: 邮箱格式不对
+              taken: 邮箱已注册
+        category:
+          attributes:
+            chinese_name:
+              taken: 该名字已使用
+              blank: 不能为空
+              too_long: 类别中文名太长
+            french_name:
+              taken: 该名字已使用
+              blank: 不能为空
+              too_long: 类别法文名太长
+        article:
+          attributes:
+            chinese_title:
+              too_long: 中文标题太长
+            french_title:
+              too_long: 法文标题太长

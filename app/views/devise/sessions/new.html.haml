@@ -1,13 +1,15 @@
-%h2 Sign in
+%h2 登录
 = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   .form-inputs
-    = f.input :login, :required => false, :autofocus => true
+    = f.input :login, :required => false, :autofocus => true, label: '用户名'
     = f.input :password, :required => false
-    %p verification
+    %p 验证码
     %input#captcha{:name => "captcha", :style => "width:60px", :type => "text"}/
     = captcha_tag :id => "captcha_img"
-    = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
+    - if flash[:alert] == "captcha_wrong"
+      %span{style:"color:red"} 验证码错误
+    = f.input :remember_me, label: "记住我",:as => :boolean if devise_mapping.rememberable?
   .form-actions
-    = f.button :submit, "Sign in"
+    = f.button :submit, "登录"
 
 = javascript_include_tag "users"

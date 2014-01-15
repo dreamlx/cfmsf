@@ -1,4 +1,4 @@
-%h1 On this site management, you can do the user, category and article management
+%h1 文章以及文章类别总览
 .pagination
   %ul
     - current_user.categories.all.each do |category|
@@ -9,8 +9,8 @@
 %table.table.center.table-bordered
   %thead
     %tr
-      %td Article Name
-      %td Status
+      %td 文章名
+      %td{style:"width:80px"} 状态
     %tbody
     - @articles.each do |article|
       - if article.status != "deleted" 
@@ -22,6 +22,6 @@
               - else
                 = link_to article.chinese_title, edit_admin_article_path(article)
 
-            %td= article.status
+            %td= t(article.status)
  
 

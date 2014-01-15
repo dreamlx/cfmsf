@@ -19,7 +19,7 @@ module Admin
     def destroy
       @user = User.find(params[:id])
       @user.destroy
-      redirect_to admin_users_path, notice: 'User was successful deleted'
+      redirect_to admin_users_path, notice: 'user_success_deleted'
     end
 
     def create
@@ -33,13 +33,13 @@ module Admin
               @user.categories << category
             end
           end
-          redirect_to admin_users_path, notice: 'User was successful created'
+          redirect_to admin_users_path, notice: 'user_success_created'
         else @user.role == "admin"
-          redirect_to admin_users_path, notice: 'User was successful created'
+          redirect_to admin_users_path, notice: 'user_success_created'
         end
       else
         @categories = Category.all
-        render action: "new", notice: 'User was failed created'
+        render action: "new", notice: 'user_failed_created'
       end
     end
 
@@ -65,10 +65,10 @@ module Admin
           categories = Category.all
           @user.categories << categories
         end
-        redirect_to admin_users_path, notice: 'User was successful updated'
+        redirect_to admin_users_path, notice: 'user_success_updated'
       else
         @categories = Category.all
-        render action: "edit"
+        render action: "edit", alert: "user_failed_updated"
       end
     end
 

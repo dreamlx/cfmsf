@@ -1,10 +1,10 @@
 .row
   .span6
-    %h3 Article Management
+    %h3 文章管理
   .span3
     %h3
       - if can? :read, @current_category
-        = link_to 'New Article', new_admin_article_path
+        = link_to '添加新文章', new_admin_article_path
 .pagination
   %ul
     - current_user.categories.all.each do |category|

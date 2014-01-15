@@ -10,7 +10,10 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
+ *= require admin/home
  */
+
+
 .sidenav {
 	margin: 30px 0 0;
 	padding: 0;

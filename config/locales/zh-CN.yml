@@ -1,6 +1,8 @@
 zh-CN:
-  app_name: CFMSF SITE MANAGEMENT
+  app_name: 上海交通大学中法医学部网站后台管理系统
   welcome: 欢迎访问进入管理页面
+  pending: 等待审核
+  public: 已发布
   crud: 
     back: 返回
     back_to: "返回%{model}"
@@ -19,4 +21,39 @@ zh-CN:
     showing: "%{model}详细信息"
     add: "添加更多%{model}"
     save: 保存
-    upload: 上传 
+    upload: 上传
+  alert:
+    failed_reject: 文章撤回失败
+    failed_approve: 文章发布失败
+    article_failed_created: 文章创建失败
+    article_failed_updated: 文章更新失败
+    article_failed_deleted: 文章删除失败
+    category_failed_created: 类别创建失败
+    category_failed_updated: 类别更新失败
+    category_failed_deleted: 类别删除失败
+    user_failed_created: 用户创建失败
+    user_failed_updated: 用户更新失败
+    captcha_wrong: 验证码错误
+
+
+  notice:
+    success_reject: 文章成功撤回
+    success_approve: 文章发布成功
+    article_success_created: 文章创建成功
+    article_success_updated: 文章更新成功
+    article_success_deleted: 文章删除成功
+    category_success_created: 类别创建成功
+    category_success_updated: 类别更新成功
+    category_success_deleted: 类别删除成功
+    user_success_deleted: 用户删除成功
+    user_success_created: 用户创建成功
+    user_success_updated: 用户更新成功
+
+
+
+
+
+
+
+
+

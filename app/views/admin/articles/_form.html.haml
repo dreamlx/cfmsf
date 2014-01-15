@@ -3,14 +3,14 @@
   %table
     %div#chinese_form{style:"display:block"}
       %div
-        %span chinese_title
+        %span 中文标题
         .row
           .span5
             = f.input :chinese_title, input_html:{style:"width:100%"}, label: false
           .span4
             .btn-group
-              %button.btn.btn-primary.active.chinese_button{type: "button"} CHB
-              %button.btn.btn-primary.french_button{type: "button"} FR
+              %button.btn.btn-primary.active.chinese_button{type: "button"} 中文版
+              %button.btn.btn-primary.french_button{type: "button"} 法文版
       %select.article_category_id{name:"article[category_id]"}
         - current_user.categories.each do |category|
           - if action_name == "edit"
@@ -22,14 +22,14 @@
       = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
     %div#french_form{style:"display:none"}
       %div
-        %span french_title
+        %span 法文标题
         .row
           .span5
             = f.input :french_title, input_html:{style:"width:100%"}, label: false
           .span4
             .btn-group
-              %button.btn.btn-primary.chinese_button{type: "button"} CHB
-              %button.btn.btn-primary.active.french_button{type: "button"} FR
+              %button.btn.btn-primary.chinese_button{type: "button"} 中文版
+              %button.btn.btn-primary.active.french_button{type: "button"} 法文版
       %select.article_category_id{name:"article[category_id]"}
         - current_user.categories.each do |category|
           - if action_name == "edit"
@@ -40,8 +40,11 @@
               = category.french_name
       = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
   .form-actions
-    = f.button :submit
-    = f.button :button, 'Cancel', :type => 'reset', :class => 'btn', :id => "cancle"
+    - if action_name == "new"
+      = f.button :submit, "创建文章"
+    - if action_name == "edit"
+      = f.button :submit, "更新文章"
+    = f.button :button, '取消', :type => 'reset', :class => 'btn', :id => "cancle"
 
 = javascript_include_tag "admin/articles"
 = stylesheet_link_tag "admin/error"
