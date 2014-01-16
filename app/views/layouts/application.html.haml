@@ -11,10 +11,5 @@
   %body
     #content
       = yield
-      %footer#foot
-        %p
-          copyright 2007 by university. all rights reserved. property of use of this web site constitutes your acceptance of  these terms. all
-          = succeed "information" do
-            %br/
-          meant to be sold, traded, or given away, any copying, manipul publishing, or other transfer of these materials except
+      = render "shared/footer"
 
