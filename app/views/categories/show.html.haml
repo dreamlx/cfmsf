@@ -43,7 +43,10 @@
   .maintit
     %a{:href => root_path}= t("home")
     \&gt;
-    = link_to "#{@category.chinese_name}", category_path(@category)
+    - if session[:locale] == "zh-CN"
+      = link_to @category.chinese_name, category_path(@category)
+    - elsif session[:locale] == "fr"
+      = link_to @category.french_name, category_path(@category)
   .searmain
     .search_res
       .maintitle

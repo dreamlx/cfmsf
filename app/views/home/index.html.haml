@@ -88,10 +88,10 @@
               %p
                 = link_to article.chinese_title, article_path(article)
           - elsif session[:locale] == "fr"
-            = link_to @news_category.french_title
+            = link_to @news_category.french_name
             - @news_category.articles.each do |article|
               %p
-                = link_to @article.chinese_title, article_path(article)
+                = link_to article.chinese_title, article_path(article)
          
 
               
