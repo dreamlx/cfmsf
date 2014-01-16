@@ -82,6 +82,6 @@
         - if article.status == "public"
           .lp
             - if session[:locale] == "zh-CN"
-              = link_to article.chiese_title, article_path(article)
+              = link_to article.chinese_title, article_path(article)
             - elsif session[:locale] == "fr"
               = link_to article.french_title, article_path(article)
