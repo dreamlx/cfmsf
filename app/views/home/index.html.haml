@@ -40,26 +40,12 @@
       %img{:src => "/assets/h36.jpg"}/
     .mlt_h41
       %img{:src => "/assets/h41.jpg"}/
-    .mlt_01
-      JANUARY
-      %br>/
-      SCHOOL
-      %br>/
-      PAPER ISSUE
-    .mlt_h43
-      %img{:src => "/assets/h43.jpg"}/
-    .mlt_02
-      2007
-      %br>/
-      FIELD TRIP
-      %br>/
-      REPORT
   .mrt
     %p
       %br
       %br
       %br
-      %p{style:"font-size:20px"} 欢迎来到
+      %p{style:"font-size:20px;margin-bottom:20px;"} 欢迎来到
     %h3
       上海
       %br>/
@@ -90,6 +76,3 @@
             - @news_category.articles.limit(5).each do |article|
               %p
                 = link_to article.french_title, article_path(article)
-         
-
-              
