@@ -1,49 +1,24 @@
 %header#head
-  %table{style:"width:700px;margin-bottom:20px;"}
-    %tr
-      %td
-        = link_to "+ " + t("home"), root_path
-      - @categories.each do |category|
-        %td 
-          - if session[:locale] == "zh-CN"
-            = link_to "+ " + category.chinese_name, category_path(category)
-          - elsif session[:locale] == 'fr'
-            = link_to "+ "+category.french_name, category_path(category)
-
-  / .nave
-  /   %nav
-  /     = link_to t("home"), root_path
-  / - @categories.each do |category|
-  /   .nave
-  /     %nav
-  /       - if session[:locale] == "zh-CN"
-  /         = link_to category.chinese_name, category_path(category)
-  /       - elsif session[:locale] == 'fr'
-  /         = link_to category.french_name, category_path(category)
-
-
-  / .nave
-  /   %nav
-  /     %a{:href => get_category_id_by_name("current students")} CURRENT
-  /   %p
-  /     %a{:href => get_category_id_by_name("current students")} students
-  / .nave
-  /   %nav
-  /     %a{:href => get_category_id_by_name("prospective students")} PROSPECTIVE
-  /   %p
-  /     %a{:href => get_category_id_by_name("prospective students")} students
-  / .nave
-  /   %nav
-  /     %a{:href => get_category_id_by_name("alumni and friends")} ALUMNI AND
-  /   %p
-  /     %a{:href => get_category_id_by_name("alumni and friends")} friends
-  / .nave
-  /   %nav
-  /     %a{:href => get_category_id_by_name("faculty and stuff")} FACULTY AND
-  /   %p
-  /     %a{:href => get_category_id_by_name("faculty and stuff")} stuff
-  / .nave
-  /   %nav
-  /     %a{:href => get_category_id_by_name("technology and invention")} TECHNOLOGY AND
-  /   %p
-  /     %a{:href => get_category_id_by_name("technology and invention")} invention
+  %div
+    %table.pull-right{style:"margin-right: 20px"}
+      %tr
+        %td
+          %a{href: root_path(locale: "zh-CN")}
+            %img.china{src:"/assets/china.jpg"}
+        %td
+          %a{href: root_path(locale: "fr")}
+            %img.french{src:"/assets/french.jpg"}
+    %table{style:"width:700px;margin-bottom:20px;"}
+    .nave
+      %nav
+        = link_to t("home"), root_path
+    - if session[:locale] == "zh-CN"
+      - @chinese_categories.each do |category|
+        .nave
+          %nav
+            = link_to category.chinese_name, category_path(category)
+    - elsif session[:locale] == 'fr'
+      - @french_categories.each do |category|
+        .nave
+          %nav
+            = link_to category.french_name, category_path(category)

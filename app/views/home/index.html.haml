@@ -55,23 +55,17 @@
       %br>/
       REPORT
   .mrt
-    %p{style:"color:#333"} 欢迎来到
-    %img.logo{src:"/assets/logo.png"}
-    .school_name 上海交通大学医学院中法医学部
-    %table{style:"margin-top:30px;"}
-      %tr
-        %td
-          %a{href: root_path(locale: "zh-CN")}
-            %img.china{src:"/assets/china.jpg"}
-        %td
-          %a{href: root_path(locale: "fr")}
-            %img.french{src:"/assets/french.jpg"}
-      %tr
-        %td
-          %span 中文版
-        %td
-          %span française
-      
+    %p
+      %br
+      %br
+      %br
+      %p{style:"font-size:20px"} 欢迎来到
+    %h3
+      上海
+      %br>/
+      交通大学医学院
+      %br>/
+      中法医学部
   = form_tag search_articles_path, method: :GET do |f|
     .search
       = text_field_tag 'search', '', class:"inp_01"
@@ -80,23 +74,24 @@
   .searmain
     .search_res
       .question
-        %h4 
-          %a{:href => "#"} FREQUENTLY ASKED
-        %h6 
-          %a{:href => "#"} QUESTIONS
-        - unless @frequently_asked_questions.nil?
-          - @frequently_asked_questions.articles.limit(10).each do |article|
-            %p
-              = link_to @article.chinese_title.blank? ? @article.french_title : @article.chinese_title, article_path(article)
+        %h2
+          %a{:href => "#"} 中法医学部新闻图片
+          / - @frequently_asked_questions.articles.limit(10).each do |article|
+          /   %p
+          /     = link_to @article.chinese_title.blank? ? @article.french_title : @article.chinese_title, article_path(article)
         
       .university
-        %h4 
-          %a{:href => "#"} NOTES AND PRESS ON
-        %h6 
-          %a{:href => "#"} UNIVERSITY
-        - unless  @notes_and_press_on_university.nil?
-          - @notes_and_press_on_university.articles.limit(10).each do |article|
-            %p
-              = link_to @article.chinese_title.blank? ? @article.french_title : @article.chinese_title, article_path(article) 
+        %h2
+          - if session[:locale] == "zh-CN"
+            = link_to @news_category.chinese_name
+            - @news_category.articles.each do |article|
+              %p
+                = link_to article.chinese_title, article_path(article)
+          - elsif session[:locale] == "fr"
+            = link_to @news_category.french_title
+            - @news_category.articles.each do |article|
+              %p
+                = link_to @article.chinese_title, article_path(article)
+         
 
               

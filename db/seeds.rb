@@ -13,4 +13,5 @@ Category.create!(id: 2,chinese_name:"外国专家工作", french_name:"Expert fr
 Category.create!(id: 3,chinese_name:"学生互换", french_name:"Echanges d’étudiants")
 Category.create!(id: 4,chinese_name:"校际合作院校及国际组织", french_name:"Relations internationales")
 Category.create!(id: 5,chinese_name:"法语沙龙", french_name:"Espace francophone")
-
+Category.create!(id: 6,chinese_name:"教师交流", french_name:"français")
+Category.create!(id: 7,chinese_name:"新闻", french_name:"Actualités")

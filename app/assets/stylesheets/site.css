@@ -8,12 +8,14 @@ ol, ul {list-style:none;}
 input, textarea {border:none;}
 h1,h2,h3,h4,h5,h6 {font-weight:normal;}
 a {text-decoration:none; color:#fff;}
+body{
+  font-family: "微软雅黑"
+}
 .clear{ clear:both;}
-
 #content{ width:780px; min-height:700px; background:#003974 url(/assets/bg.jpg) no-repeat; margin:0 auto;}
-#head{ clear:both; padding-top:57px; padding-left:40px;}
-#head .nave{ float:left; height:42px; padding-top:5px; background:url(/assets/plug.gif) no-repeat 12px 12px; margin-bottom:12px;}
-#head .nave nav{ clear:both; font-size:12px; font-weight:bold; line-height:20px;}
+#head{ clear:both; padding-top:0px; padding-left:40px;padding-right: 40px;}
+#head .nave{ float:left; height:42px; margin-bottom:12px;}
+#head .nave nav{ clear:both; font-size:12px; margin-left: 12px; margin-right: 12px;font-weight:bold; font-size: 14px;line-height:20px;}
 #head .nave nav a{ color:#fff;}
 #head .nave p{ clear:both; font-size:12px; line-height:21px;}
 #head .nave p a{ color:#fff;}
@@ -21,14 +23,15 @@ a {text-decoration:none; color:#fff;}
 
 #head .nave:hover{background:none;}
 #head .nave:hover a{ color:#f0f0f0;}
-
+#head div table tr td{margin: 0px; padding: 0px;}
 #head td { height:42px;font-size:12px; line-height:21px;}
 #head td { clear:both; font-size:12px; font-weight:bold; line-height:20px;}
 #head td  a{ color:#fff;}
 #head td{ clear:both; }
 #head td  a{ color:#fff;}
 
-.pull-left{float: left}
+.pull-left{float: left;}
+.pull-right{float: right;}
 .main{ clear:both; min-height:324px;}
 .mlt{ float:left; width:418px; height:255px; position:relative;}
 .mlt_01{ position:absolute; height:49px; width:110px; padding:7px 6px 5px 7px; left:108px; top:193px; line-height:16px; color:#185a8d; font-size:12px; font-weight:bold; background:url(../images/h42.jpg) no-repeat;}
@@ -66,8 +69,8 @@ a {text-decoration:none; color:#fff;}
 .mlt_h43{ position:absolute; height:61px; width:61px; left:232px; top:193px;}
 .logo{width: 100px; height: 100px; float: left;}
 .school_name{height: 100px; font-family: "华文行楷"; font-size: 24px; text-align: center;}
-.china{cursor: pointer;width: 100px; height: 60px; margin-right: 30px;}
-.french{cursor: pointer;width: 100px; height: 60px;}
+.china{cursor: pointer;width: 30px; height: 20px; margin-right: 5px;}
+.french{cursor: pointer;width: 30px; height: 20px;}
 .font-china{width: 50px; margin: 0px 20px 0 50px;}
 .font-french{}
 
@@ -79,7 +82,7 @@ a {text-decoration:none; color:#fff;}
 .inp_01{ height:20px; border:1px solid #c3c3c3; width:135px; line-height:20px;}
 .searchbtn{ height:22px;border:1px solid #c3c3c3; padding:0 5px; line-height:18px; background-color:#f8f8f7; font-size:14px; cursor:pointer;}
 
-.searmain{ padding:0 62px 0 47px;}
+.searmain{ padding:0 47px 0 47px;}
 .search_res{ clear:both; padding-top:18px; padding-left:22px;  border:1px solid #336190; overflow:hidden; padding-bottom:15px; margin-bottom:20px;}
 .question{ float:left; width:290px;}
 .question h4{ clear:both; font-size:12px; line-height:20px; color:#fff; font-weight:normal;}
@@ -91,7 +94,7 @@ a {text-decoration:none; color:#fff;}
 .university{ float:left; width:290px;}
 .university h4{ clear:both; font-size:12px; line-height:20px; color:#fff; font-weight:normal;}
 .university h6{ clear:both; font-size:24px; line-height:26px; color:#fff; font-weight:normal; margin-bottom:10px;}
-.university p{ clear:both; font-size:12px; background:url(../images/tip2.jpg) no-repeat 0 8px; padding-right:80px; padding-left:12px;}
+.university p{ clear:both; font-size:12px; background:url(../images/tip2.jpg) no-repeat 0 8px; padding-right:80px;}
 .university p a{ line-height:20px; color:#fff;}
 .university p a:hover{ text-decoration:underline;}
 
