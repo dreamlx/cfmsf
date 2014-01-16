@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
     @french_categories.push(Category.find(3))
     @french_categories.push(Category.find(4))
     @french_categories.push(Category.find(5))
-
   end
 
   def set_locale

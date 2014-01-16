@@ -11,7 +11,7 @@ a {text-decoration:none; color:#fff;}
 body{
   font-family: "微软雅黑"
 }
-.clear{ clear:both;}
+.clear{ clear: both;}
 #content{ width:780px; min-height:700px; background:#003974 url(/assets/bg.jpg) no-repeat; margin:0 auto;}
 #head{ clear:both; padding-top:0px; padding-left:40px;padding-right: 40px;}
 #head .nave{ float:left; height:42px; margin-bottom:12px;}
@@ -20,6 +20,7 @@ body{
 #head .nave p{ clear:both; font-size:12px; line-height:21px;}
 #head .nave p a{ color:#fff;}
 .clk{ border-top:1px solid #fff;}
+#head .nave p{margin-left: 12px;}
 
 #head .nave:hover{background:none;}
 #head .nave:hover a{ color:#f0f0f0;}
@@ -83,7 +84,7 @@ body{
 .searchbtn{ height:22px;border:1px solid #c3c3c3; padding:0 5px; line-height:18px; background-color:#f8f8f7; font-size:14px; cursor:pointer;}
 
 .searmain{ padding:0 47px 0 47px;}
-.search_res{ clear:both; padding-top:18px; padding-left:22px;  border:1px solid #336190; overflow:hidden; padding-bottom:15px; margin-bottom:20px;}
+.search_res{ clear:both; padding-top:18px; padding-left:50px; border:1px solid #336190; overflow:hidden; padding-bottom:15px; margin-bottom:20px;}
 .question{ float:left; width:290px;}
 .question h4{ clear:both; font-size:12px; line-height:20px; color:#fff; font-weight:normal;}
 .question h6{ clear:both; font-size:24px; line-height:26px; color:#fff; font-weight:normal; margin-bottom:10px;}
@@ -98,7 +99,7 @@ body{
 .university p a{ line-height:20px; color:#fff;}
 .university p a:hover{ text-decoration:underline;}
 
-.maintit{ clear:both; height:24px; padding:22px 30px 0 47px; margin-bottom:6px; line-height:24px; font-size:14px; color:#fff; font-family:"Microsoft YaHei";}
+.maintit{ clear:both; height:24px; padding:20px 30px 0 47px; margin-bottom:6px; line-height:24px; font-size:14px; color:#fff; font-family:"Microsoft YaHei";}
 .maintitle{ clear:both; height:24px; padding:0 0 10px 0px; margin-bottom:10px; line-height:24px; font-size:16px; color:#fff; font-family:"Microsoft YaHei";}
 .tailtitle{ clear:both; height:24px; margin-bottom:10px; line-height:24px; font-size:16px; color:#fff; font-family:"Microsoft YaHei"; text-align:center;}
 .lp{ clear:both; font-size:14px; background:url(../images/tip1.jpg) no-repeat 55px 10px; padding-right:80px; padding-left:64px;font-family:"Microsoft YaHei";}

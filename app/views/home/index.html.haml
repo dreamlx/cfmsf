@@ -76,20 +76,18 @@
       .question
         %h2
           %a{:href => "#"} 中法医学部新闻图片
-          / - @frequently_asked_questions.articles.limit(10).each do |article|
-          /   %p
-          /     = link_to @article.chinese_title.blank? ? @article.french_title : @article.chinese_title, article_path(article)
-        
       .university
         %h2
           - if session[:locale] == "zh-CN"
             = link_to @news_category.chinese_name
-            - @news_category.articles.each do |article|
+            - @news_category.articles.limit(5).each do |article|
               %p
                 = link_to article.chinese_title, article_path(article)
+            %p.pull-right
+              = link_to "更多", category_path(Category.find(7))
           - elsif session[:locale] == "fr"
             = link_to @news_category.french_name
-            - @news_category.articles.each do |article|
+            - @news_category.articles.limit(5).each do |article|
               %p
                 = link_to article.french_title, article_path(article)
          
