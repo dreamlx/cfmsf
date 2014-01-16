@@ -47,13 +47,22 @@
     .mlt_h201
       %img{:src => "/assets/h25.jpg"}/
   .maintit
-    %a{:href => root_path} 首页
+    %a{:href => root_path}= t("home")
     \&gt;
-    = link_to "#{@article.category.chinese_name}", category_path(@article.category)
+    - if session[:locale] == "zh-CN"
+      = link_to @article.category.chinese_name, category_path(@article.category)
+    - elsif session[:locale] == "fr"
+      = link_to @article.category.french_name, category_path(@article.category)
   .searmain
     .search_res
       .tailtitle
-        = @article.chinese_title.blank? ? @article.french_title : @article.chinese_title
+        - if session[:locale] == 'zh-CN'
+          = @article.chinese_title
+        - elsif session[:locale] == "fr"
+          = @article.french_title
       .tailcont
-        = raw(@article.chinese_content.blank? ? @article.french_content : @article.chinese_content)
+        - if session[:locale] == "zh-CN"     
+          = raw(@article.chinese_content)
+        - elsif session[:locale] == "fr"
+          = raw(@article.french_content)
 = javascript_include_tag "articles"

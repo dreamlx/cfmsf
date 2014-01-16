@@ -2,6 +2,7 @@ zh-CN:
   app_name: 上海交通大学中法医学部网站后台管理系统
   welcome: 欢迎访问进入管理页面
   home: 首页
+  search_result: 搜索结果
   pending: 等待审核
   public: 已发布
   crud: 

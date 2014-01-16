@@ -61,10 +61,10 @@
     %table{style:"margin-top:30px;"}
       %tr
         %td
-          %a
+          %a{href: root_path(locale: "zh-CN")}
             %img.china{src:"/assets/china.jpg"}
         %td
-          %a
+          %a{href: root_path(locale: "fr")}
             %img.french{src:"/assets/french.jpg"}
       %tr
         %td
@@ -97,9 +97,9 @@
     .search_res
       .question
         %h4 
-          %a{:href => get_category_id_by_name("frequently asked questions")} FREQUENTLY ASKED
+          %a{:href => "#"} FREQUENTLY ASKED
         %h6 
-          %a{:href => get_category_id_by_name("frequently asked questions")} QUESTIONS
+          %a{:href => "#"} QUESTIONS
         - unless @frequently_asked_questions.nil?
           - @frequently_asked_questions.articles.limit(10).each do |article|
             %p
@@ -107,9 +107,9 @@
         
       .university
         %h4 
-          %a{:href => get_category_id_by_name("notes and press on university")} NOTES AND PRESS ON
+          %a{:href => "#"} NOTES AND PRESS ON
         %h6 
-          %a{:href => get_category_id_by_name("notes and press on university")} UNIVERSITY
+          %a{:href => "#"} UNIVERSITY
         - unless  @notes_and_press_on_university.nil?
           - @notes_and_press_on_university.articles.limit(10).each do |article|
             %p

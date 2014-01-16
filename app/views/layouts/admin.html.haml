@@ -15,21 +15,25 @@
     = render "shared/topnav"
     %div.container
       %div.row
-        %div.span3
+        %div.span3.affix{style:"magrin-top:50px;"}
           - if user_signed_in?
-            %ul.nav.nav-list.sidenav.affix-top
+            %ul.nav.nav-list.sidenav
               %li{class: ("active" if controller_name == "home")}= link_to "主页", admin_home_index_path
               - if current_user.role == "admin"
                 %li{class: ("active" if controller_name == "users")}= link_to "用户管理", admin_users_path
                 %li{class: ("active" if controller_name == "categories")}= link_to "类别管理", admin_categories_path
               %li{class: ("active" if controller_name == "articles")}= link_to "文章管理", admin_articles_path
-        %div.span9.content
-          - unless alert.blank? || alert == "captcha_wrong"
-            .alert.alert-error.fade.in
-              %a.close{"data-dismiss" => "alert"} &times;
-              = t(alert, scope:"alert")
-          - unless notice.blank?
-            .alert.alert-success.fade.in
-              %a.close{"data-dismiss" => "alert"} &times;
-              = t(notice, scope:"notice")
-          = yield
+      .row
+        .span3
+        .span9.content  
+          - if user_signed_in?
+            - unless alert.blank? || alert == "captcha_wrong"
+              .alert.alert-error.fade.in
+                %a.close{"data-dismiss" => "alert"} &times;
+                = t(alert, scope:"alert")
+            - unless notice.blank?
+              .alert.alert-success.fade.in
+                %a.close{"data-dismiss" => "alert"} &times;
+                = t(notice, scope:"notice")
+            = yield
+          

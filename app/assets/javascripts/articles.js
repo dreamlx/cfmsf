@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var ps = $(".tailcont p");
+	var ps = $(".tailcont").children();
 	for(var i=0; i<ps.length; i++){
 		p = ps.eq(i);
 		if (p.css("background-color") == "rgb(255, 255, 255)"){

@@ -13,7 +13,7 @@
               = link_to article.french_title, edit_admin_article_path(article)
             - else
               = link_to article.chinese_title, edit_admin_article_path(article)
-          %td{style:"width:80px"}= t(article.status)
-          %td{style:"width:50px"}
+          %td= t(article.status)
+          %td
             - if can? :edit, article
               = link_to '编辑', edit_admin_article_path(article)

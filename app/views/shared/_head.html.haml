@@ -1,11 +1,25 @@
 %header#head
-  .nave
-    %nav
-      = link_to t("home"), root_path
-  - @categories.each do |category|
-    .nave
-      %nav
-        = link_to category.chinese_name, category_path(category)
+  %table{style:"width:700px;margin-bottom:20px;"}
+    %tr
+      %td
+        = link_to "+ " + t("home"), root_path
+      - @categories.each do |category|
+        %td 
+          - if session[:locale] == "zh-CN"
+            = link_to "+ " + category.chinese_name, category_path(category)
+          - elsif session[:locale] == 'fr'
+            = link_to "+ "+category.french_name, category_path(category)
+
+  / .nave
+  /   %nav
+  /     = link_to t("home"), root_path
+  / - @categories.each do |category|
+  /   .nave
+  /     %nav
+  /       - if session[:locale] == "zh-CN"
+  /         = link_to category.chinese_name, category_path(category)
+  /       - elsif session[:locale] == 'fr'
+  /         = link_to category.french_name, category_path(category)
 
 
   / .nave

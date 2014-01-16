@@ -12,12 +12,6 @@ class Category < ActiveRecord::Base
 
   after_create :set_to_admin
 
-
-  def self.get_id_by_name(french_name)
-    self.where(french_name: french_name).first.nil? ? nil : self.where(french_name: french_name).first.id
-  end
-
-
   private
 
   	def set_to_admin

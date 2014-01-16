@@ -72,14 +72,16 @@
       %br/
       AND INVENTIVE JOB
   .maintit
-    %a{:href => root_path} 首页
+    %a{:href => root_path}= t("home")
     \&gt;
-    %a{:href => ""} 搜索结果
+    %a{:href => ""}= t("search_result")
   .searmain
     .search_res
-      .maintitle 搜索结果
+      .maintitle= t("search_result")
       - @articles.each do |article|
         - if article.status == "public"
           .lp
-            = link_to (article.chinese_title.blank? ? article.french_title : article.chinese_title), article_path(article)
-
+            - if session[:locale] == "zh-CN"
+              = link_to article.chiese_title, article_path(article)
+            - elsif session[:locale] == "fr"
+              = link_to article.french_title, article_path(article)
