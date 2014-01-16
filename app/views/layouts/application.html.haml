@@ -10,5 +10,8 @@
   %body
     #content
       = yield
-      = render "shared/footer"
+      - if session[:locale] == "zh-CN"
+        = render "shared/footer"
+      - elsif session[:locale] == "fr"
+        = render "shared/french_footer"
 
