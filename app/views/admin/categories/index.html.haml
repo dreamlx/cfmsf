@@ -13,8 +13,10 @@
       %td 文章数量
       %td 操作
     %tbody
+    - i = 0
     - @categories.each do |category|
-      %tr
+      - i += 1
+      %tr{class: (i%2==0 ? "ligth_bule" : "mazarine")}
         %td= category.chinese_name
         %td= category.french_name
         %td= category.articles.where("status != 'deleted'").size

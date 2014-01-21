@@ -16,8 +16,10 @@
         %td 角色
         %td 操作
     %tbody
+    - i = 0
     - @users.each do |user|
-      %tr
+      - i += 1
+      %tr{class: (i%2==0 ? "ligth_bule" : "mazarine")}
         %td= user.username
         %td= user.role
         %td

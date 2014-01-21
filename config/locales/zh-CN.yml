@@ -6,6 +6,7 @@ zh-CN:
   search_result: 搜索结果
   pending: 等待审核
   public: 已发布
+  search: 搜索
   crud: 
     back: 返回
     back_to: "返回%{model}"

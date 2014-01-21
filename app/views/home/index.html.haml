@@ -44,7 +44,6 @@
     %p
       %br
       %br
-      %br
       %p{style:"font-size:20px;margin-bottom:20px;"} 欢迎来到
     %h3
       上海
@@ -54,25 +53,27 @@
       中法医学部
   = form_tag search_articles_path, method: :GET do |f|
     .search
-      = text_field_tag 'search', '', class:"inp_01"
-      = submit_tag 'SEARCH',  class:"searchbtn"
-
+      .input-append
+        = text_field_tag 'search', '', class:"span2"
+        = submit_tag t('search'), class:"btn"
+    
   .searmain
     .search_res
       .question
         %h2
-          %a{:href => "#"} 中法医学部新闻图片
+          %div.title
+            %a{:href => "#"} 中法医学部新闻图片
       .university
         %h2
           - if session[:locale] == "zh-CN"
-            = link_to @news_category.chinese_name
+            %div.title
+              = link_to @news_category.chinese_name, category_path(@news_category)
             - @news_category.articles.limit(5).each do |article|
               - if article.status == "public"
                 %p
                   = link_to article.chinese_title, article_path(article)
-            - if @news_category.articles.size > 5
-              %p.pull-right
-                = link_to "更多", category_path(Category.find(7))
+            %p.pull-right
+              = link_to "更多新闻", category_path(Category.find(7))
           - elsif session[:locale] == "fr"
             = link_to @news_category.french_name
             - @news_category.articles.limit(5).each do |article|
@@ -80,4 +81,4 @@
                 %p
                   = link_to article.french_title, article_path(article)
             %p.pull-right
-              = link_to "更多", category_path(Category.find(7))
+              = link_to "更多新闻", category_path(Category.find(7))

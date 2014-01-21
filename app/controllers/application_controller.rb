@@ -28,9 +28,10 @@ class ApplicationController < ActionController::Base
   # 可以將 ["fr", "zh-CH"] 設定為 VALID_LANG 放到 config/environment.rb 中
     if params[:locale] && I18n.available_locales.include?( params[:locale].to_sym )
       session[:locale] = params[:locale]
+    else
+      session[:locale] ||= "zh-CN"
     end
     I18n.locale = session[:locale] || I18n.default_locale
-    session[:locale] ||= I18n.locale
   end
 end
 

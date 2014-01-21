@@ -1,3 +1,19 @@
 body{
   font-family: "宋体"
 }
+#captcha_img{
+  cursor: pointer;
+}
+table thead tr{
+  background-color: #5B9BD5;
+  color: #fff;
+  font-weight: bolder;
+}
+
+table tbody .mazarine{
+  background-color: #D2DEEF;
+}
+
+table tbody .ligth_bule{
+  background-color: #EAEFF7;
+}

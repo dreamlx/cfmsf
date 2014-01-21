@@ -2,7 +2,7 @@
   .span6
     %h3.title 文章编辑
   .span3
-    %h3
+    %h5
       = link_to '返回文章列表', admin_articles_path(category_id: @article.category_id )
 
 / - if current_user.role == "admin"

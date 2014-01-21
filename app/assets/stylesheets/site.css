@@ -23,7 +23,7 @@ body{
 #head .nave p{margin-left: 12px;}
 
 #head .nave:hover{background:none;}
-#head .nave:hover a{ color:#f0f0f0;}
+#head .nave:hover a{ color:#f0f0f0; text-decoration: underline;}
 #head div table tr td{margin: 0px; padding: 0px;}
 #head td { height:42px;font-size:12px; line-height:21px;}
 #head td { clear:both; font-size:12px; font-weight:bold; line-height:20px;}
@@ -75,10 +75,10 @@ body{
 .font-china{width: 50px; margin: 0px 20px 0 50px;}
 .font-french{}
 
-.mrt{ float:right; width:334px; height:218px; padding:20px 0px 27px 27px; background:url(../images/hbg.jpg) no-repeat;}
-.mrt p{ clear:both; line-height:20px; color:#fff; font-size:12px; margin-bottom:5px;}
-.mrt h3{ clear:both; line-height:28px; color:#fce55d; font-weight:bold; font-size:30px; margin-bottom:5px;}
-.search{ clear:both; height:20px; padding:26px 30px 8px 52px; margin-bottom:12px;  position:relative;}
+.mrt{ float:right; width:334px; height:218px; padding:0px 0px 27px 27px; background:url(../images/hbg.jpg) no-repeat;}
+.mrt p{ clear:both; line-height:20px; color:#fff; font-size:12px;}
+.mrt h3{ clear:both;color:#fce55d; font-weight:bold; font-size:30px; margin-bottom:5px;}
+.search{ clear:both; height:20px; padding:26px 30px 8px 47px; margin-bottom:12px;  position:relative;}
 .search .srnotice{position:absolute; width:110px; height:94px; left:560px; top:35px;}
 .inp_01{ height:20px; border:1px solid #c3c3c3; width:135px; line-height:20px;}
 .searchbtn{ height:22px;border:1px solid #c3c3c3; padding:0 5px; line-height:18px; background-color:#f8f8f7; font-size:14px; cursor:pointer;}
@@ -95,10 +95,10 @@ body{
 .university{ float:left; width:290px;}
 .university h4{ clear:both; font-size:12px; line-height:20px; color:#fff; font-weight:normal;}
 .university h6{ clear:both; font-size:24px; line-height:26px; color:#fff; font-weight:normal; margin-bottom:10px;}
-.university p{ clear:both; font-size:12px; background:url(../images/tip2.jpg) no-repeat 0 8px; padding-right:80px;}
+.university p{ clear:both;line-height: 12px; font-size:12px; background:url(../images/tip2.jpg) no-repeat 0 8px; padding-right:80px;}
 .university p a{ line-height:20px; color:#fff;}
+.university .title{margin-bottom: 15px;}
 .university p a:hover{ text-decoration:underline;}
-
 .maintit{ clear:both; height:24px; padding:20px 30px 0 47px; margin-bottom:6px; line-height:24px; font-size:14px; color:#fff; font-family:"Microsoft YaHei";}
 .maintitle{ clear:both; height:24px; padding:0 0 10px 0px; margin-bottom:10px; line-height:24px; font-size:16px; color:#fff; font-family:"Microsoft YaHei";}
 .tailtitle{ clear:both; height:24px; margin-bottom:10px; line-height:24px; font-size:16px; color:#fff; font-family:"Microsoft YaHei"; text-align:center;}
@@ -109,4 +109,4 @@ body{
 .tailcont{ clear:both;  font-size:14px; color:#fff; font-family:"Microsoft YaHei"; padding:10px; line-height:24px;}
 .mltail{ clear:both; position:relative; height:140px;}
 #foot{ clear:both; text-align:center; padding-bottom:20px;}
-#foot p{ text-align:center; line-height:18px; color:#ffffff; font-size:10px; line-height:16px;}
+#foot p{ text-align:center; line-height:18px; color:#ffffff; font-size:12px; line-height:16px;}
