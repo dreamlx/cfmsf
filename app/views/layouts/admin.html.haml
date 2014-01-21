@@ -26,14 +26,13 @@
       .row
         .span3
         .span9.content{style:"border:1px soild #000"}  
-          - if user_signed_in?
-            - unless alert.blank? || alert == "captcha_wrong"
-              .alert.alert-error.fade.in
-                %a.close{"data-dismiss" => "alert"} &times;
-                = t(alert, scope:"alert")
-            - unless notice.blank?
-              .alert.alert-success.fade.in
-                %a.close{"data-dismiss" => "alert"} &times;
-                = t(notice, scope:"notice")
+          - unless alert.blank? || alert == "captcha_wrong"
+            .alert.alert-error.fade.in
+              %a.close{"data-dismiss" => "alert"} &times;
+              = t(alert, scope:"alert")
+          - unless notice.blank?
+            .alert.alert-success.fade.in
+              %a.close{"data-dismiss" => "alert"} &times;
+              = t(notice, scope:"notice")
           = yield
           
