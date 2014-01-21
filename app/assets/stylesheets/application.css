@@ -10,18 +10,5 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
+ *= search
  */
-.sidenav {
-	margin: 30px 0 0;
-	padding: 0;
-	background-color: #f1f1f1;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	border: 1px solid #eee;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-	box-shadow: 0 1px 4px rgba(0,0,0,.065);
-}
-
-.content {
-	margin: 30px 0 0;
-}

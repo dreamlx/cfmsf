@@ -5,12 +5,13 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.brand(href="/admin/home") 
-        = t("app_name")
+      
       .container.nav-collapse
+        %a.brand(href="/admin/home") 
+          = t("app_name")
         %ul.nav.pull-right
           - if user_signed_in?
-            %li= link_to "WelcomeBack #{current_user.role} : #{current_user.username}", "#"
-            %li= link_to "Log Out", destroy_user_session_path, :method => :delete
+            %li= link_to "欢迎回来 #{current_user.role} : #{current_user.username}", "#"
+            %li= link_to "登出", destroy_user_session_path, :method => :delete
           -else
-            %li= link_to 'SignIn',new_user_session_path
+            %li= link_to '登录',new_user_session_path

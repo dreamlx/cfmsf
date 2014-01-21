@@ -1,0 +1,4 @@
+zh-CN:
+  simple_form:
+    error_notification:
+      default_message: 请重新检查以下内容是否正确

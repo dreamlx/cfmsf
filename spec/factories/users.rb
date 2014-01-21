@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :user do
   	password "11111111"
 	factory :admin do
-  	  username "admin"
+  	  username "admin01"
 	  role "admin"
 	end
 

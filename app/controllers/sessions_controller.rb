@@ -11,7 +11,7 @@ class SessionsController < Devise::SessionsController
       sign_in(resource_name, resource)
       redirect_to admin_home_index_path
     else
-      redirect_to new_user_session_path, alert: "captcha is wrong "
+      redirect_to new_user_session_path, alert: "captcha_wrong"
     end
   end
 end

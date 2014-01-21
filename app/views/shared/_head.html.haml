@@ -1,0 +1,43 @@
+%header#head
+  %div
+    %table.pull-right{style:"margin-right: 20px"}
+      %tr
+        %td
+          %a{href: root_path(locale: "zh-CN")}
+            %img.china{src:"/assets/china.jpg"}
+        %td
+          %a{href: root_path(locale: "fr")}
+            %img.french{src:"/assets/french.jpg"}
+    %table{style:"width:700px;margin-bottom:20px;"}
+    .nave
+      %nav
+        = link_to t("home"), root_path
+    - if session[:locale] == "zh-CN"
+      - @chinese_categories.each do |category|
+        .nave
+          %nav
+            = link_to category.chinese_name, category_path(category)
+    - elsif session[:locale] == 'fr'
+      .nave
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "Présentation", category_path(Category.find(1))
+      .nave
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "Expert", category_path(Category.find(2))
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "français", category_path(Category.find(2))
+      .nave
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "Echanges", category_path(Category.find(3))
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "d’étudiants", category_path(Category.find(3))
+      .nave
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "Relations", category_path(Category.find(4))
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "internationales", category_path(Category.find(4))
+      .nave
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "Espace", category_path(Category.find(5))
+        %nav{style:"margin-left:16px; margin-right:15px"}
+          = link_to "francophone", category_path(Category.find(5))

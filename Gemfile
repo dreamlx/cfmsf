@@ -47,7 +47,7 @@ gem 'carrierwave-qiniu'
 
 gem 'jcrop-rails'
 gem "mini_magick"
-gem 'easy_captcha'  #captcha
+gem 'easy_captcha', :github => 'HuberyDu/easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 
 gem 'rails_12factor'

@@ -6,56 +6,12 @@
     = javascript_include_tag "application"
     = stylesheet_link_tag "site", media: "all"
 
-    %title home
+    %title 上海交通大学医学院中法医学部
   %body
     #content
-      - unless alert.blank?
-        .alert.alert-error.fade.in
-          %a.close{"data-dismiss" => "alert"} &times;
-          = alert
-      - unless notice.blank?
-        .alert.alert-success.fade.in
-          %a.close{"data-dismiss" => "alert"} &times;
-          = notice
-      %header#head
-        - @categories.each do |category|
-          .nave
-            %nav
-              = link_to category.chinese_name, category_path(category)
-      %article.main
-        .mlt
-          .mlt_01
-            JANUARY
-            %br>/
-            SCHOOL
-            %br>/
-            PAPER ISSUE
-          .mlt_02
-            2007
-            %br>/
-            FIELD TRIP
-            %br>/
-            REPORT
-        .mrt
-          %p
-            %strong HERE, AT
-          %h3
-            WEST
-            %br>/
-            UNIVERSITY OF
-            %br>/
-            TECHNOLOGY
-          %p
-            WE TEACH OUR STUDENTS
-            %br/
-            HOW TO BE THE BEST
-            %br/
-            AT EVERY TECHNOLOGICAL
-            %br/
-            AND INVENTIVE JOB
-        = form_tag search_articles_path, method: :GET do |f|
-          .search
-            = text_field_tag 'search', '', class:"inp_01"
-            = submit_tag 'SEARCH',  class:"searchbtn"
-        .search_res
-          = yield
+      = yield
+      - if session[:locale] == "zh-CN"
+        = render "shared/footer"
+      - elsif session[:locale] == "fr"
+        = render "shared/french_footer"
+

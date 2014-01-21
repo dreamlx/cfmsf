@@ -6,11 +6,11 @@
         = f.input :username
         = f.input :password
         - if action_name == "edit"
-          %div{style:"color: #D8AC83"}  leave it blank if you don't want to change it
+          %div{style:"color: #D8AC83"} 如果保持原来密码请留空
         = f.input :password_confirmation
-        = f.input :role, as: :select, collection:["editor","admin"], include_blank: false
+        = f.input :role, as: :select, collection:["admin","editor"], include_blank: false
     %div.span3#editor_permission
-      %p Editor Permission
+      %p 操作权限
       %ul
       - @categories.each do |category|
         %li	        
@@ -18,5 +18,5 @@
           = category.chinese_name
 
   .actions
-    = f.submit 'Save', :class => 'btn'
-    %input{type: "reset", value: "Cancel", class:"btn", id:"form_cancle"}
+    = f.submit '保存', :class => 'btn'
+    %input{type: "reset", value: "取消", class:"btn", id:"form_cancle"}

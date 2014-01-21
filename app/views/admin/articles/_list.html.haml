@@ -1,9 +1,9 @@
 %table.table.center.table-bordered
   %thead
     %tr
-      %td Article Name
-      %td Status
-      %td Operation
+      %td 文章名称
+      %td 状态
+      %td 操作
     %tbody
     - @articles.each do |article|
       - if article.status != "deleted"
@@ -13,7 +13,7 @@
               = link_to article.french_title, edit_admin_article_path(article)
             - else
               = link_to article.chinese_title, edit_admin_article_path(article)
-          %td= article.status
+          %td= t(article.status)
           %td
             - if can? :edit, article
-              = link_to 'Edit', edit_admin_article_path(article)
+              = link_to '编辑', edit_admin_article_path(article)

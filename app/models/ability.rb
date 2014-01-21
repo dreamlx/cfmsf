@@ -17,6 +17,10 @@ class Ability
       can [:create, :new], Article do |article|
         (user.categories.include? article.category) or (article.category_id == nil)
       end
+
+      can :read, Category do |category|
+        user.categories.include? category
+      end 
     end
     #   user ||= User.new # guest user (not logged in)
     #   if user.admin?

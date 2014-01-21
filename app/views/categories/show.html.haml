@@ -1,8 +1,61 @@
-= link_to "首页", root_path
-%span >  
-= link_to "#{(@category.chinese_name.blank? ? @category.french_name : @category.chinese_name)}", category_path(@category)
-%ul
-  - @category.articles.each do |article|
-    - if article.status == "public"
-      %li
-        = link_to (article.chinese_title.blank? ? article.french_title : article.chinese_title), article_path(article)
+= provide(:title, "CATEGORY")
+= render "shared/head"
+%article.main
+  .mlt
+    .mlt_h11
+      %img{:src => "/assets/h11.jpg"}/
+    .mlt_h12
+      %img{:src => "/assets/h12.jpg"}/
+    .mlt_h13
+      %img{:src => "/assets/h13.jpg"}/
+    .mlt_h14
+      %img{:src => "/assets/h14.jpg"}/
+    .mlt_h15
+      %img{:src => "/assets/h15.jpg"}/
+    .mlt_h16
+      %img{:src => "/assets/h16.jpg"}/
+    .mlt_h21
+      %img{:src => "/assets/h21.jpg"}/
+    .mlt_h22
+      %img{:src => "/assets/h22.jpg"}/
+    .mlt_h23
+      %img{:src => "/assets/h23.jpg"}/
+    .mlt_h24
+      %img{:src => "/assets/h24.jpg"}/
+    .mlt_h25
+      %img{:src => "/assets/h25.jpg"}/
+    .mlt_h26
+      %img{:src => "/assets/h26.jpg"}/
+    .mlt_h31
+      %img{:src => "/assets/h31.jpg"}/
+    .mlt_h32
+      %img{:src => "/assets/h32.jpg"}/
+    .mlt_h33
+      %img{:src => "/assets/h33.jpg"}/
+    .mlt_h34
+      %img{:src => "/assets/h34.jpg"}/
+    .mlt_h35
+      %img{:src => "/assets/h35.jpg"}/
+    .mlt_h36
+      %img{:src => "/assets/h36.jpg"}/
+    .mlt_h41
+      %img{:src => "/assets/h41.jpg"}/
+  .maintit
+    %a{:href => root_path}= t("home")
+    \&gt;
+    - if session[:locale] == "zh-CN"
+      = link_to @category.chinese_name, category_path(@category)
+    - elsif session[:locale] == "fr"
+      = link_to @category.french_name, category_path(@category)
+  .searmain
+    .search_res
+      .maintitle
+        = "最新动态"
+      - @category.articles.each do |article|
+        - if article.status == "public"
+          .lp
+            - if session[:locale] == "zh-CN"
+              = link_to article.chinese_title, article_path(article)
+            - elsif session[:locale] == "fr"
+              = link_to article.french_title, article_path(article)
+

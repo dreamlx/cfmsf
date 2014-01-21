@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 module ControllerMacros
   def login_admin
     before(:each) do
@@ -14,13 +16,25 @@ module ControllerMacros
     end
   end
 
-  def sign_in(user)
+  def sign_in_admin
     before(:each) do
+      @user = FactoryGirl.create(:admin)
       visit "/users/sign_in"
-      fill_in "Login", with: user.username
-      fill_in "Password", with: user.password
+      fill_in "user[login]", with: @user.username
+      fill_in "user[password]", with: @user.password
 
-      click_button "Sign in"
+      click_button "登录"
+    end
+  end
+
+  def sign_in_editor
+    before(:each) do
+      @user = FactoryGirl.create(:editor)
+      visit "/users/sign_in"
+      fill_in "user[login]", with: @user.username
+      fill_in "user[password]", with: @user.password
+
+      click_button "登录"
     end
   end
 end

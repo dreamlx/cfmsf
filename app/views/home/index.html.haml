@@ -1,0 +1,84 @@
+= provide(:title, "Home")
+= render "shared/head"
+%article.main
+  .mlt
+    .mlt_h11
+      %img{:src => "/assets/h11.jpg"}/
+    .mlt_h12
+      %img{:src => "/assets/h12.jpg"}/
+    .mlt_h13
+      %img{:src => "/assets/h13.jpg"}/
+    .mlt_h14
+      %img{:src => "/assets/h14.jpg"}/
+    .mlt_h15
+      %img{:src => "/assets/h15.jpg"}/
+    .mlt_h16
+      %img{:src => "/assets/h16.jpg"}/
+    .mlt_h21
+      %img{:src => "/assets/h21.jpg"}/
+    .mlt_h22
+      %img{:src => "/assets/h22.jpg"}/
+    .mlt_h23
+      %img{:src => "/assets/h23.jpg"}/
+    .mlt_h24
+      %img{:src => "/assets/h24.jpg"}/
+    .mlt_h25
+      %img{:src => "/assets/h25.jpg"}/
+    .mlt_h26
+      %img{:src => "/assets/h26.jpg"}/
+    .mlt_h31
+      %img{:src => "/assets/h31.jpg"}/
+    .mlt_h32
+      %img{:src => "/assets/h32.jpg"}/
+    .mlt_h33
+      %img{:src => "/assets/h33.jpg"}/
+    .mlt_h34
+      %img{:src => "/assets/h34.jpg"}/
+    .mlt_h35
+      %img{:src => "/assets/h35.jpg"}/
+    .mlt_h36
+      %img{:src => "/assets/h36.jpg"}/
+    .mlt_h41
+      %img{:src => "/assets/h41.jpg"}/
+  .mrt
+    %p
+      %br
+      %br
+      %p{style:"font-size:20px;margin-bottom:20px;"} 欢迎来到
+    %h3
+      上海
+      %br>/
+      交通大学医学院
+      %br>/
+      中法医学部
+  = form_tag search_articles_path, method: :GET do |f|
+    .search
+      .input-append
+        = text_field_tag 'search', '', class:"span2"
+        = submit_tag t('search'), class:"btn"
+    
+  .searmain
+    .search_res
+      .question
+        %h2
+          %div.title
+            %a{:href => "#"} 中法医学部新闻图片
+      .university
+        %h2
+          - if session[:locale] == "zh-CN"
+            %div.title
+              = link_to @news_category.chinese_name, category_path(@news_category)
+            - @news_category.articles.limit(5).each do |article|
+              - if article.status == "public"
+                %p
+                  = link_to article.chinese_title, article_path(article)
+            %p.pull-right
+              = link_to "更多新闻", category_path(Category.find(7))
+          - elsif session[:locale] == "fr"
+            = link_to @news_category.french_name
+            - @news_category.articles.limit(5).each do |article|
+              - if article.status == "public"
+                %p
+                  = link_to article.french_title, article_path(article)
+            %p.pull-right
+              = link_to "更多新闻", category_path(Category.find(7))

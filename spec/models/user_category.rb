@@ -1,6 +1,6 @@
-require "faker"
+# require "faker"
 
-FactoryGirl.define do
-  factory :user_category do
-  end
-end
+# FactoryGirl.define do
+#   factory :user_category do
+#   end
+# end
