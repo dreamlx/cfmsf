@@ -47,7 +47,8 @@ gem 'carrierwave-qiniu'
 
 gem 'jcrop-rails'
 gem "mini_magick"
-gem 'easy_captcha', :git => 'git@github.com:HuberyDu/easy_captcha.git', :branch => 'master'  #captcha
+# gem 'easy_captcha', :git => 'git@github.com:HuberyDu/easy_captcha.git', :branch => 'master'  #captcha
+gem 'easy_captcha'
 gem 'rvm-capistrano'
 gem 'capistrano' 
 gem 'rails_12factor'
@@ -73,7 +74,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'rails_12factor'
 end
 
 group :test do
