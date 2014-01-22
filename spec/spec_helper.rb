@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'zip/zip'
 require 'spork'
 
 
@@ -7,7 +8,6 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'rspec/autorun'
-
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -24,7 +24,7 @@ Spork.prefork do
     # config.mock_with :mocha
     # config.mock_with :flexmock
     # config.mock_with :rr
-
+    Capybara.javascript_driver = :webkit
     # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
     config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -39,31 +39,16 @@ Spork.prefork do
     config.infer_base_class_for_anonymous_controllers = false
     config.include FactoryGirl::Syntax::Methods
 
-    # config.before(:suite) do
-    #   DatabaseCleaner.strategy = :truncation
-    #   load Rails.root + "db/seeds.rb"
-    # end
-
-    # config.before(:each) do
-    #   DatabaseCleaner.start
-    # end
-
-    # config.after(:each) do
-    #   DatabaseCleaner.clean
-    # end
-    
     config.before :each do
-      if Capybara.current_driver == :selenium
-        DatabaseCleaner.strategy = :truncation
-      else
-        DatabaseCleaner.strategy = :transaction
-      end
+      DatabaseCleaner.strategy = :truncation
       DatabaseCleaner.start
+      Capybara.current_driver = :selenium
       load Rails.root + "db/seeds.rb"
     end
 
     config.after(:each) do
       DatabaseCleaner.clean
+      Capybara.use_default_driver
     end
 
     config.order = "random"

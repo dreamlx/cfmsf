@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe "article management page" do
-  describe "Admin" do
+  describe "Admin" , :js => true do
     sign_in_admin
     subject{page}
 
@@ -58,8 +58,7 @@ describe "article management page" do
   describe "Editor" do
     sign_in_editor
     before :all do
-      user.categories = Category.first
+      # user.categories = Category.first
     end   
-    it{should have_content("caeg")} 
   end
 end

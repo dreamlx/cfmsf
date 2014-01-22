@@ -53,7 +53,7 @@ gem 'capistrano'
 gem 'rails_12factor'
 gem 'rubyzip'
 # gem 'figaro'
-
+gem 'zip-zip'
 
 group :development, :test do
   gem "pry-nav"
@@ -80,7 +80,8 @@ group :test do
   gem "faker", "~> 1.1.2"
   gem "database_cleaner", "~> 1.0.1"
   gem "launchy", "~> 2.3.0"
-  gem "selenium-webdriver", "~> 2.33.0"
+  gem 'capybara-webkit'
+  gem "selenium-webdriver", "~> 2.34.0"
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
