@@ -5,8 +5,8 @@ class Article < ActiveRecord::Base
 
   before_save :default_status
 
-  validates :chinese_title, length:{maximum: 200}
-  validates :french_title, length: {maximum: 200}
+  validates :chinese_title, presence: true, length:{maximum: 200}
+  validates :french_title, presence: true, length: {maximum: 200}
   validates :category_id, presence: true
 
   def default_status

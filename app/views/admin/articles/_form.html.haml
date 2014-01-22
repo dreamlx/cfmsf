@@ -1,4 +1,4 @@
-= simple_form_for [:admin, @article] do |f|
+= simple_form_for [:admin, @article], html:{name:'article'} do |f|
   = f.error_notification
   %table
     %div#chinese_form{style:"display:block"}
@@ -42,9 +42,9 @@
             
       = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
   .form-actions
-    - if action_name == "new"
+    - if action_name == "new" || action_name == "create"
       = f.button :submit, "创建文章"
-    - if action_name == "edit"
+    - if action_name == "edit" || action_name == "update"
       = f.button :submit, "更新文章"
     = f.button :button, '取消', :type => 'reset', :class => 'btn', :id => "cancle"
 

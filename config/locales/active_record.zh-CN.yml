@@ -47,5 +47,7 @@ zh-CN:
           attributes:
             chinese_title:
               too_long: 中文标题太长
+              blank: 中文标题不能为空
             french_title:
               too_long: 法文标题太长
+              blank: 法文标题不能为空
