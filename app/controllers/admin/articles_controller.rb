@@ -64,9 +64,9 @@ module Admin
     def destroy
       @article = Article.find(params[:id])
       if @article.update_attributes(status:"deleted")
-        redirect_to admin_articles_path, notice: 'article_success_deleted'
+        redirect_to admin_articles_path(category_id: @article.category_id), notice: 'article_success_deleted'
       else
-        render action: "index", alert: "article_failed_deleted"
+        redirect_to admin_articles_path(category_id: @article.category_id), alert: "article_failed_deleted"
       end
     end
   end
