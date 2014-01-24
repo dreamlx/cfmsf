@@ -19,7 +19,7 @@
           - else
             %option{value:"#{category.id}"}
               = category.chinese_name
-      = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
+      = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image'] }
     %div#french_form{style:"display:none"}
       %div
         %span *法文标题
@@ -40,7 +40,7 @@
               %option{value:"#{category.id}", :selected => ("true" if @current_category.id == category.id)}
                 = category.french_name
             
-      = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
+      = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', 'flash','|', 'image', ] }
   .form-actions
     - if action_name == "new" || action_name == "create"
       = f.button :submit, "创建文章"
