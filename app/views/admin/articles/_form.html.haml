@@ -3,7 +3,7 @@
   %table
     %div#chinese_form{style:"display:block"}
       %div
-        %span 中文标题
+        %span *中文标题
         .row
           .span5
             = f.input :chinese_title, input_html:{style:"width:100%"}, label: false
@@ -22,7 +22,7 @@
       = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', '|', 'image', 'media'] }
     %div#french_form{style:"display:none"}
       %div
-        %span 法文标题
+        %span *法文标题
         .row
           .span5
             = f.input :french_title, input_html:{style:"width:100%"}, label: false
