@@ -19,7 +19,7 @@
           - else
             %option{value:"#{category.id}"}
               = category.chinese_name
-      = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image'] }
+      = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image','media'] }
     %div#french_form{style:"display:none"}
       %div
         %span *法文标题

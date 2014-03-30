@@ -1,0 +1,11 @@
+.menu
+  .home
+    = link_to '首页', root_path
+  %ul
+    - @categories.each do |category|
+      %li
+        = link_to category.french_name, category_path(category)
+        - if !category.submenus.blank?
+          .submenu
+            - category.submenus.each do |submenu|
+              = link_to submenus.french_name, category_path(submenu)

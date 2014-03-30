@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :chinese_name, :french_name, :id
+  attr_accessible :chinese_name, :french_name, :id, :order_no, :parent_id, :published
 
   has_many :user_categories, dependent: :destroy
   has_many :users, through: :user_categories
@@ -12,6 +12,14 @@ class Category < ActiveRecord::Base
 
   after_create :set_to_admin
 
+  def submenus
+    Category.where(parent_id: self.id)
+  end
+
+  def published_submenus
+    Category.where(parent_id: self.id, published: true)
+  end
+  
   private
 
   	def set_to_admin

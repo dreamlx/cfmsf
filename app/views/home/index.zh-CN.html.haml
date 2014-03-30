@@ -1,0 +1,59 @@
+.banner
+  .bleft
+    .bleft-m1
+      %span JANUARY
+      %br
+      SCHOOL
+      %br
+      PAPER ISSUE
+    .bleft-m2
+      %span 2007
+      %br
+      FIELD TRIP
+      %br
+      REPORT
+  .bright
+    .welcome
+      欢迎来到
+    .sitename
+      上海
+      %br
+      交通大学医学部
+      %br
+      中法医学部
+
+.search
+  = form_tag search_articles_path, method: :GET do |f|
+    = text_field_tag 'search', '', class: "key"
+    = submit_tag t('search'), class: "btn"
+/*todo: jquery 更新背景*/
+.module
+  .study
+    %h3
+      %sup 学习
+      园地
+    .study-c
+      %img{ src: "/assets/study_img.jpg" }
+      %div
+        %p
+          %strong Fusce euismod
+          consequat ate ante. Lorem ipsum dolor sit ser amet, uer adipiscing elit. Pellentesque.
+        %ul
+          - @news_category.articles.limit(5).each do |article|
+            %li
+              = link_to article.chinese_title, article_path(article)
+          %li
+            = link_to "更多新闻", category_path(Category.find(7))
+  .contact
+    %h3
+      %sup 联系
+      我们
+    .contact-c
+      %p
+        %strong Fusce euismod
+        consequat ate ante. Lorem ipsum dolor sit ser amet, uer adipiscing elit. Pellentesque.
+      %ul
+        %li Fusce euismod conse
+        %li Fusce euismod cone
+        %li Quat ante lorem
+        %li Quat ante lorem

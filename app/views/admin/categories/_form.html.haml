@@ -3,6 +3,9 @@
   %table
     = f.input :chinese_name, label: "类别中文名"
     = f.input :french_name, label: "类别法文名"
+    = f.input :published
+    = f.input :order_no
+    = f.input :parent_id # todo as select
   .form-actions
     = f.button :submit, '更新类别'
     = f.button :button, '取消', :type => 'reset', :class => 'btn', :id => "cancle"

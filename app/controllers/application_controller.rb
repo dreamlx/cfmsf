@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def get_all_category
+    @categories = Category.where(published: true)
   	@chinese_categories = Array.new
     @chinese_categories.push(Category.find(1))
     @chinese_categories.push(Category.find(2))

@@ -5,13 +5,16 @@
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = stylesheet_link_tag "site", media: "all"
+    %title =t(:title)
 
-    %title 上海交通大学医学院中法医学部
   %body
-    #content
-      = yield
-      - if session[:locale] == "zh-CN"
-        = render "shared/footer"
-      - elsif session[:locale] == "fr"
-        = render "shared/french_footer"
+    .wrapper_bg 
+      .wrapper
+        = provide(:title, "Home")
+        = render "shared/head"
+        = yield
+        - if session[:locale] == "zh-CN"
+          = render "shared/footer"
+        - elsif session[:locale] == "fr"
+          = render "shared/french_footer"
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140110071501) do
+ActiveRecord::Schema.define(:version => 20140330093825) do
 
   create_table "articles", :force => true do |t|
     t.string   "chinese_title"
@@ -27,8 +27,11 @@ ActiveRecord::Schema.define(:version => 20140110071501) do
   create_table "categories", :force => true do |t|
     t.string   "chinese_name"
     t.string   "french_name"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "parent_id",    :default => 0,     :null => false
+    t.integer  "order_no",     :default => 0,     :null => false
+    t.boolean  "published",    :default => false, :null => false
   end
 
   create_table "user_categories", :force => true do |t|
