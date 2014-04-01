@@ -14,10 +14,11 @@ body{
   font-family: "微软雅黑";
   background-color: #333;
 }
+.content{width:100%; min-height: 450px}
 .wrapper {width:669px; padding:0 64px 0 47px; height:100%; min-height:600px; background:#013974 url(/assets/bg4.jpg) top center no-repeat; margin:auto;}
 .wrapper_bg { background-color: #013974; width: 780px; margin: auto;}
 .menu {padding-top:35px; overflow:hidden;}
-.home {line-height:46px; width:65px; text-align:center; float:left;}
+.home {line-height:46px; width:auto; text-align:left; float:left; margin-right:10px;}
 .menu ul {margin-left:65px; list-style:none;}
 .menu ul li {float:left; padding:0 20px 0 0; position:relative; line-height:22px;}
 .menu ul li a {color:white; font-size:13px; text-shadow:0 0 3px #000; display:block;}
@@ -32,6 +33,7 @@ body{
 .submenu a {display:inline-block!important; padding-top:5px; margin-right:20px; text-shadow:none!important; font-size:12px!important; border:none!important;}
 .banner {width:100%; height:300px;}
 .bleft {float:left; overflow:hidden; padding:228px 0 0 60px;}
+.bleft a{color:#185a8d; }
 .bleft-m1, .bleft-m2 {padding:10px; width:105px; height:42px; float:left; color:#185a8d; line-height:14px;}
 .bleft-m1 span, .bleft-m2 span {font-weight:bold;}
 .bleft-m1 {margin-right:63px;}
@@ -54,3 +56,8 @@ body{
 .contact-c p {padding-bottom:10px;}
 .contact-c ul li {margin-left:20px; float:left; width:135px;}
 .footer {padding:10px 0 0 0; color:white; font-size:10px; line-height:12px;}
+.china, .french{height:25px; margin: 5px; padding-right: 10px;}
+.content {color:white;}
+.content h1{text-align: center;text-shadow:0 0 3px #000;}
+.post_body{margin:20px;}
+.maintit, .maintit a{color:#185a8d;;}

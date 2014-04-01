@@ -5,16 +5,16 @@
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = stylesheet_link_tag "site", media: "all"
-    %title =t(:title)
+    %title= t(:title)
 
   %body
-    .wrapper_bg 
+    .wrapper_bg
+      = render "shared/language"
       .wrapper
         = provide(:title, "Home")
         = render "shared/head"
-        = yield
-        - if session[:locale] == "zh-CN"
-          = render "shared/footer"
-        - elsif session[:locale] == "fr"
-          = render "shared/french_footer"
+        .content
+          = yield
+        = render "shared/footer"
+
 

@@ -1,50 +1,55 @@
 .banner
   .bleft
     .bleft-m1
-      %span JANUARY
-      %br
-      SCHOOL
-      %br
-      PAPER ISSUE
+      %a{ href: '#'}
+        %span JANUARY
+        %br
+        SCHOOL
+        %br
+        PAPER ISSUE
     .bleft-m2
-      %span 2007
-      %br
-      FIELD TRIP
-      %br
-      REPORT
+      %a{ href: '#'}
+        %span 2007
+        %br
+        FIELD TRIP
+        %br
+        REPORT
   .bright
-    .welcome
-      欢迎来到
+    %div{style: 'color:white;'}
+      here, at
     .sitename
-      上海
+      west
       %br
-      交通大学医学部
+      university of
       %br
-      中法医学部
+      technology,
+    %div{style: 'color:white;margin-top:15px;'}
+      we teach our students
+      how to be the best
+      at every technological
+      and inventive job
 
 .search
   = form_tag search_articles_path, method: :GET do |f|
     = text_field_tag 'search', '', class: "key"
     = submit_tag t('search'), class: "btn"
-/*todo 改变h3为分类名称，预估耗时30分钟*/
 .module
   .study
     %h3
       %sup 学习
       园地
     .study-c
-      %img{ src: "study_img.jpg" }
+      %img{ src: "/assets/study_img.jpg" }
       %div
         %p
           %strong Fusce euismod
           consequat ate ante. Lorem ipsum dolor sit ser amet, uer adipiscing elit. Pellentesque.
         %ul
-          - @news_category.articles.limit(5).each do |article|
+          - @news_category.articles.limit(6).each do |article|
             %li
               = link_to article.french_title, article_path(article)
           %li
-            = link_to "更多新闻", category_path(Category.find(7))
-  /*todo 改变h3为分类名称，预估耗时30分钟*/
+            = link_to t(:read_more), category_path(Category.find(7))
   .contact
     %h3
       %sup 联系
@@ -58,3 +63,8 @@
         %li Fusce euismod cone
         %li Quat ante lorem
         %li Quat ante lorem
+
+:javascript
+  $(document).ready(function(){
+    $('.wrapper').css("background-image", "url(/assets/bg.jpg)");
+  });
