@@ -57,7 +57,7 @@ body{
 .contact-c ul li {margin-left:20px; float:left; width:135px;}
 .footer {padding:10px 0 0 0; color:white; font-size:10px; line-height:12px;}
 .china, .french{height:25px; margin: 5px; padding-right: 10px;}
-.content {color:white;}
+.content {color:white; padding-top:10px;}
 .content h1{text-align: center;text-shadow:0 0 3px #000;}
 .post_body{margin:20px;}
 .maintit, .maintit a{color:#185a8d;;}
