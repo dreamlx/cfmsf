@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20140330093825) do
     t.string   "french_name"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
-    t.integer  "parent_id",    :default => 0,     :null => false
+    t.integer  "parent_id",    :default => 0
     t.integer  "order_no",     :default => 0,     :null => false
     t.boolean  "published",    :default => false, :null => false
   end

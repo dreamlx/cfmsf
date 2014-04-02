@@ -16,6 +16,13 @@ class Category < ActiveRecord::Base
     Category.where(parent_id: self.id)
   end
 
+  def parent_menu
+    Category.where(id: self.parent_id).first
+  end
+
+  def self.except_me(my_id)
+    self.where("id <> #{my_id}")
+  end
   def published_submenus
     Category.where(parent_id: self.id, published: true)
   end
