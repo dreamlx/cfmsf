@@ -11,8 +11,6 @@ gem 'rails', '3.2.13'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem "twitter-bootstrap-rails" #界面
   gem 'bootstrap-colorpicker-rails'
@@ -45,7 +43,7 @@ gem 'carrierwave'
 gem 'carrierwave-qiniu'
 
 gem 'jcrop-rails'
-gem "mini_magick"
+#gem "mini_magick"
 gem 'easy_captcha', :github => 'HuberyDu/easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 

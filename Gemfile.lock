@@ -350,7 +350,6 @@ DEPENDENCIES
   kaminari (~> 0.14.1)
   launchy (~> 2.3.0)
   less-rails
-  mini_magick
   nested_form
   pg
   pry
