@@ -43,7 +43,7 @@ gem 'carrierwave'
 gem 'carrierwave-qiniu'
 
 gem 'jcrop-rails'
-#gem "mini_magick"
+gem 'mini_magick', :git => 'git://github.com/minimagick/minimagick.git', :ref => '6d0f8f953112cce6324a524d76c7e126ee14f392'
 gem 'easy_captcha', :github => 'HuberyDu/easy_captcha'  #captcha
 gem 'rvm-capistrano'
 gem 'capistrano' 
@@ -69,7 +69,8 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
+  gem 'sqlite3'
 end
 
 group :test do

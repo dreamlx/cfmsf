@@ -11,6 +11,14 @@ GIT
       yard (>= 0.7.0)
 
 GIT
+  remote: git://github.com/minimagick/minimagick.git
+  revision: 6d0f8f953112cce6324a524d76c7e126ee14f392
+  ref: 6d0f8f953112cce6324a524d76c7e126ee14f392
+  specs:
+    mini_magick (3.6.0)
+      subexec (~> 0.2.1)
+
+GIT
   remote: git://github.com/sporkrb/spork-rails.git
   revision: 0dd45e59d3237b4c8f9efc215b46d9c07072a95e
   specs:
@@ -169,8 +177,6 @@ GEM
       treetop (~> 1.4.8)
     method_source (0.8.2)
     mime-types (1.25)
-    mini_magick (3.6.0)
-      subexec (~> 0.2.1)
     mini_portile (0.5.2)
     multi_json (1.8.4)
     nested_form (0.3.2)
@@ -350,6 +356,7 @@ DEPENDENCIES
   kaminari (~> 0.14.1)
   launchy (~> 2.3.0)
   less-rails
+  mini_magick!
   nested_form
   pg
   pry
