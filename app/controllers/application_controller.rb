@@ -8,21 +8,7 @@ class ApplicationController < ActionController::Base
   private
 
   def get_all_category
-    @categories = Category.where(published: true).where("parent_id is null or parent_id = ''")
-  	@chinese_categories = Array.new
-    @chinese_categories.push(Category.find(1))
-    @chinese_categories.push(Category.find(2))
-    @chinese_categories.push(Category.find(6))
-    @chinese_categories.push(Category.find(3))
-    @chinese_categories.push(Category.find(4))
-    @chinese_categories.push(Category.find(5))
-
-    @french_categories = Array.new
-    @french_categories.push(Category.find(1))
-    @french_categories.push(Category.find(2))
-    @french_categories.push(Category.find(3))
-    @french_categories.push(Category.find(4))
-    @french_categories.push(Category.find(5))
+    @categories = Category.where(published: true).where("parent_id is null or parent_id = ''").order(:order_no)
   end
 
   def set_locale

@@ -8,6 +8,7 @@
 %table.table.center.table-bordered
   %thead
     %tr
+      %td 序号
       %td 类别中文名
       %td 类别法文名
       %td 上级菜单
@@ -18,6 +19,7 @@
     - @categories.each do |category|
       - i += 1
       %tr{class: (i%2==0 ? "ligth_bule" : "mazarine")}
+        %td= category.order_no
         %td
           = "--" unless category.parent_menu.blank?
           = category.chinese_name

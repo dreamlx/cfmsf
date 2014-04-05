@@ -13,7 +13,7 @@ class Category < ActiveRecord::Base
   after_create :set_to_admin
 
   def submenus
-    Category.where(parent_id: self.id)
+    Category.where(parent_id: self.id).order(:order_no)
   end
 
   def parent_menu
