@@ -8,4 +8,4 @@
         - if !category.submenus.blank?
           .submenu
             - category.submenus.each do |submenu|
-              = link_to submenus.french_name, category_path(submenu)
+              = link_to submenu.french_name, category_path(submenu)

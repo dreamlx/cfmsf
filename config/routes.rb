@@ -1,5 +1,6 @@
 Bancheng::Application.routes.draw do
   captcha_route
+   match 'admin' => 'admin/home#index'
 
   resources :home, only: :index
   resources :categories, only: :show

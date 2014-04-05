@@ -21,7 +21,11 @@ class Category < ActiveRecord::Base
   end
 
   def self.except_me(my_id)
-    self.where("id <> #{my_id}")
+    if my_id.nil?
+      self.all
+    else
+      self.where("id <> #{my_id}") 
+    end
   end
   def published_submenus
     Category.where(parent_id: self.id, published: true)
