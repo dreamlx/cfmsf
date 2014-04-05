@@ -15,7 +15,8 @@ group :assets do
   gem "twitter-bootstrap-rails" #界面
   gem 'bootstrap-colorpicker-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  #gem 'therubyracer', :platforms => :ruby
+  gem 'execjs'
   gem 'uglifier', '>= 1.0.3'
 end
 

@@ -166,7 +166,6 @@ GEM
     less-rails (2.4.2)
       actionpack (>= 3.1)
       less (~> 2.4.0)
-    libv8 (3.16.14.3)
     listen (2.4.0)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -190,7 +189,6 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
-    pg (0.16.0)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.3)
@@ -245,7 +243,6 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    ref (1.0.5)
     requirejs-rails (0.9.1)
       railties (>= 3.1.1, < 3.3)
     rest-client (1.6.7)
@@ -298,9 +295,6 @@ GEM
     sqlite3 (1.3.8)
     state_machine (1.2.0)
     subexec (0.2.3)
-    therubyracer (0.12.0)
-      libv8 (~> 3.16.14.0)
-      ref
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -346,6 +340,7 @@ DEPENDENCIES
   devise
   dragonfly (~> 0.9.15)
   easy_captcha!
+  execjs
   factory_girl_rails (~> 4.2.1)
   faker (~> 1.1.2)
   guard-rspec (~> 3.0.2)
@@ -358,7 +353,6 @@ DEPENDENCIES
   less-rails
   mini_magick!
   nested_form
-  pg
   pry
   pry-nav
   qiniu-rs
@@ -378,7 +372,6 @@ DEPENDENCIES
   spork-rails!
   sqlite3
   state_machine
-  therubyracer
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   zip-zip
