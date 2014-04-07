@@ -71,14 +71,6 @@ group :production do
   #gem 'pg'
 end
 
-group :test do
-  gem 'capybara', '2.1.0'
-  gem "faker", "~> 1.1.2"
-  gem "database_cleaner", "~> 1.0.1"
-  gem "launchy", "~> 2.3.0"
-  gem 'capybara-webkit'
-  gem "selenium-webdriver", "~> 2.34.0"
-end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
