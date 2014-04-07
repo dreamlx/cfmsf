@@ -11,12 +11,11 @@ gem 'rails', '3.2.13'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
   gem "twitter-bootstrap-rails" #界面
   gem 'bootstrap-colorpicker-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'libv8', '3.16.14.3'
-  gem 'therubyracer', '0.11.1', :require => 'v8', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
   #gem 'execjs'
   gem 'uglifier', '>= 1.0.3'
 end
