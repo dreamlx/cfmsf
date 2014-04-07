@@ -50,11 +50,11 @@ gem 'rails_12factor'
 gem 'rubyzip'
 # gem 'figaro'
 gem 'zip-zip'
+gem 'sqlite3'
 
 group :development, :test do
   gem "pry-nav"
   gem 'pry'
-  gem 'sqlite3'
   gem "rspec-rails", "~> 2.14.0"
   gem "factory_girl_rails", "~> 4.2.1"
 
@@ -69,7 +69,6 @@ end
 
 group :production do
   #gem 'pg'
-  gem 'sqlite3'
 end
 
 group :test do
