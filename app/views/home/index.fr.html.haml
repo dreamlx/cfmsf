@@ -15,20 +15,14 @@
         %br
         REPORT
   .bright
-    %div{style: 'color:white;'}
-      here, at
+    .welcome
+      欢迎来到
     .sitename
-      west
+      上海
       %br
-      university of
+      交通大学医学部
       %br
-      technology,
-    %div{style: 'color:white;margin-top:15px;'}
-      we teach our students
-      how to be the best
-      at every technological
-      and inventive job
-
+      中法医学部
 .search
   = form_tag search_articles_path, method: :GET do |f|
     = text_field_tag 'search', '', class: "key"
@@ -49,7 +43,7 @@
             %li
               = link_to article.french_title, article_path(article)
           %li
-            = link_to t(:read_more), category_path(Category.find(7))
+            = link_to t(:read_more), category_path(@news_category)
   .contact
     %h3
       %sup 联系

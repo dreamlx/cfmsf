@@ -44,7 +44,7 @@
             %li
               = link_to article.chinese_title, article_path(article)
           %li
-            = link_to t(:read_more), category_path(Category.find(7))
+            = link_to t(:read_more), category_path(@news_category)
   .contact
     %h3
       %sup 联系
