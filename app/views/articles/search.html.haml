@@ -5,6 +5,8 @@
   = t("search_result")
 .post_body
   %ul
+    - if @articles.blank?
+      %h1 Can't match any articles' title
     - @articles.each do |article|
       - if article.status == "public"
         %li

@@ -15,8 +15,8 @@ body{
   background-color: #333;
 }
 .content{width:100%; min-height: 450px}
-.wrapper {width:669px; padding:0 64px 0 47px; height:100%; min-height:600px; background:#013974 url(/assets/bg4.jpg) top center no-repeat; margin:auto;}
-.wrapper_bg { background-color: #013974; width: 780px; margin: auto;}
+.wrapper {width:669px; padding:0 64px 0 47px; height:100%; min-height:600px; background:#013974 url(/assets/bg4.jpg) ; background-size:cover;margin:auto;}
+.wrapper_bg { background-color: #013974; width: auto; margin: auto; height: 100%; min-height:640px;position:relative;}
 .menu {padding-top:35px; overflow:hidden;}
 .home {line-height:46px; width:auto; text-align:left; float:left; margin-right:10px;}
 .menu ul {margin-left:65px; list-style:none;}
@@ -42,7 +42,7 @@ body{
 .sitename {color:#fee240; font-size:36px; line-height:46px;}
 .search {padding:0 0 10px 0; overflow:hidden;}
 .search .key {padding:5px; font-size:11px; float:left; line-height:16px;}
-.search .btn {margin-left:10px; background:#f0f0ec; color:#999; height:26px; line-height:26px; padding:0 10px; cursor:pointer;}
+.search .btn {margin-left:10px; background:#f0f0ec; color:#111; height:26px; line-height:26px; padding:0 10px; cursor:pointer;}
 .module {border:1px solid #336190; overflow:hidden; padding:10px;}
 .study, .contact {float:left; width:50%; color:white;}
 .study h3 , .contact h3 {font-size:18px; color:white; font-weight:normal; padding-bottom:10px;}
@@ -55,7 +55,7 @@ body{
 .contact-c {font-size:10px; line-height:12px;}
 .contact-c p {padding-bottom:10px;}
 .contact-c ul li {margin-left:20px; float:left; width:135px;}
-.footer {padding:10px 0 20px 0; color:white; font-size:10px; line-height:12px;}
+.footer { color:white; font-size:10px; line-height:12px;position:absolute;bottom:0px; margin-left:120px;}
 .china, .french{height:25px; margin: 5px; padding-right: 10px;}
 .content {color:white; padding-top:10px;}
 .content h1{text-align: center;text-shadow:0 0 3px #000;}
