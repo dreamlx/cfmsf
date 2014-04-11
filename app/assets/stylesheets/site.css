@@ -61,3 +61,10 @@ body{
 .content h1{text-align: center;text-shadow:0 0 3px #000;}
 .post_body{margin:20px;}
 .maintit, .maintit a{color:#185a8d;;}
+
+.sub1 {position:absolute; top:22px; left:0; background:#FFF; width:120px; display:none;}
+.sub1 ul {margin:0;}
+.sub1 ul li {float:none; line-height:30px; width:100px;}
+.sub1 ul li a {color:#1480be!important; text-shadow:none;}
+.sub1 ul li:hover .sub2 {display:block;}
+.sub2 {position:absolute; top:0; left:120px; background:#FFF; width:120px; display:none;}

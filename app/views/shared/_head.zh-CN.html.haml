@@ -6,6 +6,7 @@
       %li
         = link_to category.chinese_name, category_path(category)
         - unless category.submenus.blank?
-          .submenu
-            - category.submenus.each do |submenu|
-              = link_to submenu.chinese_name, category_path(submenu) unless submenu.chinese_name.strip.blank?
+          .sub1
+            %ul
+              - category.submenus.each do |submenu|
+                %li= link_to submenu.chinese_name, category_path(submenu) unless submenu.chinese_name.strip.blank?
