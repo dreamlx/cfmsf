@@ -11,4 +11,5 @@
  *= require_self
  *= require bootstrap_and_overrides
  *= search
+ *= require bxslider
  */

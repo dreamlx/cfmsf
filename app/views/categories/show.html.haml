@@ -1,15 +1,16 @@
 
-%ul
-  - if session[:locale] == "zh-CN"
-    %h1= @category.chinese_name
-  - elsif session[:locale] == "fr"
-    %h1= @category.french_name
+.module
+  %ul
+    - if session[:locale] == "zh-CN"
+      %h1= @category.chinese_name
+    - elsif session[:locale] == "fr"
+      %h1= @category.french_name
 
-  - @category.articles.each do |article|
-    - if article.status == "public"
-      %li
-        - if session[:locale] == "zh-CN"
-          = link_to article.chinese_title, article_path(article)
-        - elsif session[:locale] == "fr"
-          = link_to article.french_title, article_path(article)
+    - @category.articles.each do |article|
+      - if article.status == "public"
+        %li
+          - if session[:locale] == "zh-CN"
+            = link_to article.chinese_title, article_path(article)
+          - elsif session[:locale] == "fr"
+            = link_to article.french_title, article_path(article)
 

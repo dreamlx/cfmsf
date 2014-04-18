@@ -1,19 +1,21 @@
-= provide(:title, "ARTICLE")
-.maintit
-  %a{:href => root_path}= t("home")
-  \&gt;
-  - if session[:locale] == "zh-CN"
-    = link_to @article.category.chinese_name, category_path(@article.category)
-  - elsif session[:locale] == "fr"
-    = link_to @article.category.french_name, category_path(@article.category)
 
-- if session[:locale] == 'zh-CN'
-  %h1= @article.chinese_title
-- elsif session[:locale] == "fr"
-  %h1= @article.french_title
-.post_body
-  - if session[:locale] == "zh-CN"     
-    = raw(@article.chinese_content)
+.module
+  = provide(:title, "ARTICLE")
+  .maintit
+    %a{:href => root_path}= t("home")
+    \&gt;
+    - if session[:locale] == "zh-CN"
+      = link_to @article.category.chinese_name, category_path(@article.category)
+    - elsif session[:locale] == "fr"
+      = link_to @article.category.french_name, category_path(@article.category)
+
+  - if session[:locale] == 'zh-CN'
+    %h1= @article.chinese_title
   - elsif session[:locale] == "fr"
-    = raw(@article.french_content)
-= javascript_include_tag "articles"
+    %h1= @article.french_title
+  .post_body
+    - if session[:locale] == "zh-CN"     
+      = raw(@article.chinese_content)
+    - elsif session[:locale] == "fr"
+      = raw(@article.french_content)
+  = javascript_include_tag "articles"

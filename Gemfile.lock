@@ -67,6 +67,7 @@ GEM
     bootstrap-datepicker-rails (1.1.1.7)
       railties (>= 3.0)
     builder (3.0.4)
+    bxslider-rails (4.1.0)
     cancan (1.6.10)
     capistrano (2.12.0)
       highline
@@ -333,6 +334,7 @@ DEPENDENCIES
   acts-as-taggable-on
   bootstrap-colorpicker-rails
   bootstrap-datepicker-rails
+  bxslider-rails
   cancan
   capistrano
   capybara (= 2.1.0)

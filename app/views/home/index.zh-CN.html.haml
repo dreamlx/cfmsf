@@ -1,28 +1,3 @@
-.banner
-  .bleft
-    .bleft-m1
-      %a{ href: '#'}
-        %span JANUARY
-        %br
-        SCHOOL
-        %br
-        PAPER ISSUE
-    .bleft-m2
-      %a{ href: '#'}
-        %span 2007
-        %br
-        FIELD TRIP
-        %br
-        REPORT
-  .bright
-    .welcome
-      欢迎来到
-    .sitename
-      上海
-      %br
-      交通大学医学部
-      %br
-      中法医学部
 
 .search
   = form_tag search_articles_path, method: :GET do |f|
@@ -30,34 +5,27 @@
     = submit_tag t('search'), class: "btn"
 .module
   .study
-    %h3
-      %sup 学习
-      园地
-    .study-c
-      %img{ src: "/assets/study_img.jpg" }
-      %div
-        %p
-          %strong Fusce euismod
-          consequat ate ante. Lorem ipsum dolor sit ser amet, uer adipiscing elit. Pellentesque.
-        %ul
-          - @news_category.articles.limit(6).each do |article|
+    - unless @study_domain.blank?
+      %h3
+        %sup 学习
+        园地
+      .study-c
+        = raw(@study_domain.chinese_content)
+        - unless @news_category.nil?
+          %ul
+            - @news_category.articles.limit(6).each do |article|
+              %li
+                = link_to article.chinese_title, article_path(article)
             %li
-              = link_to article.chinese_title, article_path(article)
-          %li
-            = link_to t(:read_more), category_path(@news_category)
+              = link_to t(:read_more), category_path(@news_category)
+.module
   .contact
-    %h3
-      %sup 联系
-      我们
-    .contact-c
-      %p
-        %strong Fusce euismod
-        consequat ate ante. Lorem ipsum dolor sit ser amet, uer adipiscing elit. Pellentesque.
-      %ul
-        %li Fusce euismod conse
-        %li Fusce euismod cone
-        %li Quat ante lorem
-        %li Quat ante lorem
+    - unless @contact_us.blank?
+      %h3
+        %sup 联系
+        我们
+      .contact-c
+        = raw(@contact_us.chinese_content)
 
 :javascript
   $(document).ready(function(){

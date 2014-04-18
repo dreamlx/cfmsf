@@ -10,12 +10,13 @@
 
   %body
     .wrapper_bg
-      = render "shared/language"
       .wrapper
+        = render "shared/language"
         = provide(:title, "Home")
         = render "shared/head"
         .content
+          = render "shared/banner"
           = yield
-        = render "shared/footer"
+          = render "shared/footer"
 
 
