@@ -29,7 +29,7 @@ gem 'cancan' #权限管理
 gem 'simple_form' #更好的form help
 gem "nested_form"  #嵌套资源form
 gem 'state_machine' #状态转换跟踪
-gem "less-rails" 
+gem "less-rails"
 gem "haml-rails" #erb简化模板
 gem 'requirejs-rails' #requirejs
 

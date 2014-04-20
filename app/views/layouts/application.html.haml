@@ -9,10 +9,10 @@
     %title= t(:title)
 
   %body
-    .wrapper_bg
-      = render "shared/language"
+    .wrapper_bg#divWrap
+      =# render "shared/language"
       .wrapper
-        = provide(:title, "Home")
+        =# provide(:title, "Home")
         = render "shared/head"
         .content
           = render "shared/banner"

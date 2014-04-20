@@ -1,7 +1,7 @@
 .menu
-  .home
-    = link_to t('home'), root_path
   %ul
+    %li
+      = link_to t('home'), root_path
     - @categories.each do |category|
       %li
         = link_to category.chinese_name, category_path(category)
