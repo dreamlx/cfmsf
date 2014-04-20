@@ -7,13 +7,13 @@
         = link_to '添加新文章', new_admin_article_path(category_id: @current_category.id)
 .pagination
   %ul
-    - current_user.categories.all.each do |category|
-      - category_title = category.is_topmenu? ? category.chinese_name : ("-" + category.chinese_name)
-      - if category.id == @current_category.id
-        %li.active
-          %span= category_title
-      - else
-        %li.disabled
-          %span
-            = link_to category_title, admin_articles_path(category_id: category.id)
+    - @topmenus.each do |category|
+      %li{class: category.id == @current_category.id ? 'active' : 'disabled'}
+        %span
+          = link_to category.chinese_name, admin_articles_path(category_id: category.id)
+        %ul
+          - category.submenus.each do |submenu|
+            %li.submenu{class: submenu.id == @current_category.id ? 'active' : 'disabled'}
+              %span
+                = link_to ('-' + submenu.chinese_name), admin_articles_path(category_id: submenu.id)
 = render "list"

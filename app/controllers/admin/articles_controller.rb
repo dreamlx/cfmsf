@@ -3,6 +3,7 @@ module Admin
     load_and_authorize_resource
     
     def index
+      @topmenus = current_user.categories.all.reject{ |c| !c.is_topmenu? }
       @current_category = Category.find(params[:category_id]) unless params[:category_id].blank?
       if @current_category.blank?
         @current_category = current_user.categories.first

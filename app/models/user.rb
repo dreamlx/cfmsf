@@ -4,10 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
 
-  attr_accessible :password, :password_confirmation, :remember_me, :username, :role, :login
+  attr_accessible :password, :password_confirmation, :remember_me, :username, :role, :login, :email
   attr_accessor :login
 
   validates :role, presence: true
+  validates :email, presence: true
   validates :username, presence: true, length:{maximum: 10, minimum: 4}
   validates :username,
     :uniqueness => {
