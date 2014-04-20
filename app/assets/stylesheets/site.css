@@ -54,16 +54,16 @@ body{
 .post_body{margin:20px;}
 .maintit, .maintit a{color:#185a8d;;}
 
-.menu {padding-top:35px; height:auto;  width:100%;}
+.menu {padding-top:35px; height:auto;  width:100%; }
 .menu ul {float:left; list-style:none;}
 .menu ul li {float:left; position:relative; line-height:30px; padding:0 20px;}
 .menu ul li a {color:white; font-size:13px; text-shadow:0 0 3px #000;}
-.menu ul li:hover {background:#1111ff ;}
+.menu ul li:hover {background:#0080FF;}
 .menu ul li:hover a {color:#fff; text-shadow:none;}
 .menu ul li:hover .sub1 {display:block;}
-.sub1 { position:absolute; top:22px; left:0; background:#1111ff; width:120px; display:none; z-index:99;}
-.sub1 ul {margin:0;width:100%;background:#1111ff;}
-.sub1 ul li {float:none; line-height:30px; width:100%;background:#1111ff;}
+.sub1 { position:absolute; top:22px; left:0; width:120px; display:none; z-index:99;}
+.sub1 ul {margin:0;width:100%;}
+.sub1 ul li {float:none; line-height:30px; width:100%; background:#9cd9f5;}
 .sub1 ul li a {color:#fff!important; text-shadow:none; width:100%;}
 .sub1 ul li:hover .sub2 {display:block;}
 .sub2 {position:absolute; top:0; left:120px; background:#1111ff; width:120px; display:none; z-index:99;}

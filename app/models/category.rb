@@ -12,6 +12,10 @@ class Category < ActiveRecord::Base
 
   after_create :set_to_admin
 
+  def is_topmenu?
+    Category.where(id: self.parent_id).blank?
+  end
+
   def submenus
     Category.where(parent_id: self.id).order(:order_no)
   end

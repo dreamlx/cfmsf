@@ -21,10 +21,10 @@
       %tr{class: (i%2==0 ? "ligth_bule" : "mazarine")}
         %td= category.order_no
         %td
-          = "--" unless category.parent_menu.blank?
+          = "-" unless category.parent_menu.blank?
           = category.chinese_name
         %td
-          = "--" unless category.parent_menu.blank?
+          = "-" unless category.parent_menu.blank?
           = category.french_name
         %td= category.parent_menu.chinese_name unless category.parent_menu.blank?
         %td= category.articles.where("status != 'deleted'").size

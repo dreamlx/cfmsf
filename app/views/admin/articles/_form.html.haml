@@ -15,7 +15,7 @@
         - current_user.categories.each do |category|
           - if action_name == "edit"
             %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
-              = category.chinese_name
+              =  category.is_topmenu? ? category.chinese_name : ("-" + category.chinese_name)
           - else
             %option{value:"#{category.id}"}
               = category.chinese_name
@@ -34,7 +34,7 @@
         - current_user.categories.each do |category|
           - if action_name == "edit"
             %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
-              = category.french_name
+              = category.is_topmenu? ? category.french_name : ("-" + category.french_name)
           - elsif action_name == "new"
             - if !@current_category.nil?
               %option{value:"#{category.id}", :selected => ("true" if @current_category.id == category.id)}
