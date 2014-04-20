@@ -1,5 +1,5 @@
 
-.module
+.module2
   = provide(:title, "ARTICLE")
   .maintit
     %a{:href => root_path}= t("home")
@@ -14,7 +14,7 @@
   - elsif session[:locale] == "fr"
     %h1= @article.french_title
   .post_body
-    - if session[:locale] == "zh-CN"     
+    - if session[:locale] == "zh-CN"
       = raw(@article.chinese_content)
     - elsif session[:locale] == "fr"
       = raw(@article.french_content)
