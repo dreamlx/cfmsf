@@ -18,10 +18,12 @@ body{
 
 .content{width:100%; }
 .wrapper {width:669px; padding:0 64px 0 47px; 
-  height:100%; 
   min-height:600px; 
   position:relative;
-  background:#013974 url(/assets/bg00.jpg) ; background-size:cover;margin:auto;}
+  background:#013974 url(/assets/bg00.jpg) ; 
+  background-repeat: no-repeat;
+  background-size:initial;
+  margin:auto;}
 .wrapper_bg { background-color: #013974; width: auto; height: 100%; min-height:640px; position:relative;}
 
 .home {line-height:46px; width:auto; text-align:left; float:left; margin-right:10px;}

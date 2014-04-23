@@ -47,7 +47,7 @@ module Admin
     def create
       @article = Article.new(params[:article])
       if @article.save
-        AdminMailer.welcome_email(current_user, @article).deliver
+        AdminMailer.notice_email(User.find_by_username('admin'), @article).deliver
         redirect_to admin_articles_path(category_id: @article.category_id), notice: 'article_success_created'
       else
         render action: "new", alert: 'article_failed_created'
@@ -57,7 +57,7 @@ module Admin
     def update
       @article = Article.find(params[:id])
       if @article.update_attributes(params[:article])
-        AdminMailer.welcome_email(current_user, @article).deliver
+        AdminMailer.notice_email(User.find_by_username('admin'), @article).deliver
         redirect_to edit_admin_article_path(@article), notice: 'article_success_updated'
       else
         render action: "edit", alert: 'article_failed_updated'

@@ -21,7 +21,9 @@ $(document).ready(function(){
    //$('body').css('zoom', ' ' + 160 + '%');
    
 });
-$(window).resize(function(){CheckSizeZoom();});
+$(window).resize(function(){
+  CheckSizeZoom();
+});
 function CheckSizeZoom() {
   var minW = 780;
 
