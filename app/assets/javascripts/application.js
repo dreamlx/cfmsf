@@ -17,10 +17,12 @@
 
 $(document).ready(function(){
   $('.bxslider').bxSlider();
-  //CheckSizeZoom();
+  sAgent = navigator.userAgent.toLowerCase();
+  if(sAgent.indexOf("msie")==-1){CheckSizeZoom();}
 });
 $(window).resize(function(){
-  //CheckSizeZoom();
+  sAgent = navigator.userAgent.toLowerCase();
+  if(sAgent.indexOf("msie")==-1){CheckSizeZoom();}
 });
 function CheckSizeZoom() {
   var minW = 780;

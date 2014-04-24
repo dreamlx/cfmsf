@@ -16,7 +16,7 @@ body{
   background-color: #013974;
 }
 
-.language{z-index: 100; position:absolute; left:660px;}
+.language{z-index: 100; position:absolute; left:670px;}
 
 .content{width:100%; }
 .wrapper {width:669px; padding:0 64px 0 47px;
@@ -58,7 +58,7 @@ body{
 .post_body{margin:20px;}
 .maintit, .maintit a{color:#185a8d;;}
 
-.menu {padding-top:35px; height:auto;  width:100%; }
+.menu {padding-top:35px; height:50px;  width:100%; overflow:hidden; }
 .menu ul {float:left; list-style:none;}
 .menu ul li {float:left; position:relative; line-height:30px; padding:0 5px;}
 .menu ul li a {color:white; font-size:13px; text-shadow:0 0 3px #000;}
