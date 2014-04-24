@@ -17,19 +17,10 @@
 
 $(document).ready(function(){
   $('.bxslider').bxSlider();
-  var oBrowser = new detectBrowser();
-if (！oBrowser.isIE) { 
-  CheckSizeZoom();
-} 
-  
-   //$('body').css('zoom', ' ' + 160 + '%');
-   
+  //CheckSizeZoom();
 });
 $(window).resize(function(){
-    var oBrowser = new detectBrowser();
-if (！oBrowser.isIE) { 
-  CheckSizeZoom();
-} 
+  //CheckSizeZoom();
 });
 function CheckSizeZoom() {
   var minW = 780;
