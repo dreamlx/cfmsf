@@ -7,8 +7,8 @@ class Category < ActiveRecord::Base
 
   validates :chinese_name, presence: true, length:{maximum: 20}
   validates :french_name, presence: true, length:{maximum: 50}
-  validates_uniqueness_of :chinese_name
-  validates_uniqueness_of :french_name
+  #validates_uniqueness_of :chinese_name
+  #validates_uniqueness_of :french_name
 
   after_create :set_to_admin
 

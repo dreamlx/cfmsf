@@ -60,7 +60,7 @@ body{
 
 .menu {padding-top:35px; height:auto;  width:100%; }
 .menu ul {float:left; list-style:none;}
-.menu ul li {float:left; position:relative; line-height:30px; padding:0 20px;}
+.menu ul li {float:left; position:relative; line-height:30px; padding:0 5px;}
 .menu ul li a {color:white; font-size:13px; text-shadow:0 0 3px #000;}
 .menu ul li:hover {background:#0080FF;}
 .menu ul li:hover a {color:#fff; text-shadow:none;}
