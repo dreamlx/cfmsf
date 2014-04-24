@@ -1,11 +1,12 @@
 .menu
-  .home
-    = link_to t('home'), root_path
   %ul
+    %li
+      = link_to t('home'), root_path
     - @categories.each do |category|
       %li
         = link_to category.french_name, category_path(category)
-        - if !category.submenus.blank?
-          .submenu
-            - category.submenus.each do |submenu|
-              = link_to submenu.french_name, category_path(submenu) unless submenu.french_name.strip.blank?
+        - unless category.submenus.blank?
+          .sub1
+            %ul
+              - category.submenus.each do |submenu|
+                %li= link_to submenu.french_name, category_path(submenu) unless submenu.french_name.strip.blank?

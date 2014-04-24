@@ -16,6 +16,8 @@ body{
   background-color: #013974;
 }
 
+.language{z-index: 100; position:absolute; left:660px;} 
+
 .content{width:100%; }
 .wrapper {width:669px; padding:0 64px 0 47px; 
   min-height:600px; 
