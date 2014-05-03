@@ -5,6 +5,6 @@ class AdminMailer < ActionMailer::Base
     @article = article
     @user = user
     @url  = 'http://example.com/login'
-    mail(to: @user.email, subject: "Article '#{article.chinese_title}'' was updated")
+    mail(to: @user.email, subject: "Article '#{article.chinese_title}' was updated")
   end
 end
