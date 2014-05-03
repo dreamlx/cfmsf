@@ -11,14 +11,15 @@
             .btn-group
               %button.btn.btn-primary.active.chinese_button{type: "button"} 中文版
               %button.btn.btn-primary.french_button{type: "button"} 法文版
-      %select.article_category_id{name:"article[category_id]"}
-        - current_user.categories.each do |category|
-          - if action_name == "edit"
-            %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
-              =  category.is_topmenu? ? category.chinese_name : ("-" + category.chinese_name)
-          - else
-            %option{value:"#{category.id}"}
-              = category.chinese_name
+      / %select.article_category_id{name:"article[category_id]"}
+      /   - current_user.categories.each do |category|
+      /     - if action_name == "edit"
+      /       %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
+      /         =  category.is_topmenu? ? category.chinese_name : ("-" + category.chinese_name)
+      /     - else
+      /       %option{value:"#{category.id}"}
+      /         = category.chinese_name
+      = f.select :category, current_user.categories.map{|c| c.is_topmenu? ? [c.chinese_name, c.id] : [ '-' + c.chinese_name, c.id] }, :include_blank => true, :selected => @current_category.id
       = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image','media'] }
     %div#french_form{style:"display:none"}
       %div
@@ -30,16 +31,16 @@
             .btn-group
               %button.btn.btn-primary.chinese_button{type: "button"} 中文版
               %button.btn.btn-primary.active.french_button{type: "button"} 法文版
-      %select.article_category_id{name:"article[category_id]"}
-        - current_user.categories.each do |category|
-          - if action_name == "edit"
-            %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
-              = category.is_topmenu? ? category.french_name : ("-" + category.french_name)
-          - elsif action_name == "new"
-            - if !@current_category.nil?
-              %option{value:"#{category.id}", :selected => ("true" if @current_category.id == category.id)}
-                = category.french_name
-            
+      / %select.article_category_id{name:"article[category_id]"}
+      /   - current_user.categories.each do |category|
+      /     - if action_name == "edit"
+      /       %option{value:"#{category.id}", :selected => ("true" if @article.category.id == category.id )}
+      /         = category.is_topmenu? ? category.french_name : ("-" + category.french_name)
+      /     - elsif action_name == "new"
+      /       - if !@current_category.nil?
+      /         %option{value:"#{category.id}", :selected => ("true" if @current_category.id == category.id)}
+      /           = category.french_name
+      = f.select :category, current_user.categories.map{|c| c.is_topmenu? ? [c.french_name, c.id] : [ '-' + c.french_name, c.id] }, :include_blank => true, :selected => @current_category.id      
       = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline', 'flash','|', 'image', ] }
   .form-actions
     - if action_name == "new" || action_name == "create"

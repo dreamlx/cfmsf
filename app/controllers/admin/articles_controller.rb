@@ -41,6 +41,7 @@ module Admin
 
     def edit
       @article = Article.find(params[:id])
+      @current_category = @article.category
     end
 
 
