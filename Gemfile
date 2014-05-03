@@ -78,7 +78,7 @@ group :test do
   gem "database_cleaner", "~> 1.0.1"
   gem "launchy", "~> 2.3.0"
   gem 'capybara-webkit'
-  gem "selenium-webdriver", "~> 2.34.0"
+  gem "selenium-webdriver", "~> 2.38.0" #2.34.0 => 2.38.0 because of WebDriverError http://stackoverflow.com/questions/20567215/unable-to-obtain-stable-firefox-connection-in-60-seconds-127-0-0-17055-ubuntu
 end
 
 # To use ActiveModel has_secure_password

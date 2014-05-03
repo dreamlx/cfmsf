@@ -8,11 +8,11 @@ describe "article management page" do
     subject{page}
     it "article title should not nil" do
       visit new_admin_article_path
-      fill_in 'article[chinese_title]', with: 'chinese_title'
-      click_button '法文版'
-      fill_in 'article[french_title]', with:'french_title'
+      # fill_in 'article[chinese_title]', with: 'chinese_title'
+      # click_button '法文版'
+      # fill_in 'article[french_title]', with:'french_title'
       click_button '创建文章'
-      should have_content("标题不能为空")
+      should have_content("请填必填项！")
     end
   end
 
