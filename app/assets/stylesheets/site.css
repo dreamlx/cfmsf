@@ -17,7 +17,7 @@ body{
   background-color: #013974;
 }
 
-.language{z-index: 100; position:absolute; left:780px;}
+.language{z-index: 100; position:absolute; left:780px; margin-right: 30px;}
 
 .content{width:100%; }
 .wrapper {width:780px; 
