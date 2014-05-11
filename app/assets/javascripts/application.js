@@ -16,6 +16,7 @@
 //= require bxslider
 
 $(document).ready(function(){
+  
   $('.bxslider').bxSlider();
 //  sAgent = navigator.userAgent.toLowerCase();
 //  if(sAgent.indexOf("msie")==-1){CheckSizeZoom();}
