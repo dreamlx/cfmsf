@@ -29,7 +29,7 @@ body{
   margin:auto;}
 
 .home {line-height:46px; width:auto; text-align:left; float:left; margin-right:10px;}
-.banner {width:100%; height:300px;}
+.banner {width:100%; height:300px; padding-top: 60px;}
 .bleft {float:left;overflow: hidden; width:45%;margin-top: 34px; height:260px; margin-left: 54px}
 .bleft a{color:#185a8d; }
 .bright {float:right; width:361px; height:275px; margin-top:34px; padding-rigth:20px; background:url(/assets/right_widget.png) ;
@@ -61,7 +61,7 @@ body{
 .post_body{margin:20px;}
 .maintit, .maintit a{color:#185a8d;;}
 
-.menu {/*height:50px;*/  width:680px; overflow:hidden; padding: 35px 64px 0 47px;}
+.menu {/*height:50px;*/  width:680px; padding: 35px 64px 0 47px; position:absolute; z-index: 1000px;}
 .menu ul {float:left; list-style:none;}
 .menu ul li {float:left; position:relative; line-height:30px; padding:0 5px;}
 .menu ul li a {color:white; font-size:13px; text-shadow:0 0 3px #000;}
