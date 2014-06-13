@@ -23,8 +23,8 @@ gem 'jquery-rails'
 gem "ransack" 
 gem 'bootstrap-datepicker-rails'
 gem 'acts-as-taggable-on' # tag
-#gem 'rails_kindeditor', '~> 0.4.0' # rich text
-gem 'ckeditor'
+gem 'rails_kindeditor', '~> 0.4.0' # rich text
+#gem 'ckeditor'
 gem 'devise' #用户注册
 gem 'cancan' #权限管理
 gem 'simple_form' #更好的form help
