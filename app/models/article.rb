@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
   attr_accessible :category_id, :chinese_title, :french_title,
                   :chinese_content, :french_content, :status
+                  
   belongs_to :category
 
   before_save :default_status
