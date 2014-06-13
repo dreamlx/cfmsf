@@ -14,7 +14,7 @@
               %button.btn.btn-primary.active.chinese_button{type: "button"} 中文版
               %button.btn.btn-primary.french_button{type: "button"} 法文版
 
-      = f.select :category_id, current_user.categories.map{|c| c.is_topmenu? ? [c.chinese_name + '| ' + c.french_name , c.id] : [ '-' + c.chinese_name + "| " + c.french_name, c.id] }, :include_blank => true, :selected => @article.category_id
+      = f.select :category_id, current_user.categories.map{|c| c.is_topmenu? ? [c.chinese_name + '| ' + c.french_name , c.id] : [ '-' + c.chinese_name + "| " + c.french_name, c.id] }, :include_blank => true, :selected => @article.category_id||params[:category_id]
       .chinese_form{style:"display:block"}
         = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image','media' , 'source'], filterMode: false }
       .french_form{style:"display:none"}
