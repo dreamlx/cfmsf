@@ -16,9 +16,9 @@
 
       = f.select :category_id, current_user.categories.map{|c| c.is_topmenu? ? [c.chinese_name + '| ' + c.french_name , c.id] : [ '-' + c.chinese_name + "| " + c.french_name, c.id] }, :include_blank => true, :selected => @article.category_id
       .chinese_form{style:"display:block"}
-        = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image','media'] }
+        = f.input :chinese_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image','media' , 'source'], filterMode: false }
       .french_form{style:"display:none"}
-        = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image','media'] }
+        = f.input :french_content, :as => :kindeditor, :input_html => { :items => [ 'undo', 'redo', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'fontname', 'fontsize', '|', 'forecolor', 'bold','italic', 'underline','flash', '|', 'image','media', 'source'] }
   .form-actions
     - if action_name == "new" || action_name == "create"
       = f.button :submit, "创建文章"
