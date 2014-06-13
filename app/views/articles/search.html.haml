@@ -1,17 +1,17 @@
-= render "shared/banner"
-= provide(:title, "SEARCH")
-.maintit
-  %a{:href => root_path}= t("home")
-  \&gt;
-  = t("search_result")
-.post_body
-  %ul
-    - if @articles.blank?
-      %h1 Can't match any articles' title
-    - @articles.each do |article|
-      - if article.status == "public"
-        %li
-          - if session[:locale] == "zh-CN"
-            = link_to article.chinese_title, article_path(article)
-          - elsif session[:locale] == "fr"
-            = link_to article.french_title, article_path(article)
+.module2
+  = provide(:title, "SEARCH")
+  .maintit{style: "margin:20px;"}
+    %a{:href => root_path}= t("home")
+    \&gt;
+    = t("search_result")
+  .post_body
+    %ul
+      - if @articles.blank?
+        %h1 Can't match any articles' title
+      - @articles.each do |article|
+        - if article.status == "public"
+          %li
+            - if session[:locale] == "zh-CN"
+              = link_to article.chinese_title, article_path(article)
+            - elsif session[:locale] == "fr"
+              = link_to article.french_title, article_path(article)
