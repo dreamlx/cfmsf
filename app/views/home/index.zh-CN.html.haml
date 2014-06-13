@@ -10,7 +10,6 @@
         %sup 学习
         园地
       .study-c
-        = raw(@study_domain.chinese_content)
         - unless @news_category.nil?
           %ul
             - @news_category.articles.limit(6).each do |article|
