@@ -60,7 +60,7 @@ module Admin
       if @article.update_attributes(params[:article])
         #AdminMailer.notice_email(User.find_by_username('admin'), @article).deliver
         User.where('role = ?', 'admin').each  do |user|
-          AdminMailer.notice_email(user, @article).deliver
+          #AdminMailer.notice_email(user, @article).deliver
         end
         redirect_to edit_admin_article_path(@article), notice: 'article_success_updated'
       else

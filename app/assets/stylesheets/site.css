@@ -42,7 +42,8 @@ body{
 .search .key {padding:5px; font-size:11px; float:left; line-height:16px;}
 .search .btn {margin-left:10px; background:#f0f0ec; color:#111; height:26px; line-height:26px; padding:0 10px; cursor:pointer;}
 .module {border:1px solid #336190; overflow:hidden; padding:10px; margin-bottom: 20px;}
-.module2 {border:1px solid #336190; padding:10px; margin-bottom: 20px; width:100%; margin-top:60px;}
+.module2 {border:1px solid #336190;margin-bottom: 20px; width:100%; margin-top:60px; padding-bottom: 20px;}
+.module2 ul{padding-left: 30px;}
 .study, .contact {float:left; width:100%; color:white; margin-bottom: 20px;}
 .study h3 , .contact h3 {font-size:18px; color:white; font-weight:normal; padding-bottom:10px;}
 .study h3 sup , .contact h3 sup {font-size:12px; vertical-align:12px;}
