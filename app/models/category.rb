@@ -10,7 +10,13 @@ class Category < ActiveRecord::Base
   #validates_uniqueness_of :chinese_name
   #validates_uniqueness_of :french_name
 
+  scope :not_include_me, ->(my_id) { where("id <> #{my_id}") }
+
   after_create :set_to_admin
+
+  def self.top_menus
+    Category.where("parent_id is null or parent_id = ''")
+  end
 
   def is_topmenu?
     Category.where(id: self.parent_id).blank?
@@ -24,13 +30,6 @@ class Category < ActiveRecord::Base
     Category.where(id: self.parent_id).first
   end
 
-  def self.except_me(my_id)
-    if my_id.nil?
-      self.all
-    else
-      self.where("id <> #{my_id}") 
-    end
-  end
   def published_submenus
     Category.where(parent_id: self.id, published: true)
   end

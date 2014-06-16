@@ -4,11 +4,11 @@
     = f.input :order_no, label: "菜单顺序"
     = f.input :chinese_name, label: "类别中文名"
     = f.input :french_name, label: "类别法文名"
-    = f.input :parent_id, collection: Category.except_me(@category.id).map{|c| c.is_topmenu? ? [c.chinese_name, c.id] : [ '-' + c.chinese_name, c.id] }, :include_blank => true, :selected => @category.parent_id
+    = f.input :parent_id, collection: Category.not_include_me(f.object.id).top_menus.map{|c| c.is_topmenu? ? [c.chinese_name, c.id] : [ '-' + c.chinese_name, c.id] }, :include_blank => true, :selected => @category.parent_id
     = f.input :published, label: '发布菜单'
   .form-actions
     = f.button :submit, '更新类别'
-    = f.button :button, '取消', :type => 'reset', :class => 'btn', :id => "cancle"
+    = f.button :button, '重置表单', :type => 'reset', :class => 'btn', :id => "cancle"
 
 = javascript_include_tag "admin/categories"
 = stylesheet_link_tag "admin/error"
