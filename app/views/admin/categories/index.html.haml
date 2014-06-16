@@ -15,9 +15,7 @@
       %td 文章数量
       %td 操作
     %tbody
-    - i = 0
     - @categories.each do |category|
-      / - i += 1
       %tr{class: cycle( "ligth_bule" , "mazarine")}
         %td= category.order_no
         %td
