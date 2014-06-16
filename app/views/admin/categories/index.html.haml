@@ -10,7 +10,8 @@
       %li
         = category.order_no
          
-        \#{category.chinese_name} |
+        \#{category.chinese_name} 
+        |
         \#{category.french_name}
         (#{link_to category.articles.where("status != 'deleted'").size, admin_articles_path(category_id: category)})
         - if can? :edit, category
