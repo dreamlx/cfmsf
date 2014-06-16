@@ -58,7 +58,6 @@
                           - if category.articles.size == 0 and (can? :delete, category)
                             = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
 
-<<<<<<< HEAD
 
 / %table.table.center.table-bordered
 /   %thead
@@ -86,7 +85,7 @@
 /             = link_to '编辑', edit_admin_category_path(category)
 /           - if category.articles.size == 0 and (can? :delete, category)
 /             = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
-=======
+
 %table.table.center.table-bordered
   %thead
     %tr
@@ -114,4 +113,4 @@
             = link_to '编辑', edit_admin_category_path(category)
           - if category.articles.size == 0 and (can? :delete, category)
             = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
->>>>>>> 11d06bc1ccd77070d1214f97036c50b49034e17c
+
