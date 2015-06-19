@@ -4,6 +4,87 @@
   .span3
     %h3
       = link_to '添加新类别', new_admin_category_path
+%ul
+  - @categories.each do |category|
+    - if category.is_topmenu?
+      %li
+        = category.order_no
+         
+        \#{category.chinese_name} 
+        |
+        \#{category.french_name}
+        (#{link_to category.articles.where("status != 'deleted'").size, admin_articles_path(category_id: category)})
+        - if can? :edit, category
+          = link_to '编辑', edit_admin_category_path(category)
+        - if category.articles.size == 0 and (can? :delete, category)
+          = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
+      %li
+        %ul
+          - category.submenus.each do |category|
+            %li
+              = category.order_no
+              = category.chinese_name
+              |
+              \#{category.french_name}
+              (#{link_to category.articles.where("status != 'deleted'").size, admin_articles_path(category_id: category)})
+              - if can? :edit, category
+                = link_to '编辑', edit_admin_category_path(category)
+              - if category.articles.size == 0 and (can? :delete, category)
+                = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
+            %li
+              %ul
+                - category.submenus.each do |category|
+                  %li
+                    = category.order_no
+                    = category.chinese_name
+                    |
+                    \#{category.french_name}
+                    (#{link_to category.articles.where("status != 'deleted'").size, admin_articles_path(category_id: category)})
+                    - if can? :edit, category
+                      = link_to '编辑', edit_admin_category_path(category)
+                    - if category.articles.size == 0 and (can? :delete, category)
+                      = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
+                  %li
+                    %ul
+                      - category.submenus.each do |category|
+                        %li
+                          = category.order_no
+                          = category.chinese_name
+                          |
+                          \#{category.french_name}
+                          (#{link_to category.articles.where("status != 'deleted'").size, admin_articles_path(category_id: category)})
+                          - if can? :edit, category
+                            = link_to '编辑', edit_admin_category_path(category)
+                          - if category.articles.size == 0 and (can? :delete, category)
+                            = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
+
+
+/ %table.table.center.table-bordered
+/   %thead
+/     %tr
+/       %td 序号
+/       %td 类别中文名
+/       %td 类别法文名
+/       %td 上级菜单
+/       %td 文章数量
+/       %td 操作
+/     %tbody
+/     - @categories.each do |category|
+/       %tr{class: cycle( "ligth_bule" , "mazarine")}
+/         %td= category.order_no
+/         %td
+/           = "-" unless category.parent_menu.blank?
+/           = category.chinese_name
+/         %td
+/           = "-" unless category.parent_menu.blank?
+/           = category.french_name
+/         %td= category.parent_menu.chinese_name unless category.parent_menu.blank?
+/         %td= category.articles.where("status != 'deleted'").size
+/         %td
+/           - if can? :edit, category
+/             = link_to '编辑', edit_admin_category_path(category)
+/           - if category.articles.size == 0 and (can? :delete, category)
+/             = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
 
 %table.table.center.table-bordered
   %thead
@@ -32,3 +113,4 @@
             = link_to '编辑', edit_admin_category_path(category)
           - if category.articles.size == 0 and (can? :delete, category)
             = link_to '删除', admin_category_path(category), :method => :delete, :data => { :confirm => '确定?' }
+
