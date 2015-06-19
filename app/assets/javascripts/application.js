@@ -25,6 +25,14 @@ $(document).ready(function(){
 //  sAgent = navigator.userAgent.toLowerCase();
 //  if(sAgent.indexOf("msie")==-1){CheckSizeZoom();}
 //});
+
+if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) { //test for MSIE x.x;
+ var ieversion=new Number(RegExp.$1) // capture x.x portion and store as a number
+ if (ieversion<=8)
+  alert("你的浏览器版本太老，不再被微软支持。为了最佳视觉效果请下载最新版本的IE浏览器或者chrome浏览器");
+}
+
+
 function CheckSizeZoom() {
   var minW = 780;
 
